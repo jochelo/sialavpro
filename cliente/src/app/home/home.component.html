@@ -1,28 +1,32 @@
 <div id="colorlib-page">
-  <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
-  <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-    <h1 id="colorlib-logo"><a href="index.html">Balay</a></h1>
+  <a class="js-colorlib-nav-toggle colorlib-nav-toggle" href="#"><i></i></a>
+  <aside class="border js-fullheight" id="colorlib-aside" role="complementary">
+    <h1 id="colorlib-logo"><a [routerLink]="['/home']">Prodag</a></h1>
     <nav id="colorlib-main-menu" role="navigation">
       <ul>
-        <li class="colorlib-active"><a href="index.html">Home</a></li>
-        <li><a href="work.html">Project</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li class="colorlib-active"><a [routerLink]="['/home/inicio']">Inicio</a></li>
+        <li><a href="work.html">Galería</a></li>
+        <li><a href="about.html">Servicios</a></li>
+        <li><a href="services.html">Reservas</a></li>
+        <li><a href="blog.html">Contactos</a></li>
+        <li><a href="contact.html">Inicio de Sesión</a></li>
       </ul>
     </nav>
 
     <div class="colorlib-footer">
-      <p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        <span>Demo Images: <a href="http://nothingtochance.co/" target="_blank">nothingtochance.co</a></span></small></p>
+      <p>
+        <small>
+          Copyright &copy; 2020 "PRODAG"
+          <br>
+          <fa-icon [icon]="faUserCircle"></fa-icon> Desarrollado por
+          <a href="https://github.com/jochelo" target="_blank">Jochelo</a>
+        </small>
+      </p>
       <ul>
-        <li><a href="#"><i class="icon-facebook2"></i></a></li>
-        <li><a href="#"><i class="icon-twitter2"></i></a></li>
-        <li><a href="#"><i class="icon-instagram"></i></a></li>
-        <li><a href="#"><i class="icon-linkedin2"></i></a></li>
+        <li><a href="#" target="_blank"><i class="icon-facebook2"></i></a></li>
+        <!--<li><a href="#" target=_blank><i class="icon-twitter2"></i></a></li>-->
+        <li><a href="#" target="_blank"><i class="icon-instagram"></i></a></li>
+        <!--<li><a href="#" target=_blank><i class="icon-linkedin2"></i></a></li>-->
       </ul>
     </div>
 

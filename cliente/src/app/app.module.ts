@@ -12,6 +12,7 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import {AppInterceptor} from './app.interceptor';
 import {registerLocaleData} from '@angular/common';
+import {HomeModule} from './home/home.module';
 
 registerLocaleData(localeEsBo, 'es-Bo');
 
@@ -22,6 +23,7 @@ registerLocaleData(localeEsBo, 'es-Bo');
   ],
   imports: [
     BrowserModule,
+    HomeModule,
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot(appReducers),

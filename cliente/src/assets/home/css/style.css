@@ -1175,7 +1175,8 @@ body.offcanvas {
   bottom: -10px; }
 
 .colorlib-nav-toggle.active i {
-  background: transparent; }
+  background: transparent;
+}
 
 .colorlib-nav-toggle.active i::before {
   top: 0;
@@ -1200,7 +1201,7 @@ body.offcanvas {
   z-index: 9999;
   cursor: pointer;
   opacity: 1;
-  visibility: hidden;
+  visibility: visible;
   padding: 20px;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
@@ -1208,7 +1209,9 @@ body.offcanvas {
   @media screen and (max-width: 768px) {
     .colorlib-nav-toggle {
       opacity: 1;
-      visibility: visible; } }
+      visibility: visible;
+    }
+  }
 
 @media screen and (max-width: 480px) {
   .col-xxs-12 {

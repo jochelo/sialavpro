@@ -5,7 +5,7 @@ import {InicioComponent} from './inicio/inicio.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent,
     children: [
       {
