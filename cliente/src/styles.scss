@@ -1,5 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import "~src/assets/scss/theme";
+@import "~src/assets/scss/maps";
+
+/*@import "~src/assets/home/sass/bootstrap";
+@import "~src/assets/home/css/style";
+@import "~src/assets/home/sass/bootstrap/mixins";
+@import "~src/assets/home/sass/bootstrap/theme";*/
+
+// @import "~src/assets/home/css/style";
+@import "~src/assets/home/sass/style";
+@import "~src/assets/home/sass/bootstrap/variables";
+@import "~src/assets/home/sass/bootstrap/mixins/vendor-prefixes";
+
+
 // @import '~@angular/material/theming';
 
 // @include mat-core();

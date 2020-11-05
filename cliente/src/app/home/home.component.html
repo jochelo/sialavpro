@@ -1,15 +1,25 @@
 <div id="colorlib-page">
-  <a class="js-colorlib-nav-toggle colorlib-nav-toggle" href="#"><i></i></a>
-  <aside class="border js-fullheight" id="colorlib-aside" role="complementary">
+  <a (click)="isCollapse = !isCollapse" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+  <aside class="js-fullheight" id="colorlib-aside" role="complementary">
     <h1 id="colorlib-logo"><a [routerLink]="['/home']">Prodag</a></h1>
     <nav id="colorlib-main-menu" role="navigation">
       <ul>
-        <li class="colorlib-active"><a [routerLink]="['/home/inicio']">Inicio</a></li>
-        <li><a href="work.html">Galería</a></li>
-        <li><a href="about.html">Servicios</a></li>
-        <li><a href="services.html">Reservas</a></li>
-        <li><a href="blog.html">Contactos</a></li>
-        <li><a href="contact.html">Inicio de Sesión</a></li>
+        <li [class.colorlib-active]="router.url.search('inicio') !== -1"><a [routerLink]="'/home/inicio'">Inicio</a>
+        </li>
+        <li [class.colorlib-active]="router.url.search('galeria') !== -1"><a [routerLink]="'/home/galeria'">Galería</a>
+        </li>
+        <li [class.colorlib-active]="router.url.search('servicios') !== -1"><a [routerLink]="'/home/servicios'">Servícios</a>
+        </li>
+        <li [class.colorlib-active]="router.url.search('reservas') !== -1"><a
+          [routerLink]="'/home/reservas'">Reservas</a>
+        </li>
+        <li [class.colorlib-active]="router.url.search('contactos') !== -1"><a [routerLink]="'/home/contactos'">Contactos</a>
+        </li>
+        <li [class.colorlib-active]="router.url.search('login') !== -1">
+          <a [routerLink]="'/login'">
+            <fa-icon [icon]="faSignInAlt"></fa-icon>
+          </a>
+        </li>
       </ul>
     </nav>
 
@@ -18,8 +28,9 @@
         <small>
           Copyright &copy; 2020 "PRODAG"
           <br>
-          <fa-icon [icon]="faUserCircle"></fa-icon> Desarrollado por
-          <a href="https://github.com/jochelo" target="_blank">Jochelo</a>
+          <fa-icon [icon]="faUserCircle"></fa-icon>
+          Desarrollado por
+          <a href="https://github.com/jochelo" target="_blank">Jochelo Developer</a>
         </small>
       </p>
       <ul>
@@ -31,7 +42,6 @@
     </div>
 
   </aside>
-
   <div id="colorlib-main">
     <router-outlet></router-outlet>
   </div>
