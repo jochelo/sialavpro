@@ -1,0 +1,76 @@
+<div class="colorlib-narrow-content">
+  <div class="row">
+    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+      <span class="heading-meta">Edición de Empleado</span>
+      <h2 class="colorlib-heading">Actualizar datos del Empleado</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 offset-md-1 animate-box" data-animate-effect="fadeInLeft">
+      <form [formGroup]="empleadoGroup">
+
+        <div class="form-group">
+          <label for="rolEmpleado">Rol del Trabajador</label>
+          <select class="form-control" formControlName="rolEmpleado" id="rolEmpleado"
+                  name="rolEmpleado">
+            <option value="mallero">Mallero</option>
+            <option value="obrero">Obrero</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="nombres">Nombres</label>
+          <input class="form-control" formControlName="nombres" id="nombres" name="nombres" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="apellidos">Apellidos</label>
+          <input class="form-control" formControlName="apellidos" id="apellidos" name="apellidos" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="celular">Telefono/Celular</label>
+          <input class="form-control" formControlName="celular" id="celular" name="celular" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="carnet">Carnet de Identidad</label>
+          <input class="form-control" formControlName="carnet" id="carnet" name="carnet" type="text">
+        </div>
+
+        <hr>
+        <h4 class="text-info"><strong>CAMPOS OPCIONALES</strong></h4>
+
+        <div class="form-group">
+          <label for="foto">Foto</label>
+          <div class="custom-file">
+            <input (change)="uploadfile($event)"
+                   accept="image/*"
+                   class="custom-file-input"
+                   id="foto"
+                   lang="es" name="foto" type="file">
+            <label #labelFoto class="form-control custom-file-label" data-browse="Elegir" for="foto">Seleccionar
+              Foto</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="direccion">Dirección</label>
+          <textarea name="direccion" id="direccion" formControlName="direccion" class="form-control" cols="30" rows="10"></textarea>
+        </div>
+
+        <div class="form-group text-right">
+          <button (click)="onUpdate()" [disabled]="empleadoGroup.invalid" class="btn btn-primary btn-lg">ACTUALIZAR</button>
+          <button (click)="onCancel()" class="btn btn-default btn-lg">CANCELAR</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+<ngx-spinner >
+  <p class="text-white-50 text-center">
+    {{ empleadoState.message }}
+  </p>
+</ngx-spinner>
+

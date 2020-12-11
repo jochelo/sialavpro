@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <!--<ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>-->
+        <ion-title>Prodag</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="bg-login">
+        <div class="bg-danger-light padding-rl" *ngIf="error !== null">
+            <div class="text-white-50">{{ error }}</div>
+        </div>
+        <div class="bg-transparent-50 padding-rl">
+            <h3 class="text-center">Iniciar Sesión</h3>
+            <form [formGroup]="loginGroup">
+                <img [src]="userImage" alt="" class="sidebar-img">
+                <ion-item color="transparent">
+                    <ion-label position="floating">Cuenta</ion-label>
+                    <ion-input formControlName="cuenta" type="text" [autofocus]="true"></ion-input>
+                </ion-item>
+                <br>
+                <ion-item color="transparent">
+                    <ion-label position="floating">Contraseña</ion-label>
+                    <ion-input formControlName="password" type="password"></ion-input>
+                </ion-item>
+                <br>
+                <ion-button expand="block" (click)="onLogin()">
+                    INGRESAR
+                </ion-button>
+            </form>
+        </div>
+    </div>
+    <!--<div class="imgcontainer">
+      <img src="assets/imgs/HDfingerprint.jpg" alt="Avatar" class="avatar">
+    </div>-->
+</ion-content>

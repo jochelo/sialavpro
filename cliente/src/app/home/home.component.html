@@ -4,16 +4,17 @@
     <h1 id="colorlib-logo"><a [routerLink]="['/home']">Prodag</a></h1>
     <nav id="colorlib-main-menu" role="navigation">
       <ul>
-        <li [class.colorlib-active]="router.url.search('inicio') !== -1"><a [routerLink]="'/home/inicio'">Inicio</a>
+        <li [class.colorlib-active]="router.url.search('inicio') !== -1">
+          <a [routerLink]="'/home/inicio'">Inicio</a>
         </li>
-        <li [class.colorlib-active]="router.url.search('galeria') !== -1"><a [routerLink]="'/home/galeria'">Galería</a>
+        <li [class.colorlib-active]="router.url.search('galeria') !== -1">
+          <a [routerLink]="'/home/galeria'">Galería</a>
         </li>
-        <li [class.colorlib-active]="router.url.search('servicios') !== -1"><a [routerLink]="'/home/servicios'">Servícios</a>
+        <li [class.colorlib-active]="router.url.search('servicios') !== -1">
+          <a [routerLink]="'/home/servicios'">Servícios</a>
         </li>
-        <li [class.colorlib-active]="router.url.search('reservas') !== -1"><a
-          [routerLink]="'/home/reservas'">Reservas</a>
-        </li>
-        <li [class.colorlib-active]="router.url.search('contactos') !== -1"><a [routerLink]="'/home/contactos'">Contactos</a>
+        <li [class.colorlib-active]="router.url.search('contactos') !== -1">
+          <a [routerLink]="'/home/contactos'">Contactos y Reservas</a>
         </li>
         <li [class.colorlib-active]="router.url.search('login') !== -1">
           <a [routerLink]="'/login'">

@@ -1,0 +1,100 @@
+<div class="colorlib-narrow-content">
+  <div class="row">
+    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+      <span class="heading-meta">Edición de Caja de Clavos</span>
+      <h2 class="colorlib-heading">Actualizar Caja de Clavos</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 offset-md-1 animate-box" data-animate-effect="fadeInLeft">
+      <form [formGroup]="cajaclavoGroup">
+        <div class="form-group">
+          <label for="tipoClavo">Tipo de Clavo</label>
+          <select class="form-control" formControlName="tipoClavo" id="tipoClavo"
+                  name="tipoClavo">
+            <option value="calamina">Clavo de Calamina</option>
+            <option value="construccion">Clavo de Construcción</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="largo">Largo</label>
+          <div class="row">
+            <div class="col-6">
+              <input (ngModelChange)="onChangeLongitud()"
+                     class="form-control"
+                     tooltip="Entero"
+                     placeholder="Entero"
+                     formControlName="largo"
+                     id="largo"
+                     name="largo" type="number">
+            </div>
+            <div class="col-6">
+              <ng-select [items]="fracciones" bindLabel="fraccion"
+                         (ngModelChange)="onChangeLongitud()"
+                         tooltip="Fracción"
+                         bindValue="fraccion"
+                         class="form-control"
+                         formControlName="largoFraccion"></ng-select>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label for="bwg">BWG (Calibre)</label>
+          <input class="custom-range" formControlName="bwg" id="bwg" max="22" min="5" name="bwg"
+                 type="range">
+          <p class="text-right">
+            <strong>{{ cajaclavoGroup.get('bwg').value ? cajaclavoGroup.get('bwg').value : 0 }}</strong></p>
+        </div>
+
+        <div class="form-group">
+          <label for="precio">Precio de la Caja</label>
+          <input class="form-control" formControlName="precio" id="precio" min="0" name="precio"
+                 step="0.1" type="number">
+        </div>
+
+        <div class="form-group">
+          <label for="numeroBolsas">Número de Bolsas</label>
+          <input class="form-control" formControlName="numeroBolsas" id="numeroBolsas" min="0" name="numeroBolsas"
+                 step="0.1" type="number">
+        </div>
+
+        <hr>
+        <h4 class="text-info"><strong>CAMPOS OPCIONALES</strong></h4>
+
+        <div class="form-group">
+          <label for="foto">Foto</label>
+          <div class="custom-file">
+            <input (change)="uploadfile($event)"
+                   accept="image/*"
+                   class="custom-file-input"
+                   id="foto"
+                   lang="es" name="foto" type="file">
+            <label #labelFoto class="form-control custom-file-label" data-browse="Elegir" for="foto">Seleccionar
+              Archivo</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="descripcion">Descripción</label>
+          <textarea class="form-control" cols="30" formControlName="descripcion" id="descripcion" name="descripcion"
+                    rows="10"></textarea>
+        </div>
+
+        <div class="form-group text-right">
+          <button (click)="onUpdate()" [disabled]="cajaclavoGroup.invalid" class="btn btn-primary btn-lg">ACTUALIZAR
+          </button>
+          <button (click)="onCancel()" class="btn btn-default btn-lg">CANCELAR</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+<ngx-spinner>
+  <p class="text-white-50 text-center">
+    {{ cajaclavoState.message }}
+  </p>
+</ngx-spinner>

@@ -7,10 +7,12 @@
       <sourceFolder url="file://$MODULE_DIR$/servidor/app" isTestSource="false" packagePrefix="App\" />
       <sourceFolder url="file://$MODULE_DIR$/servidor/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/asm89/stack-cors" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/aws/aws-sdk-php" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/bacon/bacon-qr-code" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/dasprid/enum" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/defuse/php-encryption" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/dnoegel/php-xdg-base-dir" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/doctrine/instantiator" />
@@ -22,6 +24,7 @@
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/facade/ignition-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/fideloper/proxy" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/filp/whoops" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/firebase/php-jwt" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/fruitcake/laravel-cors" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/fzaninotto/faker" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/graham-campbell/result-type" />
@@ -31,25 +34,34 @@
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/hamcrest/hamcrest-php" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/laravel/fortify" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/laravel/framework" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/laravel/passport" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/laravel/tinker" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/lcobucci/jwt" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/league/commonmark" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/league/event" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/league/flysystem" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/league/flysystem-aws-s3-v3" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/league/mime-type-detection" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/league/oauth2-server" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/mtdowling/jmespath.php" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/myclabs/deep-copy" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/nesbot/carbon" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/nunomaduro/collision" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/nyholm/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/opis/closure" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/paragonie/constant_time_encoding" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/paragonie/random_compat" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/phar-io/manifest" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/phar-io/version" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/php-http/message-factory" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/phpdocumentor/type-resolver" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/phpoption/phpoption" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/phpseclib/phpseclib" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/phpspec/prophecy" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/phpunit/php-code-coverage" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/phpunit/php-file-iterator" />
@@ -61,6 +73,7 @@
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/psr/event-dispatcher" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/psr/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/psr/http-factory" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/psr/log" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/psr/simple-cache" />
@@ -108,6 +121,7 @@
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/symfony/polyfill-php73" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/symfony/polyfill-php80" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/symfony/process" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/symfony/psr-http-message-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/symfony/routing" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/symfony/service-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/symfony/string" />

@@ -1,0 +1,108 @@
+<div class="colorlib-narrow-content">
+  <div class="container-fluid animate-box" data-animate-effect="fadeInRight">
+    <div class="row">
+      <div class="col-12 text-right">
+        <button (click)="onCreate()" class="btn btn-primary">
+          <fa-icon [icon]="faPlus"></fa-icon>
+          NUEVO GAVION
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+      <span class="heading-meta">Gaviones</span>
+      <h2 class="colorlib-heading">Lista de Gaviones</h2>
+
+      <alert *ngIf="gavionState.loading" class="text-center" type="info">
+        <fa-icon [icon]="faSpinner" [pulse]="true" size="2x"></fa-icon>
+        <br>
+        <strong>{{ gavionState.message }}</strong>
+      </alert>
+      <alert *ngIf="gavionState.error" class="text-center" type="danger">
+        {{ gavionState.message }}
+      </alert>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 offset-md-1 animate-box" data-animate-effect="fadeInLeft">
+      <div *ngIf="!gavionState.loading">
+        <div *ngFor="let gavion of gavionState.gaviones;let i = index">
+          <mat-card class="mt-3">
+            <mat-card-header>
+              <mat-card-title>
+                <span class="card-index">{{ gavionState.paginacion.from + i }}</span>
+                <button (click)="gavion.show = true" *ngIf="!gavion.show" color="primary" mat-icon-button>
+                  <fa-icon [icon]="faEllipsisV"></fa-icon>
+                </button>
+                <button (click)="gavion.show = false" *ngIf="gavion.show" color="warn" mat-icon-button>
+                  <fa-icon [icon]="faTimes"></fa-icon>
+                </button>
+                <span class="text-black-50"><strong>{{ gavion.tipoGavion | uppercase }}</strong></span>
+              </mat-card-title>
+
+              <mat-card-subtitle>
+                <p>
+                  <strong>{{ 'DIMENSIÓN: ' }}</strong>{{ gavion.alto + ' x ' + gavion.largo + ' x ' + gavion.ancho + ' [mts]'}}
+                </p>
+              </mat-card-subtitle>
+
+            </mat-card-header>
+            <mat-card-content [collapse]="!gavion.show" [isAnimated]="true" class="text-black-50 ml-3">
+              <div class="row">
+                <div class="col-md-5">
+                  <img *ngIf="gavion.foto !== null" [src]="gavion.foto" alt="" class="img-fluid img-responsive">
+                </div>
+                <div class="col-md-7">
+                  <p class="text-primary">
+                    <fa-icon [icon]="faHashtag"></fa-icon>
+                    {{ gavion.cantidad + ' Unidades Disponibles'}}
+                  </p>
+                  <p><strong>{{ 'Precio: ' }}</strong>{{ gavion.precio + ' Bs.'}}</p>
+                  <p><strong>{{ 'Número de Diafragmas: ' }}</strong>{{ gavion.numeroDiafragma }}</p>
+
+                  <p *ngIf="gavion.descripcion !== null"><strong>{{ 'Descripción: ' }}</strong>{{ gavion.descripcion }}
+                  </p>
+                </div>
+              </div>
+            </mat-card-content>
+            <mat-card-actions [collapse]="!gavion.show" [isAnimated]="true" align="end" class="text-black-50 ml-3">
+              <div class="btn-group">
+                <button (click)="onEdit(gavion)"
+                        class="btn btn-secondary"
+                        tooltip="Editar Gavion">
+                  <fa-icon [icon]="faEdit"></fa-icon>
+                </button>
+                <button (click)="onDelete(gavion)"
+                        class="btn btn-danger"
+                        tooltip="Eliminar Gavion">
+                  <fa-icon [icon]="faTrash"></fa-icon>
+                </button>
+              </div>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+          <pagination (pageChanged)="onChangeState({
+                    type: 'paginate',
+                    payload: {
+                      items: $event.itemsPerPage,
+                      page: $event.page
+                    }
+                  })"
+                      *ngIf="gavionState.paginacion !== null"
+                      [(ngModel)]="gavionState.paginacion.current_page"
+                      [boundaryLinks]="true"
+                      [itemsPerPage]="5"
+                      [maxSize]="7"
+                      [totalItems]="gavionState.paginacion.total"
+                      firstText="&laquo;" lastText="&raquo;" nextText="&rsaquo;" previousText="&lsaquo;">
+          </pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

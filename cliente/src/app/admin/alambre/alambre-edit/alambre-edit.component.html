@@ -1,0 +1,73 @@
+<div class="colorlib-narrow-content">
+  <div class="row">
+    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+      <span class="heading-meta">Edición de Alambre</span>
+      <h2 class="colorlib-heading">Actualizar Alambre</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 offset-md-1 animate-box" data-animate-effect="fadeInLeft">
+      <form [formGroup]="alambreGroup">
+        <div class="form-group">
+          <label for="tipoAlambre">Tipo de Alambre</label>
+          <select class="form-control" formControlName="tipoAlambre" id="tipoAlambre"
+                  name="tipoAlambre">
+            <option value="amarre">Alambre de Amarre</option>
+            <option value="galvanizado">Alambre Galvanizado</option>
+            <option value="puas">Alambre de Puas</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="awg">{{ 'AWG (Número de Alambre)' }}</label>
+          <input class="custom-range" formControlName="awg" id="awg" max="22" min="1" name="awg" step="1"
+                 type="range">
+          <p class="text-right"><strong>{{ alambreGroup.get('awg').value ? alambreGroup.get('awg').value : 0 }}</strong></p>
+        </div>
+
+        <div class="form-group">
+          <label for="peso">Peso</label>
+          <input class="form-control" formControlName="peso" id="peso" name="peso" type="number" min="0" step="0.01">
+        </div>
+
+        <div class="form-group">
+          <label for="precio">Precio</label>
+          <input class="form-control" formControlName="precio" id="precio" name="precio" type="number" min="0" step="0.1">
+        </div>
+
+        <hr>
+        <h4 class="text-info"><strong>CAMPOS OPCIONALES</strong></h4>
+
+        <div class="form-group">
+          <label for="foto">Foto</label>
+          <div class="custom-file">
+            <input (change)="uploadfile($event)"
+                   accept="image/*"
+                   class="custom-file-input"
+                   id="foto"
+                   lang="es" name="foto" type="file">
+            <label #labelFoto class="form-control custom-file-label" data-browse="Elegir" for="foto">Seleccionar
+              Archivo</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="descripcion">Descripción</label>
+          <textarea name="descripcion" id="descripcion" formControlName="descripcion" class="form-control" cols="30" rows="10"></textarea>
+        </div>
+
+        <div class="form-group text-right">
+          <button (click)="onUpdate()" [disabled]="alambreGroup.invalid" class="btn btn-primary btn-lg">ACTUALIZAR</button>
+          <button (click)="onCancel()" class="btn btn-default btn-lg">CANCELAR</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+<ngx-spinner >
+  <p class="text-white-50 text-center">
+    {{ alambreState.message }}
+  </p>
+</ngx-spinner>
+

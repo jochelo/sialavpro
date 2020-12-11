@@ -83,4 +83,13 @@ class UsuarioController extends Controller
     {
         //
     }
+
+    public function download($filename = null)
+    {
+        if ($filename === null) {
+            return response()->download(public_path("images/usuario.png"));
+        } else {
+            return response()->download(storage_path("app/usuarios/{$filename}"));
+        }
+    }
 }

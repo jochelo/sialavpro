@@ -115,6 +115,20 @@
       <path value="$PROJECT_DIR$/servidor/vendor/brick/math" />
       <path value="$PROJECT_DIR$/servidor/vendor/dnoegel/php-xdg-base-dir" />
       <path value="$PROJECT_DIR$/servidor/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/servidor/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/servidor/vendor/nyholm/psr7" />
+      <path value="$PROJECT_DIR$/servidor/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/servidor/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/servidor/vendor/php-http/message-factory" />
+      <path value="$PROJECT_DIR$/servidor/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/servidor/vendor/defuse/php-encryption" />
+      <path value="$PROJECT_DIR$/servidor/vendor/laravel/passport" />
+      <path value="$PROJECT_DIR$/servidor/vendor/league/oauth2-server" />
+      <path value="$PROJECT_DIR$/servidor/vendor/league/event" />
+      <path value="$PROJECT_DIR$/servidor/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/servidor/vendor/mtdowling/jmespath.php" />
+      <path value="$PROJECT_DIR$/servidor/vendor/league/flysystem-aws-s3-v3" />
+      <path value="$PROJECT_DIR$/servidor/vendor/aws/aws-sdk-php" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

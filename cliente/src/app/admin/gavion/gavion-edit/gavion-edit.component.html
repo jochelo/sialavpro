@@ -1,0 +1,96 @@
+<div class="colorlib-narrow-content">
+  <div class="row">
+    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+      <span class="heading-meta">Edición de Gavion</span>
+      <h2 class="colorlib-heading">Actualizar Gavion</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 offset-md-1 animate-box" data-animate-effect="fadeInLeft">
+      <form [formGroup]="gavionGroup">
+        <div class="form-group">
+          <label for="tipoGavion">Tipo de Gavion</label>
+          <select (change)="onTipoGavion()" class="form-control" formControlName="tipoGavion" id="tipoGavion"
+                  name="tipoGavion">
+            <!--<option [selected]="true">Seleccione el tipo de Gavion</option>-->
+            <option value="gavion">Gavion</option>
+            <option value="colchoneta">Colchoneta</option>
+          </select>
+        </div>
+<!--
+        <div class="form-group">
+          <label for="celda">Celda</label>
+          <input class="custom-range" formControlName="celda" id="celda" max="22" min="1" name="celda" step="0.5"
+                 type="range">
+          <p class="text-right"><strong>{{ gavionGroup.get('celda').value ? gavionGroup.get('celda').value : 0 }}</strong> cm.</p>
+        </div>
+
+        <div class="form-group">
+          <label for="alambre">Alambre</label>
+          <input class="custom-range" formControlName="alambre" id="alambre" max="25" min="5" name="alambre"
+                 type="range">
+          <p class="text-right"><strong>{{ gavionGroup.get('alambre').value ? gavionGroup.get('alambre').value : 0 }}</strong></p>
+        </div>
+-->
+        <div class="form-group">
+          <label for="alto">Alto</label>
+          <input class="form-control" formControlName="alto" id="alto" name="alto" type="number" min="0" step="0.1">
+        </div>
+
+        <div class="form-group">
+          <label for="largo">Largo</label>
+          <input class="form-control" formControlName="largo" id="largo" name="largo" type="number" min="0" step="0.1">
+        </div>
+
+        <div class="form-group">
+          <label for="ancho">Ancho</label>
+          <input class="form-control" formControlName="ancho" id="ancho" name="ancho" type="number" min="0" step="0.1">
+        </div>
+
+        <div *ngIf="gavionGroup.get('tipoGavion').value === 'colchoneta'" class="form-group">
+          <label for="numeroDiafragma">Cantidad de Diafragmas</label>
+          <input class="form-control" formControlName="numeroDiafragma" id="numeroDiafragma" name="numeroDiafragma" type="number" min="0" step="0.1">
+        </div>
+
+        <div class="form-group">
+          <label for="precio">Precio</label>
+          <input class="form-control" formControlName="precio" id="precio" name="precio" type="number" min="0" step="0.1">
+        </div>
+
+        <hr>
+        <h4 class="text-info"><strong>CAMPOS OPCIONALES</strong></h4>
+
+        <div class="form-group">
+          <label for="foto">Foto</label>
+          <div class="custom-file">
+            <input (change)="uploadfile($event)"
+                   accept="image/*"
+                   class="custom-file-input"
+                   id="foto"
+                   lang="es" name="foto" type="file">
+            <label #labelFoto class="form-control custom-file-label" data-browse="Elegir" for="foto">Seleccionar
+              Archivo</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="descripcion">Descripción</label>
+          <textarea name="descripcion" id="descripcion" formControlName="descripcion" class="form-control" cols="30" rows="10"></textarea>
+        </div>
+
+        <div class="form-group text-right">
+          <button (click)="onUpdate()" [disabled]="gavionGroup.invalid" class="btn btn-primary btn-lg">ACTUALIZAR</button>
+          <button (click)="onCancel()" class="btn btn-default btn-lg">CANCELAR</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+<ngx-spinner >
+  <p class="text-white-50 text-center">
+    {{ gavionState.message }}
+  </p>
+</ngx-spinner>
+
+

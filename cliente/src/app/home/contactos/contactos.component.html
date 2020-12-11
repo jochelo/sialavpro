@@ -1,66 +1,71 @@
-
-  <div class="colorlib-contact">
-    <div class="colorlib-narrow-content">
-      <div class="row">
-        <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-          <span class="heading-meta">Contactos</span>
-          <h2 class="colorlib-heading">Contactanos</h2>
-        </div>
+<div class="colorlib-contact">
+  <div class="colorlib-narrow-content">
+    <div class="row">
+      <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+        <span class="heading-meta">Contactos y Reservas</span>
+        <h2 class="colorlib-heading">Contactanos</h2>
       </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInRight">
-            <agm-map
-              [disableDoubleClickZoom]="true"
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInRight">
+          <agm-map
+            [disableDoubleClickZoom]="true"
+            [latitude]="lat"
+            [longitude]="lng"
+            [usePanning]="true"
+            [zoom]="zoom">
+            <agm-transit-layer></agm-transit-layer>
+            <agm-marker
+              [label]="'PRODAG'"
               [latitude]="lat"
               [longitude]="lng"
-              [usePanning]="true"
-              [zoom]="zoom">
-              <agm-transit-layer></agm-transit-layer>
-              <agm-marker
-                [label]="'PRODAG'"
-                [latitude]="lat"
-                [longitude]="lng"
-                [markerDraggable]="false"
-                [title]="'PRODAG'">
-                <agm-info-window>
-                  <h4><strong>Prodag</strong></h4>
-                  <p>Empresa de Productos de Acero Galvanizado</p>
-                </agm-info-window>
-              </agm-marker>
-            </agm-map>
+              [markerDraggable]="false"
+              [title]="'PRODAG'">
+              <agm-info-window>
+                <h4><strong>Prodag</strong></h4>
+                <p>Empresa de Productos de Acero Galvanizado</p>
+              </agm-info-window>
+            </agm-marker>
+          </agm-map>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <app-reservas></app-reservas>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <!--<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
+          <div class="colorlib-icon">
+            <i class="icon-globe-outline"></i>
+          </div>
+          <div class="colorlib-text">
+            <p><a href="https://prodag@hotmail.com" target="_blank">prodag@hotmail.com</a></p>
+          </div>
+        </div>-->
+        <div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
+          <div class="colorlib-icon">
+            <i class="icon-map"></i>
+          </div>
+          <div class="colorlib-text">
+            <p>Oruro, Sud Este, 12 de Octubre, Circunvalación y America.</p>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-            <div class="colorlib-icon">
-              <i class="icon-globe-outline"></i>
-            </div>
-            <div class="colorlib-text">
-              <p><a href="https://prodag@hotmail.com" target="_blank">prodag@hotmail.com</a></p>
-            </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
+          <div class="colorlib-icon">
+            <!--<i class="icon-phone"></i>-->
+            <fa-icon [icon]="faWhatsapp" size="xs"></fa-icon>
           </div>
-
-          <div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-            <div class="colorlib-icon">
-              <i class="icon-map"></i>
-            </div>
-            <div class="colorlib-text">
-              <p>Oruro, Sud Este, 12 de Octubre, Circunvalación y America.</p>
-            </div>
-          </div>
-
-          <div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-            <div class="colorlib-icon">
-              <i class="icon-phone"></i>
-            </div>
-            <div class="colorlib-text">
-              <p><a href="tel://+591 711 86662" tooltip="Gerente general: Sabino Lobo">+591 711 86662</a>
-                <br><a href="tel://+591 794 26068" tooltip="Ibeth Lobo">+591 794 26068</a></p>
-            </div>
+          <div class="colorlib-text">
+            <p><a href="tel://+591 711 86662">+591 711 86662</a>
+              <br><a href="tel://+591 794 26068">+591 794 26068</a></p>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 

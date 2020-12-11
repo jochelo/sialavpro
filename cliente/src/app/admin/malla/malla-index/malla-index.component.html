@@ -1,0 +1,106 @@
+<div class="colorlib-narrow-content">
+  <div class="container-fluid animate-box" data-animate-effect="fadeInRight">
+    <div class="row">
+      <div class="col-12 text-right">
+        <button (click)="onCreate()" class="btn btn-primary">
+          <fa-icon [icon]="faPlus"></fa-icon>
+          NUEVA MALLA
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+      <span class="heading-meta">Mallas</span>
+      <h2 class="colorlib-heading">Lista de Mallas</h2>
+
+      <alert *ngIf="mallaState.loading" class="text-center" type="info">
+        <fa-icon [icon]="faSpinner" [pulse]="true" size="2x"></fa-icon>
+        <br>
+        <strong>{{ mallaState.message }}</strong>
+      </alert>
+      <alert *ngIf="mallaState.error" class="text-center" type="danger">
+        {{ mallaState.message }}
+      </alert>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 offset-md-1 animate-box" data-animate-effect="fadeInLeft">
+      <div *ngIf="!mallaState.loading">
+        <div *ngFor="let malla of mallaState.mallas;let i = index">
+          <mat-card class="mt-3">
+            <mat-card-header>
+              <mat-card-title>
+                <span class="card-index">{{ mallaState.paginacion.from + i }}</span>
+                <button (click)="malla.show = true" *ngIf="!malla.show" color="primary" mat-icon-button>
+                  <fa-icon [icon]="faEllipsisV"></fa-icon>
+                </button>
+                <button (click)="malla.show = false" *ngIf="malla.show" color="warn" mat-icon-button>
+                  <fa-icon [icon]="faTimes"></fa-icon>
+                </button>
+                <span class="text-black-50"><strong>{{ 'Malla ' + malla.tipoMalla | uppercase }}</strong></span>
+              </mat-card-title>
+
+              <mat-card-subtitle>
+                <p *ngIf="!malla.m2"><strong>{{ 'Dimensión: ' }}</strong>{{ malla.alto + ' x ' + malla.largo }}</p>
+              </mat-card-subtitle>
+
+            </mat-card-header>
+            <mat-card-content [collapse]="!malla.show" [isAnimated]="true" class="text-black-50 ml-3">
+              <div class="row">
+                <div class="col-md-5">
+                  <img *ngIf="malla.foto !== null" [src]="malla.foto" alt="" class="img-fluid img-responsive">
+                </div>
+                <div class="col-md-7">
+                  <p class="text-primary">
+                    <fa-icon [icon]="faHashtag"></fa-icon>
+                    {{ ' ' + malla.cantidad + ' Rollos Disponibles'}}
+                  </p>
+                  <!--<p><strong>{{ 'Celda: ' }}</strong>{{ malla.celda }}</p>
+                  <p><strong>{{ 'Alambre: ' }}</strong>{{ malla.alambre }}</p>-->
+                  <p><strong>{{ 'Precio: ' }}</strong>{{ malla.precio + ' Bs.'}} {{ malla.m2 ? ' m2' : '' }}</p>
+                  <p *ngIf="malla.descripcion !== null"><strong>{{ 'Descripción: ' }}</strong>{{ malla.descripcion }}
+                  </p>
+                </div>
+              </div>
+            </mat-card-content>
+            <mat-card-actions [collapse]="!malla.show" [isAnimated]="true" align="end" class="text-black-50 ml-3">
+              <div class="btn-group">
+                <button (click)="onEdit(malla)"
+                        class="btn btn-secondary"
+                        tooltip="Editar Malla">
+                  <fa-icon [icon]="faEdit"></fa-icon>
+                </button>
+                <button (click)="onDelete(malla)"
+                        class="btn btn-danger"
+                        tooltip="Eliminar Malla">
+                  <fa-icon [icon]="faTrash"></fa-icon>
+                </button>
+              </div>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+          <pagination (pageChanged)="onChangeState({
+                    type: 'paginate',
+                    payload: {
+                      items: $event.itemsPerPage,
+                      page: $event.page
+                    }
+                  })"
+                      *ngIf="mallaState.paginacion !== null"
+                      [(ngModel)]="mallaState.paginacion.current_page"
+                      [boundaryLinks]="true"
+                      [itemsPerPage]="5"
+                      [maxSize]="7"
+                      [totalItems]="mallaState.paginacion.total"
+                      firstText="&laquo;" lastText="&raquo;" nextText="&rsaquo;" previousText="&lsaquo;">
+          </pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

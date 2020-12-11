@@ -1,0 +1,8 @@
+{
+  "name": "cliente-mobile",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

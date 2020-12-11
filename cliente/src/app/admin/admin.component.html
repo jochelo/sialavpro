@@ -1,0 +1,91 @@
+<div id="colorlib-page">
+  <a (click)="isCollapse = !isCollapse" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+  <aside class="js-fullheight" id="colorlib-aside" role="complementary">
+    <h1 id="colorlib-logo"><a [routerLink]="['/admin']">Prodag</a></h1>
+    <nav id="colorlib-main-menu" role="navigation">
+      <ul>
+        <li *ngFor="let item of items"
+            [class.colorlib-active]="router.url.search(item.search) !== -1" class="item-left-line">
+          <a *ngIf="item.type === 'item'" [routerLink]="item.routerLink" (click)="onCollapseMenu()">
+            <fa-icon [icon]="item.icon" class="icon-item-left"></fa-icon>
+            {{ item.label }}
+          </a>
+          <a (click)="item.isCollapsed = onCollapse(item)" *ngIf="item.type === 'menu'" class="pointer">
+            <fa-icon [icon]="item.icon" class="icon-item-left"></fa-icon>
+            {{ item.label}}
+          </a>
+          <fa-icon *ngIf="item.type === 'menu' && item.isCollapsed" [icon]="faCaretDown" class="float-right"></fa-icon>
+          <fa-icon *ngIf="item.type === 'menu' && !item.isCollapsed" [icon]="faCaretUp" class="float-right"></fa-icon>
+
+          <ul *ngIf="item.type === 'menu'" [collapse]="item.isCollapsed" [isAnimated]="true" class="text-left mt-4">
+            <li *ngFor="let it of item.items" [class.colorlib-active]="router.url.search(it.search) !== -1">
+              <a [routerLink]="it.routerLink" (click)="onCollapseMenu()">
+                <fa-icon [icon]="it.icon" class="icon-subitem-left"></fa-icon>
+                {{ it.label }}
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="colorlib-footer">
+      <p>
+        <small>
+          Copyright &copy; 2020 "PRODAG"
+          <br>
+          <fa-icon [icon]="faUserCircle"></fa-icon>
+          Desarrollado por
+          <a href="https://github.com/jochelo" target="_blank">Jochelo Developer</a>
+        </small>
+      </p>
+      <!--<ul>
+        <li><a href="#" target="_blank"><i class="icon-facebook2"></i></a></li>
+        <li><a href="#" target=_blank><i class="icon-twitter2"></i></a></li>
+        <li><a href="#" target="_blank"><i class="icon-instagram"></i></a></li>
+        <li><a href="#" target=_blank><i class="icon-linkedin2"></i></a></li>
+      </ul>-->
+    </div>
+  </aside>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <span class="spacer"></span>
+    <div id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item dropdown">
+          <a (click)="dropdown = !dropdown" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"
+             id="navbarDropdown"
+             role="button">
+              <span class="account-pointer mr-3" *ngIf="authState.usuario !== null">
+                <img
+                  height="20"
+                  [src]="authState.usuario.foto"
+                  style="border-radius: 100%;"
+                  width="20">
+                {{ auth$ | async }}
+              </span>
+          </a>
+          <div [collapse]="dropdown"
+               [isAnimated]="true"
+               aria-labelledby="navbarDropdown"
+               class="dropdown-menu dropdown-menu-right"
+               id="dropdown-content">
+
+            <a (click)="dropdown = true" [routerLink]="['/admin/perfil/show']" class="dropdown-item">
+              Cuenta de Usuario</a>
+
+            <div class="dropdown-divider"></div>
+            <a *ngIf="authState.usuario !== null"
+               class="dropdown-item pointer">Perfil de Usuario</a>
+
+            <div class="dropdown-divider"></div>
+            <a (click)="logout()" class="dropdown-item pointer">Cerrar Sesion</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="colorlib-main">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+

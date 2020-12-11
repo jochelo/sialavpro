@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {faWhatsapp} from '@fortawesome/free-brands-svg-icons';
 
 declare const contentWayPoint: any;
 declare const mobileMenuOutsideClick: any;
@@ -13,6 +14,8 @@ export class ContactosComponent implements OnInit {
   lat = -17.985170;
   lng = -67.099693;
   zoom = 18;
+
+  faWhatsapp = faWhatsapp;
 
   constructor() { }
 

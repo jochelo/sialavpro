@@ -1,0 +1,104 @@
+<div class="colorlib-narrow-content">
+  <div class="container-fluid animate-box" data-animate-effect="fadeInRight">
+    <div class="row">
+      <div class="col-12 text-right">
+        <button (click)="onCreate()" class="btn btn-primary">
+          <fa-icon [icon]="faPlus"></fa-icon>
+          NUEVO ALAMBRE
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+      <span class="heading-meta">Alambres</span>
+      <h2 class="colorlib-heading">Lista de Alambres</h2>
+
+      <alert *ngIf="alambreState.loading" class="text-center" type="info">
+        <fa-icon [icon]="faSpinner" [pulse]="true" size="2x"></fa-icon>
+        <br>
+        <strong>{{ alambreState.message }}</strong>
+      </alert>
+      <alert *ngIf="alambreState.error" class="text-center" type="danger">
+        {{ alambreState.message }}
+      </alert>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 offset-md-1 animate-box" data-animate-effect="fadeInLeft">
+      <div *ngIf="!alambreState.loading">
+        <div *ngFor="let alambre of alambreState.alambres;let i = index">
+          <mat-card class="mt-3">
+            <mat-card-header>
+              <mat-card-title>
+                <span class="card-index">{{ alambreState.paginacion.from + i }}</span>
+                <button (click)="alambre.show = true" *ngIf="!alambre.show" color="primary" mat-icon-button>
+                  <fa-icon [icon]="faEllipsisV"></fa-icon>
+                </button>
+                <button (click)="alambre.show = false" *ngIf="alambre.show" color="warn" mat-icon-button>
+                  <fa-icon [icon]="faTimes"></fa-icon>
+                </button>
+                <span class="text-black-50"><strong>{{ 'Alambre ' + alambre.tipoAlambre | uppercase }}</strong></span>
+              </mat-card-title>
+
+              <mat-card-subtitle>
+                <p><strong>{{ 'PRECIO: ' }}</strong>{{ alambre.precio + ' Bs.'}}</p>
+              </mat-card-subtitle>
+
+            </mat-card-header>
+            <mat-card-content [collapse]="!alambre.show" [isAnimated]="true" class="text-black-50 ml-3">
+              <div class="row">
+                <div class="col-md-5">
+                  <img *ngIf="alambre.foto !== null" [src]="alambre.foto" alt="" class="img-fluid img-responsive">
+                </div>
+                <div class="col-md-7">
+                  <p class="text-primary">
+                    <fa-icon [icon]="faHashtag"></fa-icon>
+                    {{ alambre.cantidad + ' Unidades Disponibles'}}
+                  </p>
+                  <p><strong>{{ 'AWG: ' }}</strong>{{ alambre.awg }}</p>
+                  <p><strong>{{ 'Peso: ' }}</strong>{{ alambre.peso }}</p>
+                  <p *ngIf="alambre.descripcion !== null"><strong>{{ 'Descripción: ' }}</strong>{{ alambre.descripcion }}
+                  </p>
+                </div>
+              </div>
+            </mat-card-content>
+            <mat-card-actions [collapse]="!alambre.show" [isAnimated]="true" align="end" class="text-black-50 ml-3">
+              <div class="btn-group">
+                <button (click)="onEdit(alambre)"
+                        class="btn btn-secondary"
+                        tooltip="Editar Alambre">
+                  <fa-icon [icon]="faEdit"></fa-icon>
+                </button>
+                <button (click)="onDelete(alambre)"
+                        class="btn btn-danger"
+                        tooltip="Eliminar Alambre">
+                  <fa-icon [icon]="faTrash"></fa-icon>
+                </button>
+              </div>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+          <pagination (pageChanged)="onChangeState({
+                    type: 'paginate',
+                    payload: {
+                      items: $event.itemsPerPage,
+                      page: $event.page
+                    }
+                  })"
+                      *ngIf="alambreState.paginacion !== null"
+                      [(ngModel)]="alambreState.paginacion.current_page"
+                      [boundaryLinks]="true"
+                      [itemsPerPage]="5"
+                      [maxSize]="7"
+                      [totalItems]="alambreState.paginacion.total"
+                      firstText="&laquo;" lastText="&raquo;" nextText="&rsaquo;" previousText="&lsaquo;">
+          </pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

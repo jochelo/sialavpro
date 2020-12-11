@@ -1,0 +1,3 @@
+<app-empleado-index [empleadoState]="empleadoState" *ngIf="empleadoState.location === 'index'"></app-empleado-index>
+<app-empleado-create [empleadoState]="empleadoState" *ngIf="empleadoState.location === 'create'"></app-empleado-create>
+<app-empleado-edit [empleadoState]="empleadoState" *ngIf="empleadoState.location === 'edit'"></app-empleado-edit>

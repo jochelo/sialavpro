@@ -6,7 +6,7 @@ $border-radius-base:  4px !default;
 $padding-base-vertical: 14px !default;
 
 // $brand-primary: #FFC300 !default;
-$brand-primary: #0d47a1 !default;
+$brand-primary: #2962ff !default;
 $brand-footer: #2C2C2C !default;
 
 
@@ -14,8 +14,8 @@ $brand-footer: #2C2C2C !default;
 $brand-white: #fff;
 $brand-black: #000;
 $brand-darker: #444;
-$brand-gray: rgba(204, 204, 204, 0.31);
-$brand-lighter: #e9e9e9;
+$brand-gray: rgba(204, 204, 204, 0.63);
+$brand-lighter: rgba(233, 233, 233, 0.9);
 $brand-body-color: #e8e8e8;
 $brand-selection-color: #f9f6f0;
 $brand-overlay-color: #3b3d40;
@@ -171,7 +171,7 @@ figure {
 
 #colorlib-page {
     width: 100%;
-    overflow: hidden;
+    // overflow: hidden;
     position: relative;
 }
 #colorlib-aside {
@@ -179,7 +179,7 @@ figure {
   padding-bottom: 40px;
   padding-left: 3em;
   padding-right: 3em;
-  //width: 20%;
+  width: 20%;
   position: fixed;
   bottom: 0;
   top: 0;
@@ -188,17 +188,18 @@ figure {
   z-index: 1001;
   background: $brand-footer;
   @include transition(.5s);
-  width: 270px;
-  @include translateX(-270px);
+  /*width: 270px;
+  @include translateX(-270px);*/
   padding-top: 4em;
-	/*@media screen and (max-width: $screen-lg) {
+	@media screen and (max-width: $screen-lg) {
 		width: 30%;
+    @include translateX(30%);
 	}
 	@media screen and (max-width: $screen-sm) {
 		width: 270px;
 		@include translateX(-270px);
 		padding-top: 4em;
-	}*/
+	}
 	#colorlib-logo {
 		text-align: right;
 		font-weight: 700;
@@ -332,15 +333,15 @@ figure {
 }
 
 #colorlib-main {
-	width: 100%;
+	width: 80%;
 	float: right;
 	@include transition(.5s);
-	/*@media screen and (max-width: $screen-lg) {
+	@media screen and (max-width: $screen-lg) {
 		width: 70%;
 	}
 	@media screen and (max-width: $screen-sm) {
-		width: 100%;
-	}*/
+    width: 100%;
+	}
 }
 
 
@@ -763,7 +764,7 @@ content: "\ea1c";
 		text-align: center;
 		background: rgba($brand-black,.03);
 		@include border-radius(2px);
-		i {
+		i, fa-icon {
 			display: table-cell;
 			vertical-align: middle;
 			color: $brand-primary;
@@ -1209,13 +1210,17 @@ content: "\ea1c";
 	@include transition(.5s);
 	padding: 8px 15px!important;
 	&.btn-sm {
-		padding: 4px 15px!important;
+		padding: 4px 8px!important;
+    // padding: 4px 15px!important;
 	}
 	&.btn-md {
 		padding: 8px 20px!important;
 	}
 	&.btn-lg {
-		padding: 18px 36px!important;
+    padding: 18px 36px!important;
+    @media all and (max-width: 375px) {
+      padding: 13px 28px!important;
+    }
 	}
 	&:hover, &:active, &:focus {
 		box-shadow: none!important;
@@ -1441,7 +1446,7 @@ content: "\ea1c";
 	z-index: 9999;
 	cursor: pointer;
 	opacity: 1;
-	visibility: visible;
+	visibility: hidden;
 	padding: 20px;
 	@include transition(.5s);
   	@media screen and (max-width: $screen-sm) {

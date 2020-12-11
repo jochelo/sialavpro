@@ -1,0 +1,100 @@
+<div class="colorlib-narrow-content">
+  <div class="row">
+    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+      <span class="heading-meta">Nueva Malla</span>
+      <h2 class="colorlib-heading">Registrar Malla</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 offset-md-1 animate-box" data-animate-effect="fadeInLeft">
+      <form [formGroup]="mallaGroup">
+        <div class="form-group">
+          <label for="tipoMalla">Tipo de Malla</label>
+          <select class="form-control" formControlName="tipoMalla" id="tipoMalla"
+                  name="tipoMalla">
+            <option [selected]="true">Seleccione el tipo de Malla</option>
+            <option value="hexagonal">Malla Hexagonal</option>
+            <option value="olimpica">Malla Olimpica</option>
+            <option value="ganadera">Malla Ganadera</option>
+            <option value="milimetrica puntas abiertas">Malla Milimetrica de puntas abiertas</option>
+            <option value="milimetrica puntas cerradas">Malla Milimetrica de puntas cerradas</option>
+            <option value="presoldada">Malla Presoldada</option>
+          </select>
+        </div>
+
+        <!--<div class="form-group">
+          <label for="celda">Celda</label>
+          <input class="custom-range" formControlName="celda" id="celda" max="22" min="1" name="celda" step="0.5"
+                 type="range">
+          <p class="text-right"><strong>{{ mallaGroup.get('celda').value ? mallaGroup.get('celda').value : 0 }}</strong> cm.</p>
+        </div>
+
+        <div class="form-group">
+          <label for="alambre">Alambre</label>
+          <input class="custom-range" formControlName="alambre" id="alambre" max="25" min="5" name="alambre"
+                 type="range">
+          <p class="text-right"><strong>{{ mallaGroup.get('alambre').value ? mallaGroup.get('alambre').value : 0 }}</strong></p>
+        </div>
+
+        <div class="form-group text-right">
+          <div class="row">
+            <div class="col-12">
+              <mat-checkbox (change)="onM2($event.checked)" color="primary">
+                ¿Tiene Dimensiones Definidas?
+                <small>(Alto-Largo)</small>
+              </mat-checkbox>
+            </div>
+          </div>
+        </div>-->
+
+        <div *ngIf="!mallaGroup.get('m2').value" class="form-group">
+          <label for="alto">Alto</label>
+          <input class="form-control" formControlName="alto" id="alto" name="alto" type="number" min="0" step="0.1">
+        </div>
+
+        <div *ngIf="!mallaGroup.get('m2').value" class="form-group">
+          <label for="largo">Largo</label>
+          <input class="form-control" formControlName="largo" id="largo" name="largo" type="number" min="0" step="0.1">
+        </div>
+
+        <div class="form-group">
+          <label for="precio">Precio {{ mallaGroup.get('m2').value ? 'por metro cuadrado' : '' }}</label>
+          <input class="form-control" formControlName="precio" id="precio" name="precio" type="number" min="0" step="0.1">
+        </div>
+
+        <hr>
+        <h4 class="text-info"><strong>CAMPOS OPCIONALES</strong></h4>
+
+        <div class="form-group">
+          <label for="foto">Foto</label>
+          <div class="custom-file">
+            <input (change)="uploadfile($event)"
+                   accept="image/*"
+                   class="custom-file-input"
+                   id="foto"
+                   lang="es" name="foto" type="file">
+            <label #labelFoto class="form-control custom-file-label" data-browse="Elegir" for="foto">Seleccionar
+              Archivo</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="descripcion">Descripción</label>
+          <textarea name="descripcion" id="descripcion" formControlName="descripcion" class="form-control" cols="30" rows="10"></textarea>
+        </div>
+
+        <div class="form-group text-right">
+          <button (click)="onStore()" [disabled]="mallaGroup.invalid" class="btn btn-primary btn-lg">REGISTRAR</button>
+          <button (click)="onCancel()" class="btn btn-default btn-lg">CANCELAR</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+<ngx-spinner>
+  <p class="text-white-50 text-center">
+    {{ mallaState.message }}
+  </p>
+</ngx-spinner>
+

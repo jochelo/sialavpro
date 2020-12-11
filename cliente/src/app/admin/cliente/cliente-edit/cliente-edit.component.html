@@ -1,0 +1,51 @@
+<div class="colorlib-narrow-content">
+  <div class="row">
+    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+      <span class="heading-meta">Edición de Cliente</span>
+      <h2 class="colorlib-heading">Actualizar datos del Cliente</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 offset-md-1 animate-box" data-animate-effect="fadeInLeft">
+      <form [formGroup]="clienteGroup">
+
+        <div class="form-group">
+          <label for="nombres">Nombres</label>
+          <input class="form-control" formControlName="nombres" id="nombres" name="nombres" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="apellidos">Apellidos</label>
+          <input class="form-control" formControlName="apellidos" id="apellidos" name="apellidos" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="celular">Telefono/Celular</label>
+          <input class="form-control" formControlName="celular" id="celular" name="celular" type="text">
+        </div>
+
+        <hr>
+        <h4 class="text-info"><strong>CAMPOS OPCIONALES</strong></h4>
+
+        <div class="form-group">
+          <label for="direccion">Dirección</label>
+          <textarea class="form-control" cols="30" formControlName="direccion" id="direccion" name="direccion"
+                    rows="10"></textarea>
+        </div>
+
+        <div class="form-group text-right">
+          <button (click)="onUpdate()" [disabled]="clienteGroup.invalid" class="btn btn-primary btn-lg">ACTUALIZAR
+          </button>
+          <button (click)="onCancel()" class="btn btn-default btn-lg">CANCELAR</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+<ngx-spinner>
+  <p class="text-white-50 text-center">
+    {{ clienteState.message }}
+  </p>
+</ngx-spinner>
+

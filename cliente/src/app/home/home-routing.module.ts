@@ -25,10 +25,6 @@ const routes: Routes = [
         component: ServiciosComponent
       },
       {
-        path: 'reservas',
-        component: ReservasComponent
-      },
-      {
         path: 'contactos',
         component: ContactosComponent
       },

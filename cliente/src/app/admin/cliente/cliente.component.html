@@ -1,0 +1,3 @@
+<app-cliente-index [clienteState]="clienteState" *ngIf="clienteState.location === 'index'"></app-cliente-index>
+<app-cliente-create [clienteState]="clienteState" *ngIf="clienteState.location === 'create'"></app-cliente-create>
+<app-cliente-edit [clienteState]="clienteState" *ngIf="clienteState.location === 'edit'"></app-cliente-edit>

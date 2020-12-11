@@ -1,0 +1,25 @@
+no existen permisos parA TRABAJADORES
+
+falta es falta
+
+falta no avisada o bajo criterio se imprime un memo
+
+maximo 3 memos 
+
+si tiene mas de 3 memos DESCANSO
+
+
+Descanso por un periodo de tiempo previamente acordado
+
+se maneja estados para los empleados
+	ACTIVO, OBSERVADO, DESCANSO, BAJA
+
+RETRASOS
+
+JORNADA LABORAL hora ini y hora fin VARIABLES
+	SI un empleado marca sus asistencia fuera del rango de horas, se tomaras las horas limites 
+	como dato.
+
+	
+
+	

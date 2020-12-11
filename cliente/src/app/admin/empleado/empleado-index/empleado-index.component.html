@@ -1,0 +1,100 @@
+<div class="colorlib-narrow-content">
+  <div class="container-fluid animate-box" data-animate-effect="fadeInRight">
+    <div class="row">
+      <div class="col-12 text-right">
+        <button (click)="onCreate()" class="btn btn-primary">
+          <fa-icon [icon]="faPlus"></fa-icon>
+          NUEVO TRABAJOR
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+      <span class="heading-meta">Trabajadores</span>
+      <h2 class="colorlib-heading">Lista de Trabajadores</h2>
+
+      <alert *ngIf="empleadoState.loading" class="text-center" type="info">
+        <fa-icon [icon]="faSpinner" [pulse]="true" size="2x"></fa-icon>
+        <br>
+        <strong>{{ empleadoState.message }}</strong>
+      </alert>
+      <alert *ngIf="empleadoState.error" class="text-center" type="danger">
+        {{ empleadoState.message }}
+      </alert>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 offset-md-1 animate-box" data-animate-effect="fadeInLeft">
+      <div *ngIf="!empleadoState.loading">
+        <div *ngFor="let empleado of empleadoState.empleados;let i = index">
+          <mat-card class="mt-3">
+            <mat-card-header>
+              <mat-card-title>
+                <span class="card-index">{{ empleadoState.paginacion.from + i }}</span>
+                <button (click)="empleado.show = true" *ngIf="!empleado.show" color="primary" mat-icon-button>
+                  <fa-icon [icon]="faEllipsisV"></fa-icon>
+                </button>
+                <button (click)="empleado.show = false" *ngIf="empleado.show" color="warn" mat-icon-button>
+                  <fa-icon [icon]="faTimes"></fa-icon>
+                </button>
+                <span class="text-black-50"><strong><fa-icon [icon]="faUserCheck"></fa-icon>{{ ' ' + empleado.nombres + ' ' + empleado.apellidos | uppercase }}</strong></span>
+              </mat-card-title>
+
+              <mat-card-subtitle>
+                <p><strong>{{ 'Telefono/Celular: ' }}</strong>{{ empleado.celular }}</p>
+              </mat-card-subtitle>
+
+            </mat-card-header>
+            <mat-card-content [collapse]="!empleado.show" [isAnimated]="true" class="text-black-50 ml-3">
+              <div class="row">
+                <div class="col-md-5">
+                  <p class="text-primary"><strong>{{ 'ROL: ' }}</strong>{{ empleado.rolEmpleado | uppercase }}</p>
+                  <img *ngIf="empleado.foto !== null" [src]="empleado.foto" alt="" class="img-fluid img-responsive">
+                </div>
+                <div class="col-md-7">
+                  <p><strong>{{ 'Carnet de Identidad: ' }}</strong>{{ empleado.carnet }}</p>
+                  <p class="text-success"><strong>{{ 'Dirección: ' }}</strong>{{ empleado.direccion }}</p>
+                </div>
+              </div>
+            </mat-card-content>
+            <mat-card-actions [collapse]="!empleado.show" [isAnimated]="true" align="end" class="text-black-50 ml-3">
+              <div class="btn-group">
+                <button (click)="onEdit(empleado)"
+                        class="btn btn-secondary"
+                        tooltip="Editar Empleado">
+                  <fa-icon [icon]="faEdit"></fa-icon>
+                </button>
+                <button (click)="onDelete(empleado)"
+                        class="btn btn-danger"
+                        tooltip="Eliminar Empleado">
+                  <fa-icon [icon]="faTrash"></fa-icon>
+                </button>
+              </div>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+          <pagination (pageChanged)="onChangeState({
+                    type: 'paginate',
+                    payload: {
+                      items: $event.itemsPerPage,
+                      page: $event.page
+                    }
+                  })"
+                      *ngIf="empleadoState.paginacion !== null"
+                      [(ngModel)]="empleadoState.paginacion.current_page"
+                      [boundaryLinks]="true"
+                      [itemsPerPage]="5"
+                      [maxSize]="7"
+                      [totalItems]="empleadoState.paginacion.total"
+                      firstText="&laquo;" lastText="&raquo;" nextText="&rsaquo;" previousText="&lsaquo;">
+          </pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

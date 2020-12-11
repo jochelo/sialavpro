@@ -1,4 +1,4 @@
-<div id="colorlib-page">
+<div id="colorlib-page" class="vertical-bar">
   <div id="colorlib-main">
     <div class="colorlib-contact animate-box bg-login" data-animate-effect="fadeInRight">
       <div class="colorlib-narrow-content">
@@ -9,15 +9,29 @@
               <h2 class="colorlib-heading">Iniciar Sesión</h2>
               <div class="row">
                 <div class="col-md-12">
-                  <form action="">
+                  <div class="form-group">
+                    <img [src]="userImage" alt="" class="sidebar-img mb-3">
+                  </div>
+                  <alert *ngIf="authState.loading" class="text-center" type="info">
+                    <fa-icon [icon]="faSpinner" [pulse]="true" size="2x"></fa-icon>
+                    <br>
+                    <strong>Verificando Credenciales...</strong>
+                  </alert>
+                  <alert *ngIf="authState.error" class="text-center" type="danger">
+                    {{ authState.message }}
+                  </alert>
+                  <form (submit)="onLogin()" *ngIf="!authState.loading" [formGroup]="loginGroup">
                     <div class="form-group">
-                      <img alt="" [src]="userImage" class="sidebar-img mb-3">
+                      <input class="form-control"
+                             #cuenta
+                             formControlName="cuenta"
+                             [ngModel]="loginGroup.value.cuenta"
+                             (ngModelChange)="loginGroup.value.cuenta = loginGroup.value.cuenta?.toLowerCase()"
+                             placeholder="Cuenta"
+                             type="text">
                     </div>
                     <div class="form-group">
-                      <input class="form-control" placeholder="Cuenta" type="text">
-                    </div>
-                    <div class="form-group">
-                      <input class="form-control" placeholder="Contraseña" type="password">
+                      <input class="form-control" formControlName="password" placeholder="Contraseña" type="password">
                     </div>
                     <div class="form-group text-right">
                       <button class="btn btn-primary btn-block btn-lg btn-send-message">Ingresar</button>

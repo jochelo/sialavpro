@@ -1,0 +1,17 @@
+<div id="container">
+    <ion-card (click)="presentActionSheet(empleado)" *ngFor="let empleado of empleados; let i = index" button>
+        <ion-card-header>
+            <ion-card-title>
+                <ion-item>
+                    <ion-avatar slot="start">
+                        <img [src]="empleado.foto" alt="">
+                    </ion-avatar>
+                    <h5>{{ empleado.nombres + ' ' + empleado.apellidos | uppercase }}</h5>
+                </ion-item>
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>Carnet: <em>{{ empleado.carnet }}</em></p>
+        </ion-card-content>
+    </ion-card>
+</div>

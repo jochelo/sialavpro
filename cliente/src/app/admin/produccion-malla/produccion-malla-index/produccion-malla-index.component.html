@@ -1,0 +1,168 @@
+<div class="colorlib-narrow-content">
+  <div class="animate-box" data-animate-effect="fadeInRight">
+    <div class="row mb-5">
+      <div class="col-12 text-right">
+        <div class="btn-group">
+          <button (click)="onCreateIndividual()" class="btn btn-primary btn-lg" tooltip="Nuevo Cupo Individual Masivo">
+            <fa-icon [icon]="faUserCog" size="2x"></fa-icon>
+          </button>
+          <button (click)="onCreateGrupal()" class="btn btn-success btn-lg" tooltip="Nuevo Cupo Grupal">
+            <fa-icon [icon]="faUsersCog" size="2x"></fa-icon>
+          </button>
+          <!--<button (click)="onCreateSinCupo()" class="btn btn-secondary btn-lg" tooltip="Nueva Producción sin Cupo">
+            <fa-icon [icon]="faDumpster" size="2x"></fa-icon>
+          </button>-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+      <span class="heading-meta">Producción de Mallas</span>
+      <h2 class="colorlib-heading">
+        Lista de Producción de Mallas <small class="h3 text-primary">{{ showHoy ? 'Hoy' : '' }}</small>
+        <br>
+        <small style="font-size: 0.55em">
+          <span class="float-left btn-group">
+            <button (click)="onChangeDate(-1)" class="btn btn-sm btn-outline-secondary">
+              <fa-icon [icon]="faCaretLetf"></fa-icon>
+            </button>
+            <button (click)="onChangeDate(1)" class="btn btn-sm btn-outline-secondary">
+              <fa-icon [icon]="faCaretRight"></fa-icon>
+            </button>
+          </span>
+          <strong class="ml-2">
+            {{ now | date: 'EEEE, d MMMM, y' }}
+          </strong>
+        </small>
+        <br *ngIf="!showHoy">
+        <button (click)="onChangeDate(0)" *ngIf="!showHoy" class="btn btn-sm btn-secondary">
+          HOY
+        </button>
+      </h2>
+
+      <alert *ngIf="produccionMallaState.loading" class="text-center" type="info">
+        <fa-icon [icon]="faSpinner" [pulse]="true" size="2x"></fa-icon>
+        <br>
+        <strong>{{ produccionMallaState.message }}</strong>
+      </alert>
+      <alert *ngIf="produccionMallaState.error" class="text-center" type="danger">
+        {{ produccionMallaState.message }}
+      </alert>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 offset-md-1 animate-box" data-animate-effect="fadeInLeft">
+      <div *ngIf="!produccionMallaState.loading">
+        <div *ngFor="let produccionMalla of produccionMallaState.produccionMallas;let i = index">
+          <mat-card [class.bg-danger-light]="produccionMalla.concluido && !onCumplido(produccionMalla)"
+                    [class.bg-gray-light]="!produccionMalla.concluido"
+                    [class.bg-success-light]="produccionMalla.concluido && onCumplido(produccionMalla)"
+                    class="mt-3">
+            <mat-card-header>
+              <mat-card-title>
+                <span class="card-index">{{ produccionMallaState.paginacion.from + i }}</span>
+                <button (click)="produccionMalla.show = true" *ngIf="!produccionMalla.show" color="primary"
+                        mat-icon-button>
+                  <fa-icon [icon]="faEllipsisV"></fa-icon>
+                </button>
+                <button (click)="produccionMalla.show = false" *ngIf="produccionMalla.show" color="warn"
+                        mat-icon-button>
+                  <fa-icon [icon]="faTimes"></fa-icon>
+                </button>
+                <span class="text-black-50">
+                  <strong>
+                    {{produccionMalla.tipo_malla | uppercase }}
+                  </strong>
+                  <small>
+                    <strong>
+                      {{ produccionMalla.dimension }}
+                    </strong>
+                  </small>
+                </span>
+              </mat-card-title>
+              <mat-card-subtitle>
+                <ul class="list-unstyled">
+                  <li><small><strong>A CARGO DE</strong></small>
+                    <ul>
+                      <li *ngFor="let trabajador of produccionMalla.empleados_nombre_completo">
+                        {{ trabajador.nombres + ' ' + trabajador.apellidos | uppercase }}
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content [collapse]="!produccionMalla.show" [isAnimated]="true" class="text-black-50 ml-3">
+              <!--<p><strong>{{ 'Cantidad Producida: ' }}</strong>{{ produccionMalla.cantidad }}</p>-->
+              <div class="row">
+                <div class="col-md-4" *ngIf="produccionMalla.cupo">
+                  <mat-form-field class="full-width">
+                    <mat-label class="text-primary">CUPO [Mallas]</mat-label>
+                    <input class="text-primary" matInput disabled type="text" [value]="produccionMalla.cupo">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field class="full-width">
+                    <mat-label>Mallas Producidas [Mallas]</mat-label>
+                    <input [(ngModel)]="produccionMalla.cantidad" matInput type="number" [value]="produccionMalla.cantidad" (ngModelChange)="produccionMalla.change = true">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field class="full-width" *ngIf="produccionMalla.cupo">
+                    <mat-label>Desperdicio [gr]</mat-label>
+                    <input [(ngModel)]="produccionMalla.desperdicio" matInput type="number" (ngModelChange)="produccionMalla.change = true">
+                    <!--<button (click)="produccionMalla.desperdicio = null"
+                            *ngIf="produccionMalla.desperdicio"
+                            aria-label="Clear"
+                            mat-button
+                            mat-icon-button
+                            matSuffix>
+                      <fa-icon [icon]="faTimes"></fa-icon>
+                    </button>-->
+                  </mat-form-field>
+                </div>
+              </div>
+            </mat-card-content>
+            <mat-card-actions [collapse]="!produccionMalla.show" [isAnimated]="true" align="end"
+                              class="text-black-50 ml-3">
+              <div class="btn-group">
+                <button (click)="onUpdate(produccionMalla)"
+                        class="btn btn-secondary"
+                        *ngIf="produccionMalla.change"
+                        tooltip="Actualizar Producción">
+                  <fa-icon [icon]="faSyncAlt"></fa-icon>
+                </button>
+                <button (click)="onDelete(produccionMalla)"
+                        class="btn btn-danger"
+                        tooltip="Eliminar Producción">
+                  <fa-icon [icon]="faTrash"></fa-icon>
+                </button>
+              </div>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+          <pagination (pageChanged)="onChangeState({
+                    type: 'paginate',
+                    payload: {
+                      items: $event.itemsPerPage,
+                      page: $event.page
+                    }
+                  })"
+                      *ngIf="produccionMallaState.paginacion !== null"
+                      [(ngModel)]="produccionMallaState.paginacion.current_page"
+                      [boundaryLinks]="true"
+                      [itemsPerPage]="5"
+                      [maxSize]="7"
+                      [totalItems]="produccionMallaState.paginacion.total"
+                      firstText="&laquo;" lastText="&raquo;" nextText="&rsaquo;" previousText="&lsaquo;">
+          </pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

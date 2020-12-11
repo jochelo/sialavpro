@@ -1,31 +1,58 @@
-
-  <div class="colorlib-contact">
-    <div class="colorlib-narrow-content">
-      <div class="row">
-        <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-          <span class="heading-meta">Reservas</span>
-          <h2 class="colorlib-heading">Envianos tu reserva</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-8 offset-md-1">
-          <div class="row">
-            <div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInLeft">
-              <form action="">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Ingrese su Nombre Completo">
-                </div>
-                <div class="form-group">
-                  <textarea name="" id="message" cols="30" rows="20" class="form-control" placeholder="Ingrese su Pedido"></textarea>
-                </div>
-                <div class="form-group text-right">
-                  <button class="btn btn-lg btn-primary">Enviar Pedido</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="row">
+  <div class="col-md-12 animate-box" data-animate-effect="fadeInRight">
+    <!--<span class="heading-meta">Reservas</span>-->
+    <h2 class="colorlib-heading">Envianos tu reserva</h2>
   </div>
+</div>
+<div class="row">
+  <div class="col animate-box" data-animate-effect="fadeInRight">
+    <form [formGroup]="reservaGroup" (submit)="onStore()">
 
+      <div class="form-group">
+        <input class="form-control"
+               [class.is-invalid]="reservaState.error !== null && reservaState.error.errors.nombre !== undefined"
+               formControlName="nombre"
+               placeholder="Ingrese su Nombre Completo"
+               type="text">
+        <p *ngIf="reservaState.error !== null" class="text-danger">
+          <small>{{ reservaState.error.errors?.nombre }}</small>
+        </p>
+      </div>
+
+      <div class="form-group">
+        <input class="form-control"
+               formControlName="celular"
+               aria-describedby="celular"
+               [class.is-invalid]="reservaState.error !== null && reservaState.error.errors.celular !== undefined"
+               placeholder="Ingrese su Telefono/Celular"
+               type="text">
+        <p *ngIf="reservaState.error !== null" class="text-danger">
+          <small>{{ reservaState.error.errors?.celular }}</small>
+        </p>
+      </div>
+
+      <div class="form-group">
+        <textarea class="form-control"
+                  [class.is-invalid]="reservaState.error !== null && reservaState.error.errors.detalle !== undefined"
+                  cols="30"
+                  id="message"
+                  formControlName="detalle"
+                  name=""
+                  placeholder="Ingrese su Pedido"
+                  rows="30"></textarea>
+        <p *ngIf="reservaState.error !== null" class="text-danger">
+          <small>{{ reservaState.error.errors?.detalle }}</small>
+        </p>
+      </div>
+
+      <div class="form-group text-right">
+        <button [disabled]="reservaGroup.invalid" class="btn btn-lg btn-primary">Enviar Pedido</button>
+      </div>
+    </form>
+  </div>
+</div>
+<ngx-spinner>
+  <p class="text-white-50 text-center">
+    {{ reservaState.message }}
+  </p>
+</ngx-spinner>

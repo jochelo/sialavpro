@@ -22,6 +22,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     burgerMenu();
+
+    if (localStorage.getItem('token-prodag') !== null) {
+      localStorage.removeItem('token-prodag');
+    }
   }
 
 }

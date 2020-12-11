@@ -127,7 +127,6 @@ var contentWayPoint = function () {
 };
 
 var burgerMenu = function () {
-
   $('.js-colorlib-nav-toggle').on('click', function (event) {
     event.preventDefault();
     var $this = $(this);
@@ -140,8 +139,6 @@ var burgerMenu = function () {
       $('body').addClass('offcanvas');
     }
   });
-
-
 };
 
 // Click outside of offcanvass

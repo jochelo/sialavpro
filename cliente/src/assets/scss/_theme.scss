@@ -22,6 +22,7 @@
 .bg-login {
   display: block;
   position: fixed;
+  overflow-y: auto;
   height: 100vh;
   width: 100vw;
   background-size: cover;
@@ -33,7 +34,7 @@
 }
 
 .sidebar-img {
-  background-color: $brand-primary;
+  // background-color: $brand-primary;
   display: block;
   width: 180px;//273px;//283px;
   //height:283px;//274px;
@@ -44,3 +45,120 @@
       width: 55%;
   }
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.icon-item-left {
+  float: left !important;
+  font-size: 1.2em;
+  margin-top: 3px;
+  margin-left: -25px;
+  padding-right: 10px;
+}
+
+.icon-item-right {
+  float: right !important;
+  font-size: 1.1em;
+  margin-top: 3px;
+  margin-right: -10px;
+  padding-left: 20px;
+}
+
+.item-left-line {
+  color: rgba(255,255,255,.5);
+  border: 1px;
+  border-left-style: solid;
+}
+
+.icon-subitem-left {
+  float: left !important;
+  margin-top: 4px;
+  margin-left: 5px;
+  padding-right: 10px;
+}
+
+.spacer {
+  flex: 1 1;
+}
+
+.card-index {
+  font-size: 0.45em;
+  padding: 5px;
+  background: rgba(240, 240, 240, 0.71);
+  border-radius: 3px;
+}
+
+.form-control-admin {
+  border: 1px solid $brand-gray !important;
+  height: 38px !important;
+  border-radius: 3px !important;
+}
+
+.form-control {
+  border: 1px solid $brand-gray !important;
+  border-radius: 3px !important;
+}
+
+.custom-file {
+  height: 54px !important;
+}
+
+.custom-file-label {
+  padding-top: 15px;
+}
+
+.custom-file-label::after {
+  padding-top: 15px;
+  height: 53px !important;
+}
+
+.btn-group {
+  .btn {
+    border: 2px;
+    margin-right: 0;
+  }
+}
+
+.ng-select-container {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.ng-dropdown-panel {
+  left: 0;
+  margin-top: 10px;
+  padding-left: 15px;
+  background-color: rgba(233, 233, 233, 0.97) !important;
+}
+.ng-option {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+
+#colorlib-main-menu > ul > li > ul > li > a {
+  text-transform: initial !important;
+}
+
+.bg-danger-light {
+  background-color: rgba(217, 83, 79, 0.2) !important;
+}
+
+.bg-warning-light {
+  background-color: rgba(240, 173, 78, 0.2) !important;
+}
+
+.bg-success-light {
+  background-color: rgba(92, 184, 92, 0.2) !important;
+}
+
+.bg-gray-light {
+  background-color: rgba(233, 233, 233, 0.2) !important;
+}
+
+.full-width {
+  width: 100%;
+}
+
+
+
