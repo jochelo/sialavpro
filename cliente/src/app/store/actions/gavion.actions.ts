@@ -7,6 +7,20 @@ export const irVistaGavion = createAction(
   props<{ location: string }>()
 );
 
+export const getGaviones = createAction(
+  '[Gavion] Lista de Gaviones'
+);
+
+export const getGavionesSuccess = createAction(
+  '[Gavion] Lista de Gaviones Success',
+  props<{ gaviones: Gavion[] }>()
+);
+
+export const getGavionesFailure = createAction(
+  '[Gavion] Lista de Gaviones Failure',
+  props<{ error: any }>()
+);
+
 export const paginateGaviones = createAction(
   '[Gavion] Paginacion de Gaviones',
   props<{ items: number, page: number }>()

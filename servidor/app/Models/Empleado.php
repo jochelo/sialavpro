@@ -18,6 +18,7 @@ class Empleado extends Model
         'celular',
         'carnet',
         'foto',
+        'huella',
         'direccion',
         'rolEmpleado'
     ];

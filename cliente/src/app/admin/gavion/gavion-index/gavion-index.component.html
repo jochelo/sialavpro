@@ -54,10 +54,11 @@
                   <img *ngIf="gavion.foto !== null" [src]="gavion.foto" alt="" class="img-fluid img-responsive">
                 </div>
                 <div class="col-md-7">
-                  <p class="text-primary">
-                    <fa-icon [icon]="faHashtag"></fa-icon>
-                    {{ gavion.cantidad + ' Unidades Disponibles'}}
-                  </p>
+                  <h3 class="text-primary">
+                    <small><fa-icon [icon]="faHashtag"></fa-icon></small>
+                    {{ ' ' + gavion.cantidad }}
+                    <small>{{ ' Unidades Disponibles' }}</small>
+                  </h3>
                   <p><strong>{{ 'Precio: ' }}</strong>{{ gavion.precio + ' Bs.'}}</p>
                   <p><strong>{{ 'Número de Diafragmas: ' }}</strong>{{ gavion.numeroDiafragma }}</p>
 

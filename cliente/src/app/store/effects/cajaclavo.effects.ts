@@ -5,7 +5,7 @@ import {catchError, map, switchMap} from 'rxjs/operators';
 import {of, range} from 'rxjs';
 import {CajaclavoService} from '../../services/cajaclavo.service';
 import {
-  deleteCajaclavo, deleteCajaclavoFailure, deleteCajaclavoSuccess,
+  deleteCajaclavo, deleteCajaclavoFailure, deleteCajaclavoSuccess, getCajaclavos, getCajaclavosFailure, getCajaclavosSuccess,
   paginateCajaclavos,
   paginateCajaclavosFailure,
   paginateCajaclavosSuccess,
@@ -20,6 +20,23 @@ import {NgxSpinnerService} from 'ngx-spinner';
 
 @Injectable()
 export class CajaclavoEffects {
+
+  getCajaclavos$ = createEffect(() =>
+    this.actions$
+      .pipe(
+        ofType(getCajaclavos),
+        switchMap(() => {
+          return this.cajaclavoService.getCajaclavos()
+            .pipe(
+              map((response: Cajaclavo[]) => {
+                return getCajaclavosSuccess({
+                  cajaclavos: response
+                });
+              }),
+              catchError(error => of(getCajaclavosFailure(error)))
+            );
+        })
+      ));
 
   paginateCajaclavos$ = createEffect(() =>
     this.actions$

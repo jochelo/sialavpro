@@ -21,4 +21,14 @@ class Alambre extends Model
         'cantidad',
         'descripcion',
     ];
+    protected $appends = [
+      'tipo_awg'
+    ];
+
+    public function getTipoAwgAttribute() {
+        if ($this->tipoAlambre !== 'galvanizado') {
+            return 'Alambre de ' . $this->tipoAlambre . ' | ' . $this->awg;
+        }
+        return 'Alambre ' . $this->tipoAlambre . ' | ' . $this->awg;
+    }
 }

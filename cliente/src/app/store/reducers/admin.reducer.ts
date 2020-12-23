@@ -8,6 +8,9 @@ import {ClienteState} from './cliente.reducer';
 import {EmpleadoState} from './empleado.reducer';
 import {ReservaState} from './reserva.reducer';
 import {ProduccionMallaState} from './produccion-malla.reducer';
+import {ProduccionGavionState} from './produccion-gavion.reducer';
+import {PedidoState} from './pedido.reducer';
+import {AdquisicionAlambreState} from './adquisicion-alambre.reducer';
 import * as fromAuth from './auth.reducer';
 import * as fromMalla from './malla.reducer';
 import * as fromGavion from './gavion.reducer';
@@ -17,6 +20,11 @@ import * as fromCliente from './cliente.reducer';
 import * as fromEmpleado from './empleado.reducer';
 import * as fromReserva from './reserva.reducer';
 import * as fromProduccionMalla from './produccion-malla.reducer';
+import * as fromProduccionGavion from './produccion-gavion.reducer';
+import * as fromPedido from './pedido.reducer';
+import * as fromAdquisicionAlambre from './adquisicion-alambre.reducer';
+import {AdquisicionCajaclavoState} from './adquisicion-cajaclavo.reducer';
+import * as fromAdquisicionCajaclavo from './adquisicion-cajaclavo.reducer';
 
 export interface AdminState {
   auth: AuthState;
@@ -28,6 +36,10 @@ export interface AdminState {
   empleado: EmpleadoState;
   reserva: ReservaState;
   produccionMalla: ProduccionMallaState;
+  produccionGavion: ProduccionGavionState;
+  pedido: PedidoState;
+  adquisicionAlambre: AdquisicionAlambreState;
+  adquisicionCajaclavo: AdquisicionCajaclavoState;
 }
 
 export const adminReducers: ActionReducerMap<AdminState> = {
@@ -39,5 +51,9 @@ export const adminReducers: ActionReducerMap<AdminState> = {
   cliente: fromCliente.reducer,
   empleado: fromEmpleado.reducer,
   reserva: fromReserva.reducer,
-  produccionMalla: fromProduccionMalla.reducer
+  produccionMalla: fromProduccionMalla.reducer,
+  produccionGavion: fromProduccionGavion.reducer,
+  pedido: fromPedido.reducer,
+  adquisicionAlambre: fromAdquisicionAlambre.reducer,
+  adquisicionCajaclavo: fromAdquisicionCajaclavo.reducer
 };

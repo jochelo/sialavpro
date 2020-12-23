@@ -52,10 +52,12 @@
                   <img *ngIf="malla.foto !== null" [src]="malla.foto" alt="" class="img-fluid img-responsive">
                 </div>
                 <div class="col-md-7">
-                  <p class="text-primary">
-                    <fa-icon [icon]="faHashtag"></fa-icon>
-                    {{ ' ' + malla.cantidad + ' Rollos Disponibles'}}
-                  </p>
+                  <h3 class="text-primary">
+                    <small><fa-icon [icon]="faHashtag"></fa-icon></small>
+                    {{ ' ' + malla.cantidad }}
+                    <small>{{ ' Rollos Disponibles' }}</small>
+                  </h3>
+
                   <!--<p><strong>{{ 'Celda: ' }}</strong>{{ malla.celda }}</p>
                   <p><strong>{{ 'Alambre: ' }}</strong>{{ malla.alambre }}</p>-->
                   <p><strong>{{ 'Precio: ' }}</strong>{{ malla.precio + ' Bs.'}} {{ malla.m2 ? ' m2' : '' }}</p>

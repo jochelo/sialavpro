@@ -1,6 +1,6 @@
 {
   "appId": "io.ionic.starter",
-  "appName": "cliente-mobile",
+  "appName": "Prodag Asistencia Dactilar",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

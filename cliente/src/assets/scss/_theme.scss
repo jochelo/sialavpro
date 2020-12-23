@@ -128,12 +128,21 @@
 .ng-dropdown-panel {
   left: 0;
   margin-top: 10px;
-  padding-left: 15px;
+
   background-color: rgba(233, 233, 233, 0.97) !important;
 }
+.ng-option-marked {
+  background-color: rgb(198, 198, 198) !important;
+}
 .ng-option {
-  padding-top: 5px !important;
-  padding-bottom: 5px !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  padding-left: 15px !important;
+}
+
+.ng-option-disabled::before {
+  content: "No se encontraron coincidencias" !important;
+  padding-right: 150rem;
 }
 
 #colorlib-main-menu > ul > li > ul > li > a {

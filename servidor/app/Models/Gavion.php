@@ -25,4 +25,12 @@ class Gavion extends Model
         'cantidad',
         'descripcion',
     ];
+
+    protected $appends = [
+        'tipo_dimension'
+    ];
+
+    public function getTipoDimensionAttribute() {
+        return $this->tipoGavion . ' | ' . $this->alto . ' x ' . $this->largo . ' x ' . $this->ancho;
+    }
 }

@@ -1,0 +1,21 @@
+<div align="end">
+<button mat-icon-button size="small" (click)="onClose()">
+  <mat-icon>close</mat-icon>
+</button>
+</div>
+<h1 mat-dialog-title>
+  {{ data.name }}
+</h1>
+<form (submit)="onOnSubmit()" [formGroup]="dataGroup">
+  <div mat-dialog-content>
+    <p>¿Cuántos desea?</p>
+    <mat-form-field>
+      <mat-label>Cantidad</mat-label>
+      <input #inputCantidad matInput formControlName="cantidadSolicitada" type="number">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions align="end">
+    <!--<button mat-button (click)="onNoClick()">Cancelar</button>-->
+    <button mat-button mat-raised-button color="primary" [disabled]="dataGroup.invalid" type="submit">Registrar</button>
+  </div>
+</form>

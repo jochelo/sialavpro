@@ -49,10 +49,14 @@ class AlambreController extends Controller
         return response()->json($alambre, 201);
     }
 
+    public function getAlambres() {
+        $alambres = Alambre::get();
+        return response()->json($alambres, 200);
+    }
+
     public function paginateAlambres() {
         $items = \request()->input('items');
         $alambres = Alambre::paginate($items);
-        // $alambres = Alambre::get();
         return response()->json($alambres, 200);
     }
 

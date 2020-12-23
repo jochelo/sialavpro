@@ -49,6 +49,11 @@ class CajaclavoController extends Controller
         return response()->json($cajaclavo, 201);
     }
 
+    public function getCajaclavos() {
+        $cajaclavos = Cajaclavo::get();
+        return response()->json($cajaclavos, 200);
+    }
+
     public function paginateCajaclavos() {
         $items = \request()->input('items');
         $cajaclavos = Cajaclavo::paginate($items);

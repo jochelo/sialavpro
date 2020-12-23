@@ -13,6 +13,10 @@ export class CajaclavoService {
   constructor(private http: HttpClient) {
   }
 
+  getCajaclavos(): Observable<any> {
+    return this.http.get(`${this.base}get-cajaclavos`);
+  }
+
   paginateCajaclavos(data: any): Observable<any> {
     return this.http.post(`${this.base}paginate-cajaclavos`, data);
   }

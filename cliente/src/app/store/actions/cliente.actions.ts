@@ -7,6 +7,20 @@ export const irVistaCliente = createAction(
   props<{ location: string }>()
 );
 
+export const getClientes = createAction(
+  '[Cliente] Lista de Clientes'
+);
+
+export const getClientesSuccess = createAction(
+  '[Cliente] Lista de Clientes Success',
+  props<{ clientes: Cliente[] }>()
+);
+
+export const getClientesFailure = createAction(
+  '[Cliente] Lista de Clientes Failure',
+  props<{ error: any }>()
+);
+
 export const paginateClientes = createAction(
   '[Cliente] Paginacion de Clientes',
   props<{ items: number, page: number }>()
@@ -35,6 +49,25 @@ export const storeClienteSuccess = createAction(
 export const storeClienteFailure = createAction(
   '[Cliente] Store Cliente Failure',
   props<{ error: any }>()
+);
+
+export const showCliente = createAction(
+  '[Cliente] Show Cliente',
+  props<{ idcliente: number }>()
+);
+
+export const showClienteSuccess = createAction(
+  '[Cliente] Show Cliente Success',
+  props<{ cliente: Cliente }>()
+);
+
+export const showClienteFailure = createAction(
+  '[Cliente] Show Cliente Failure',
+  props<{ error: any }>()
+);
+
+export const resetCliente = createAction(
+  '[Cliente] Reset Cliente'
 );
 
 export const editCliente = createAction(

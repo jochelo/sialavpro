@@ -1,0 +1,96 @@
+<div class="colorlib-narrow-content" *ngIf="adquisicionCajaclavoState?.location === 'index'">
+  <div class="container-fluid animate-box" data-animate-effect="fadeInRight">
+    <div class="row">
+      <div class="col-12 text-right">
+        <button (click)="onCreate()" class="btn btn-primary">
+          <fa-icon [icon]="faPlus"></fa-icon>
+          NUEVA ADQUISICIÓN
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+      <span class="heading-meta">Adquisición de Cajas de clavos</span>
+      <h2 class="colorlib-heading">Lista de Adquisición de Cajas de clavos</h2>
+
+      <alert *ngIf="adquisicionCajaclavoState.loading" class="text-center" type="info">
+        <fa-icon [icon]="faSpinner" [pulse]="true" size="2x"></fa-icon>
+        <br>
+        <strong>{{ adquisicionCajaclavoState.message }}</strong>
+      </alert>
+      <alert *ngIf="adquisicionCajaclavoState.error" class="text-center" type="danger">
+        {{ adquisicionCajaclavoState.message }}
+      </alert>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 offset-md-1 animate-box" data-animate-effect="fadeInLeft">
+      <div *ngIf="!adquisicionCajaclavoState.loading">
+        <div *ngFor="let adquisicionCajaclavo of adquisicionCajaclavoState.adquisicionCajaclavos;let i = index">
+          <mat-card class="mt-3">
+            <mat-card-header>
+              <mat-card-title>
+                <span class="card-index">{{ adquisicionCajaclavoState.paginacion.from + i }}</span>
+                <button (click)="adquisicionCajaclavo.show = true" *ngIf="!adquisicionCajaclavo.show" color="primary" mat-icon-button>
+                  <fa-icon [icon]="faEllipsisV"></fa-icon>
+                </button>
+                <button (click)="adquisicionCajaclavo.show = false" *ngIf="adquisicionCajaclavo.show" color="warn" mat-icon-button>
+                  <fa-icon [icon]="faTimes"></fa-icon>
+                </button>
+                <span class="text-black-50"><strong>{{ adquisicionCajaclavo.tipo_dimension | uppercase }}</strong></span>
+              </mat-card-title>
+
+              <mat-card-subtitle>
+                <p><strong>{{ 'Fecha: ' }}</strong>{{ adquisicionCajaclavo.fecha | date: 'EEEE, d MMMM, y' }}</p>
+              </mat-card-subtitle>
+
+            </mat-card-header>
+            <mat-card-content [collapse]="!adquisicionCajaclavo.show" [isAnimated]="true" class="text-black-50 ml-3">
+              <mat-form-field class="full-width">
+                <mat-label>Cantidad Adquirida [Cajas]</mat-label>
+                <input [(ngModel)]="adquisicionCajaclavo.cantidad" matInput type="number" [value]="adquisicionCajaclavo.cantidad" (ngModelChange)="adquisicionCajaclavo.change = true">
+              </mat-form-field>
+            </mat-card-content>
+            <mat-card-actions [collapse]="!adquisicionCajaclavo.show" [isAnimated]="true" align="end" class="text-black-50 ml-3">
+              <div class="btn-group">
+                <button (click)="onEdit(adquisicionCajaclavo)"
+                        class="btn btn-secondary"
+                        *ngIf="adquisicionCajaclavo.change"
+                        tooltip="Editar Adquisición">
+                  <fa-icon [icon]="faEdit"></fa-icon>
+                </button>
+                <button (click)="onDelete(adquisicionCajaclavo)"
+                        class="btn btn-danger"
+                        tooltip="Eliminar Adquisición">
+                  <fa-icon [icon]="faTrash"></fa-icon>
+                </button>
+              </div>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+          <pagination (pageChanged)="onChangeState({
+                    type: 'paginate',
+                    payload: {
+                      items: $event.itemsPerPage,
+                      page: $event.page
+                    }
+                  })"
+                      *ngIf="adquisicionCajaclavoState.paginacion !== null"
+                      [(ngModel)]="adquisicionCajaclavoState.paginacion.current_page"
+                      [boundaryLinks]="true"
+                      [itemsPerPage]="5"
+                      [maxSize]="7"
+                      [totalItems]="adquisicionCajaclavoState.paginacion.total"
+                      firstText="&laquo;" lastText="&raquo;" nextText="&rsaquo;" previousText="&lsaquo;">
+          </pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-adquisicion-cajaclavo-create [adquisicionCajaclavoState]="adquisicionCajaclavoState" *ngIf="adquisicionCajaclavoState.location === 'create'"></app-adquisicion-cajaclavo-create>

@@ -16,7 +16,10 @@ class CreateProduccionGavionsTable extends Migration
         Schema::create('produccion_gavions', function (Blueprint $table) {
             $table->id();
             $table->date('fecha');
+            $table->integer('cupo')->nullable();
             $table->integer('cantidad');
+            $table->double('desperdicio')->nullable();
+            $table->boolean('concluido')->default(false);
             $table->unsignedBigInteger('gavion_id');
             $table->foreign('gavion_id')->references('id')->on('gavions')->cascadeOnDelete();
 

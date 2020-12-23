@@ -11,6 +11,10 @@ import {EmpleadoComponent} from './empleado/empleado.component';
 import {ReservaComponent} from './reserva/reserva.component';
 import {ProduccionMallaComponent} from './produccion-malla/produccion-malla.component';
 import {AsistenciaCreateComponent} from './asistencia/asistencia-create/asistencia-create.component';
+import {ProduccionGavionComponent} from './produccion-gavion/produccion-gavion.component';
+import {PedidoComponent} from './pedido/pedido.component';
+import {AdquisicionAlambreIndexComponent} from './adquisicion/adquisicion-alambre-index/adquisicion-alambre-index.component';
+import {AdquisicionCajaclavoIndexComponent} from './adquisicion/adquisicion-cajaclavo-index/adquisicion-cajaclavo-index.component';
 
 const routes: Routes = [
   {
@@ -64,8 +68,29 @@ const routes: Routes = [
           {
             path: 'produccion-mallas',
             component: ProduccionMallaComponent
+          },
+          {
+            path: 'produccion-gaviones',
+            component: ProduccionGavionComponent
           }
         ]
+      },
+      {
+        path: 'adquisicion',
+        children: [
+          {
+            path: 'adquisicion-alambres',
+            component: AdquisicionAlambreIndexComponent
+          },
+          {
+            path: 'adquisicion-cajaclavos',
+            component: AdquisicionCajaclavoIndexComponent
+          }
+        ]
+      },
+      {
+        path: 'pedidos/:tipo',
+        component: PedidoComponent
       },
       {
         path: '',

@@ -3,7 +3,7 @@ import {Cajaclavo} from '../../models/cajaclavo';
 import {Paginate} from '../../models/paginate';
 import {
   deleteCajaclavo, deleteCajaclavoFailure, deleteCajaclavoSuccess,
-  editCajaclavo,
+  editCajaclavo, getCajaclavos, getCajaclavosFailure, getCajaclavosSuccess,
   irVistaCajaclavo,
   paginateCajaclavos,
   paginateCajaclavosFailure,
@@ -44,6 +44,26 @@ const cajaclavoReducer = createReducer(
     ...state,
     location: props.location
   })),
+  on(getCajaclavos, (state: CajaclavoState, props) => ({
+    ...state,
+    loading: true,
+    loaded: false,
+    message: 'Cargando Lista de Cajas de clavos',
+  })),
+  on(getCajaclavosSuccess, (state: CajaclavoState, props) => ({
+    ...state,
+    loading: false,
+    loaded: true,
+    cajaclavos: props.cajaclavos,
+    message: null
+  })),
+  on(getCajaclavosFailure, (state: CajaclavoState, props) => ({
+    ...state,
+    loading: false,
+    loaded: false,
+    message: props.error.message,
+    error: props.error
+  })),
   on(paginateCajaclavos, (state: CajaclavoState, props) => ({
     ...state,
     loading: true,
@@ -77,6 +97,7 @@ const cajaclavoReducer = createReducer(
     loaded: true,
     location: 'index',
     cajaclavos: [...state.cajaclavos, props.cajaclavo],
+    cajaclavo: props.cajaclavo,
     message: null,
   })),
   on(storeCajaclavoFailure, (state: CajaclavoState, props) => ({

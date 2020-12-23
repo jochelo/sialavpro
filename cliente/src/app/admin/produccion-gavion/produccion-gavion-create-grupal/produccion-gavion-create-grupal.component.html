@@ -1,0 +1,109 @@
+<div *ngIf="gavionState.location !== 'create'" class="colorlib-narrow-content">
+  <div class="row">
+    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+      <span class="heading-meta">Nuevo Cupo de Producción de Gaviones</span>
+      <h2 class="colorlib-heading">Registrar Cupo Grupal de Gaviones
+        <fa-icon [icon]="faUsersCog"></fa-icon>
+      </h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 offset-md-1 animate-box" data-animate-effect="fadeInLeft">
+      <form [formGroup]="produccionGavionGroup">
+        <div class="form-group">
+          <label for="fecha">Fecha de Producción</label>
+          <input class="form-control" formControlName="fecha" id="fecha" type="date">
+        </div>
+
+        <div *ngIf="gavionState !== null" class="form-group">
+          <label for="idgavion">Seleccione una Gavion</label>
+          <div class="row">
+            <div [class.col-12]="produccionGavionGroup.value.idgavion !== null"
+                 [class.col-sm-9]="produccionGavionGroup.value.idgavion === null">
+              <ng-select [items]="gavionState.gaviones"
+                         bindLabel="tipo_dimension"
+                         bindValue="id"
+                         class="form-control"
+                         formControlName="idgavion"
+                         id="idgavion"></ng-select>
+            </div>
+            <div *ngIf="produccionGavionGroup.value.idgavion === null" class="col-sm-3 mt-3 mt-md-0">
+              <button (click)="onCreateGavion()"
+                      [disabled]="produccionGavionGroup.value.idgavion !== null"
+                      class="btn btn-primary btn-lg btn-block"
+                      tooltip="Registrar Nuevo Gavion">
+                <fa-icon [icon]="faPlus"></fa-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="cupo">Cupo</label>
+              <input class="form-control" formControlName="cupo" id="cupo" min="1" name="cupo" step="1" type="number">
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div *ngIf="empleadoState !== null" class="form-group">
+              <label for="empleados">Trabajadores</label>
+              <ng-select (change)="onPushEmpleado()"
+                         [items]="empleadoState.empleados"
+                         bindLabel="nombre_completo_ci"
+                         class="form-control"
+                         formControlName="empleado"
+                         id="empleados"></ng-select>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+        <h4 class="text-info"><strong>LISTA DE TRABAJADORES</strong><br>
+          <small class="text-primary">PARA PRODUCCIÓN INDIVIDUAL</small>
+        </h4>
+        <div class="mb-4">
+          <div *ngFor="let empleado of empleados;let i = index">
+            <mat-card class="mt-3">
+              <mat-card-header>
+                <mat-card-title>
+                  <span class="card-index">{{ i + 1 }}</span>
+                  <span
+                    class="text-black-50"><strong>{{ ' ' + empleado.nombres + ' ' + empleado.apellidos | uppercase }}</strong></span>
+                </mat-card-title>
+
+                <mat-card-subtitle>
+                  <p><strong>{{ 'Carnet de Identidad: ' }}</strong>{{ empleado.carnet }}</p>
+                </mat-card-subtitle>
+
+              </mat-card-header>
+              <mat-card-actions align="end" class="text-black-50 ml-3">
+                <button (click)="onDeleteEmpleado(empleado)"
+                        class="btn btn-danger"
+                        tooltip="Eliminar Empleado">
+                  <fa-icon [icon]="faTrash"></fa-icon>
+                </button>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </div>
+
+        <div class="form-group text-right">
+          <button (click)="onStore()" [disabled]="produccionGavionGroup.invalid" class="btn btn-primary btn-lg">
+            REGISTRAR
+          </button>
+          <button (click)="onCancel()" class="btn btn-default btn-lg">CANCELAR</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<app-gavion-create [gavionState]="gavionState" *ngIf="gavionState.location === 'create'"></app-gavion-create>
+
+<ngx-spinner>
+  <p class="text-white-50 text-center">
+    {{ produccionGavionState.message }}
+  </p>
+</ngx-spinner>
+

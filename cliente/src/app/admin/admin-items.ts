@@ -1,13 +1,21 @@
 import {
+  faArchive,
   faBorderNone,
   faBoxes,
   faBoxOpen,
-  faBullseye, faClock,
-  faDesktop, faHandshake, faShoppingCart,
-  faTools, faUserClock, faUserCog,
+  faBullseye,
+  faCartPlus,
+  faClock,
+  faDesktop,
+  faDollyFlatbed,
+  faHandshake,
+  faShoppingCart,
+  faTools, faTruckLoading,
+  faUserClock,
   faUserPlus,
   faUsers,
-  faUsersCog, faUserTie
+  faUsersCog,
+  faUserTie
 } from '@fortawesome/free-solid-svg-icons';
 
 export const items = [
@@ -26,7 +34,7 @@ export const items = [
     icon: faBoxes,
     routerLink: null,
     search: null,
-    label: 'Alta de Productos',
+    label: 'Alta Productos',
     urlPermiso: 'alta-productos',
     show: true,
     items: [
@@ -89,7 +97,7 @@ export const items = [
       }
     ]
   },
-  {
+  /*{
     type: 'menu',
     isCollapsed: true,
     icon: faClock,
@@ -109,7 +117,7 @@ export const items = [
         show: true,
       }
     ]
-  },
+  },*/
   {
     type: 'menu',
     isCollapsed: true,
@@ -141,6 +149,36 @@ export const items = [
     ]
   },
   {
+    type: 'menu',
+    isCollapsed: true,
+    icon: faTruckLoading,
+    routerLink: null,
+    search: null,
+    label: 'Adquisicion',
+    urlPermiso: 'adquisicion',
+    show: true,
+    items: [
+      {
+        type: 'item',
+        icon: faBullseye,
+        routerLink: '/admin/adquisicion/adquisicion-alambres',
+        search: 'adquisicion-alambres',
+        label: 'Adquisición Alambres',
+        urlPermiso: 'adquisicion-alambres',
+        show: true,
+      },
+      {
+        type: 'item',
+        icon: faArchive,
+        routerLink: '/admin/adquisicion/adquisicion-cajaclavos',
+        search: 'adquisicion-cajaclavos',
+        label: 'Adquisición Cajas Clavos',
+        urlPermiso: 'adquisicion-cajaclavos',
+        show: true,
+      }
+    ]
+  },
+  {
     type: 'item',
     icon: faUsers,
     routerLink: '/admin/clientes',
@@ -150,13 +188,34 @@ export const items = [
     show: true,
   },
   {
-    type: 'item',
+    type: 'menu',
+    isCollapsed: true,
     icon: faShoppingCart,
-    routerLink: '/admin/pedidos',
-    search: 'pedido',
+    routerLink: null,
+    search: null,
     label: 'Pedidos',
     urlPermiso: 'pedidos',
     show: true,
+    items: [
+      {
+        type: 'item',
+        icon: faCartPlus,
+        routerLink: '/admin/pedidos/create',
+        search: 'pedidos/create',
+        label: 'Registrar Pedido',
+        urlPermiso: 'pedido-create',
+        show: true,
+      },
+      {
+        type: 'item',
+        icon: faDollyFlatbed,
+        routerLink: '/admin/pedidos/index',
+        search: 'pedidos/index',
+        label: 'Lista de Pedidos',
+        urlPermiso: 'pedido-index',
+        show: true,
+      }
+    ]
   },
   {
     type: 'item',

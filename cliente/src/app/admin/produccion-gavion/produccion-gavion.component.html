@@ -1,0 +1,3 @@
+<app-produccion-gavion-index [produccionGavionState]="produccionGavionState" *ngIf="produccionGavionState?.location === 'index'"></app-produccion-gavion-index>
+<app-produccion-gavion-create-individual [produccionGavionState]="produccionGavionState" *ngIf="produccionGavionState.location === 'create-individual'"></app-produccion-gavion-create-individual>
+<app-produccion-gavion-create-grupal [produccionGavionState]="produccionGavionState" *ngIf="produccionGavionState.location === 'create-grupal'"></app-produccion-gavion-create-grupal>

@@ -48,6 +48,11 @@ class GavionController extends Controller
         return response()->json($gavion, 201);
     }
 
+    public function getGaviones() {
+        $gaviones = Gavion::orderBy('tipoGavion')->get();
+        return response()->json($gaviones, 200);
+    }
+
     public function paginateGaviones() {
         $items = \request()->input('items');
         $gaviones = Gavion::orderBy('tipoGavion')->paginate($items);

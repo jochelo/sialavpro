@@ -5,7 +5,7 @@ import {catchError, map, switchMap} from 'rxjs/operators';
 import {of, range} from 'rxjs';
 import {AlambreService} from '../../services/alambre.service';
 import {
-  deleteAlambre, deleteAlambreFailure, deleteAlambreSuccess,
+  deleteAlambre, deleteAlambreFailure, deleteAlambreSuccess, getAlambres, getAlambresFailure, getAlambresSuccess,
   paginateAlambres,
   paginateAlambresFailure,
   paginateAlambresSuccess,
@@ -20,6 +20,23 @@ import {NgxSpinnerService} from 'ngx-spinner';
 
 @Injectable()
 export class AlambreEffects {
+
+  getAlambres$ = createEffect(() =>
+    this.actions$
+      .pipe(
+        ofType(getAlambres),
+        switchMap(() => {
+          return this.alambreService.getAlambres()
+            .pipe(
+              map((response: Alambre[]) => {
+                return getAlambresSuccess({
+                  alambres: response
+                });
+              }),
+              catchError(error => of(getAlambresFailure(error)))
+            );
+        })
+      ));
 
   paginateAlambres$ = createEffect(() =>
     this.actions$

@@ -1,0 +1,168 @@
+<div class="colorlib-narrow-content">
+  <div class="animate-box" data-animate-effect="fadeInRight">
+    <div class="row mb-5">
+      <div class="col-12 text-right">
+        <div class="btn-group">
+          <!--<button (click)="onCreateIndividual()" class="btn btn-primary btn-lg" tooltip="Nuevo Cupo Individual Masivo">
+            <fa-icon [icon]="faUserCog" size="2x"></fa-icon>
+          </button>-->
+          <button (click)="onCreateGrupal()" class="btn btn-success btn-lg" tooltip="Nuevo Cupo Grupal">
+            <fa-icon [icon]="faUsersCog" size="2x"></fa-icon>
+          </button>
+          <!--<button (click)="onCreateSinCupo()" class="btn btn-secondary btn-lg" tooltip="Nueva Producción sin Cupo">
+            <fa-icon [icon]="faDumpster" size="2x"></fa-icon>
+          </button>-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+      <span class="heading-meta">Producción de Gaviones</span>
+      <h2 class="colorlib-heading">
+        Lista de Producción de Gaviones <small class="h3 text-primary">{{ showHoy ? 'Hoy' : '' }}</small>
+        <br>
+        <small style="font-size: 0.55em">
+          <span class="float-left btn-group">
+            <button (click)="onChangeDate(-1)" class="btn btn-sm btn-outline-secondary">
+              <fa-icon [icon]="faCaretLetf"></fa-icon>
+            </button>
+            <button (click)="onChangeDate(1)" class="btn btn-sm btn-outline-secondary">
+              <fa-icon [icon]="faCaretRight"></fa-icon>
+            </button>
+          </span>
+          <strong class="ml-2">
+            {{ now | date: 'EEEE, d MMMM, y' }}
+          </strong>
+        </small>
+        <br *ngIf="!showHoy">
+        <button (click)="onChangeDate(0)" *ngIf="!showHoy" class="btn btn-sm btn-secondary">
+          HOY
+        </button>
+      </h2>
+
+      <alert *ngIf="produccionGavionState.loading" class="text-center" type="info">
+        <fa-icon [icon]="faSpinner" [pulse]="true" size="2x"></fa-icon>
+        <br>
+        <strong>{{ produccionGavionState.message }}</strong>
+      </alert>
+      <alert *ngIf="produccionGavionState.error" class="text-center" type="danger">
+        {{ produccionGavionState.message }}
+      </alert>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 offset-md-1 animate-box" data-animate-effect="fadeInLeft">
+      <div *ngIf="!produccionGavionState.loading">
+        <div *ngFor="let produccionGavion of produccionGavionState.produccionGaviones;let i = index">
+          <mat-card [class.bg-danger-light]="produccionGavion.concluido && !onCumplido(produccionGavion)"
+                    [class.bg-gray-light]="!produccionGavion.concluido"
+                    [class.bg-success-light]="produccionGavion.concluido && onCumplido(produccionGavion)"
+                    class="mt-3">
+            <mat-card-header>
+              <mat-card-title>
+                <span class="card-index">{{ produccionGavionState.paginacion.from + i }}</span>
+                <button (click)="produccionGavion.show = true" *ngIf="!produccionGavion.show" color="primary"
+                        mat-icon-button>
+                  <fa-icon [icon]="faEllipsisV"></fa-icon>
+                </button>
+                <button (click)="produccionGavion.show = false" *ngIf="produccionGavion.show" color="warn"
+                        mat-icon-button>
+                  <fa-icon [icon]="faTimes"></fa-icon>
+                </button>
+                <span class="text-black-50">
+                  <strong>
+                    {{produccionGavion.tipo_gavion | uppercase }}
+                  </strong>
+                  <small>
+                    <strong>
+                      {{ produccionGavion.dimension }}
+                    </strong>
+                  </small>
+                </span>
+              </mat-card-title>
+              <mat-card-subtitle>
+                <ul class="list-unstyled">
+                  <li><small><strong>A CARGO DE</strong></small>
+                    <ul>
+                      <li *ngFor="let trabajador of produccionGavion.empleados_nombre_completo">
+                        {{ trabajador.nombres + ' ' + trabajador.apellidos | uppercase }}
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content [collapse]="!produccionGavion.show" [isAnimated]="true" class="text-black-50 ml-3">
+              <!--<p><strong>{{ 'Cantidad Producida: ' }}</strong>{{ produccionGavion.cantidad }}</p>-->
+              <div class="row">
+                <div class="col-md-4" *ngIf="produccionGavion.cupo">
+                  <mat-form-field class="full-width">
+                    <mat-label class="text-primary">CUPO [Gaviones]</mat-label>
+                    <input class="text-primary" matInput disabled type="text" [value]="produccionGavion.cupo">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field class="full-width">
+                    <mat-label>Gaviones Producidos [Gaviones]</mat-label>
+                    <input [(ngModel)]="produccionGavion.cantidad" matInput type="number" [value]="produccionGavion.cantidad" (ngModelChange)="produccionGavion.change = true">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field class="full-width" *ngIf="produccionGavion.cupo">
+                    <mat-label>Desperdicio [gr]</mat-label>
+                    <input [(ngModel)]="produccionGavion.desperdicio" matInput type="number" (ngModelChange)="produccionGavion.change = true">
+                    <!--<button (click)="produccionGavion.desperdicio = null"
+                            *ngIf="produccionGavion.desperdicio"
+                            aria-label="Clear"
+                            mat-button
+                            mat-icon-button
+                            matSuffix>
+                      <fa-icon [icon]="faTimes"></fa-icon>
+                    </button>-->
+                  </mat-form-field>
+                </div>
+              </div>
+            </mat-card-content>
+            <mat-card-actions [collapse]="!produccionGavion.show" [isAnimated]="true" align="end"
+                              class="text-black-50 ml-3">
+              <div class="btn-group">
+                <button (click)="onUpdate(produccionGavion)"
+                        class="btn btn-secondary"
+                        *ngIf="produccionGavion.change"
+                        tooltip="Actualizar Producción">
+                  <fa-icon [icon]="faSyncAlt"></fa-icon>
+                </button>
+                <button (click)="onDelete(produccionGavion)"
+                        class="btn btn-danger"
+                        tooltip="Eliminar Producción">
+                  <fa-icon [icon]="faTrash"></fa-icon>
+                </button>
+              </div>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+          <pagination (pageChanged)="onChangeState({
+                    type: 'paginate',
+                    payload: {
+                      items: $event.itemsPerPage,
+                      page: $event.page
+                    }
+                  })"
+                      *ngIf="produccionGavionState.paginacion !== null"
+                      [(ngModel)]="produccionGavionState.paginacion.current_page"
+                      [boundaryLinks]="true"
+                      [itemsPerPage]="5"
+                      [maxSize]="7"
+                      [totalItems]="produccionGavionState.paginacion.total"
+                      firstText="&laquo;" lastText="&raquo;" nextText="&rsaquo;" previousText="&lsaquo;">
+          </pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

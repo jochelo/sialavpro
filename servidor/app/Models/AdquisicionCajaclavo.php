@@ -16,4 +16,13 @@ class AdquisicionCajaclavo extends Model
         'cantidad',
         'cajaclavo_id',
     ];
+
+    protected $appends = [
+        'tipo_dimension'
+    ];
+
+    public function getTipoDimensionAttribute() {
+        $cajaclavo = Cajaclavo::find($this->cajaclavo_id);
+        return 'Clavos de ' . $cajaclavo['tipoClavo']. " | " . $cajaclavo['longitud']. "'' x " . $cajaclavo['bwg'];
+    }
 }

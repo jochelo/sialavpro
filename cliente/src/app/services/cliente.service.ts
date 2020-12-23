@@ -13,12 +13,20 @@ export class ClienteService {
   constructor(private http: HttpClient) {
   }
 
+  getClientes(): Observable<any> {
+    return this.http.get(`${this.base}get-clientes`);
+  }
+
   paginateClientes(data: any): Observable<any> {
     return this.http.post(`${this.base}paginate-clientes`, data);
   }
 
   storeCliente(data: any): Observable<any> {
     return this.http.post(`${this.base}store-cliente`, data);
+  }
+
+  showCliente(idcliente: number): Observable<any> {
+    return this.http.get(`${this.base}show-cliente/${idcliente}`);
   }
 
   updateCliente(data: any): Observable<any> {

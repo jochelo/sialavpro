@@ -5,7 +5,7 @@ import {catchError, map, switchMap} from 'rxjs/operators';
 import {of, range} from 'rxjs';
 import {GavionService} from '../../services/gavion.service';
 import {
-  deleteGavion, deleteGavionFailure, deleteGavionSuccess,
+  deleteGavion, deleteGavionFailure, deleteGavionSuccess, getGaviones, getGavionesFailure, getGavionesSuccess,
   paginateGaviones,
   paginateGavionesFailure,
   paginateGavionesSuccess,
@@ -17,9 +17,28 @@ import {Paginate} from '../../models/paginate';
 import {Gavion} from '../../models/gavion';
 import {ToastrService} from 'ngx-toastr';
 import {NgxSpinnerService} from 'ngx-spinner';
+import {getMallas, getMallasFailure, getMallasSuccess} from '../actions/malla.actions';
+import {Malla} from '../../models/malla';
 
 @Injectable()
 export class GavionEffects {
+
+  getGaviones$ = createEffect(() =>
+    this.actions$
+      .pipe(
+        ofType(getGaviones),
+        switchMap(() => {
+          return this.gavionService.getGaviones()
+            .pipe(
+              map((response: Gavion[]) => {
+                return getGavionesSuccess({
+                  gaviones: response,
+                });
+              }),
+              catchError(error => of(getGavionesFailure(error)))
+            );
+        })
+      ));
 
   paginateGaviones$ = createEffect(() =>
     this.actions$

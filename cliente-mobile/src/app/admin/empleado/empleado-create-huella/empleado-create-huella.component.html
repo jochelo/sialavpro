@@ -1,3 +1,11 @@
-<ion-button>
-  Click fingerPrint
-</ion-button>
+<ion-fab vertical="center" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="showFingerPrintSave()" color="primary">
+        <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+</ion-fab>
+
+<ion-fab vertical="center" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="showSecretFingerPrint()" color="light">
+        <ion-icon name="eye"></ion-icon>
+    </ion-fab-button>
+</ion-fab>

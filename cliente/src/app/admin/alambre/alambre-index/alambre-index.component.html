@@ -52,10 +52,11 @@
                   <img *ngIf="alambre.foto !== null" [src]="alambre.foto" alt="" class="img-fluid img-responsive">
                 </div>
                 <div class="col-md-7">
-                  <p class="text-primary">
-                    <fa-icon [icon]="faHashtag"></fa-icon>
-                    {{ alambre.cantidad + ' Unidades Disponibles'}}
-                  </p>
+                  <h3 class="text-primary">
+                    <small><fa-icon [icon]="faHashtag"></fa-icon></small>
+                    {{ ' ' + alambre.cantidad }}
+                    <small>{{ ' Rollos Disponibles' }}</small>
+                  </h3>
                   <p><strong>{{ 'AWG: ' }}</strong>{{ alambre.awg }}</p>
                   <p><strong>{{ 'Peso: ' }}</strong>{{ alambre.peso }}</p>
                   <p *ngIf="alambre.descripcion !== null"><strong>{{ 'Descripción: ' }}</strong>{{ alambre.descripcion }}

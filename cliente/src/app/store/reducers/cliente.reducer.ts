@@ -3,11 +3,11 @@ import {Cliente} from '../../models/cliente';
 import {Paginate} from '../../models/paginate';
 import {
   deleteCliente, deleteClienteFailure, deleteClienteSuccess,
-  editCliente,
+  editCliente, getClientes, getClientesFailure, getClientesSuccess,
   irVistaCliente,
   paginateClientes,
   paginateClientesFailure,
-  paginateClientesSuccess,
+  paginateClientesSuccess, resetCliente, showCliente, showClienteFailure, showClienteSuccess,
   storeCliente,
   storeClienteFailure,
   storeClienteSuccess, updateCliente, updateClienteFailure, updateClienteSuccess
@@ -44,6 +44,26 @@ const clienteReducer = createReducer(
     ...state,
     location: props.location
   })),
+  on(getClientes, (state: ClienteState, props) => ({
+    ...state,
+    loading: true,
+    loaded: false,
+    message: 'Cargando Listado de Clientes',
+  })),
+  on(getClientesSuccess, (state: ClienteState, props) => ({
+    ...state,
+    loading: false,
+    loaded: true,
+    clientes: props.clientes,
+    message: null
+  })),
+  on(getClientesFailure, (state: ClienteState, props) => ({
+    ...state,
+    loading: false,
+    loaded: false,
+    message: props.error.message,
+    error: props.error
+  })),
   on(paginateClientes, (state: ClienteState, props) => ({
     ...state,
     loading: true,
@@ -77,6 +97,7 @@ const clienteReducer = createReducer(
     loaded: true,
     location: 'index',
     clientes: [...state.clientes, props.cliente],
+    cliente: props.cliente,
     message: null,
   })),
   on(storeClienteFailure, (state: ClienteState, props) => ({
@@ -85,6 +106,31 @@ const clienteReducer = createReducer(
     loaded: false,
     message: props.error.message,
     error: props.error
+  })),
+  on(showCliente, (state: ClienteState, props) => ({
+    ...state,
+    loading: true,
+    loaded: false,
+    message: 'Buscando Cliente'
+  })),
+  on(showClienteSuccess, (state: ClienteState, props) => ({
+    ...state,
+    loading: false,
+    loaded: true,
+    cliente: props.cliente,
+    message: null,
+  })),
+  on(showClienteFailure, (state: ClienteState, props) => ({
+    ...state,
+    loading: false,
+    loaded: false,
+    message: props.error.message,
+    error: props.error
+  })),
+
+  on(resetCliente, (state: ClienteState) => ({
+    ...state,
+    cliente: null,
   })),
   on(editCliente, (state: ClienteState, props) => ({
     ...state,

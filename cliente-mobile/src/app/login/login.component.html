@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-    <ion-toolbar>
+    <ion-toolbar color="dark">
         <!--<ion-buttons slot="start">
             <ion-menu-button></ion-menu-button>
         </ion-buttons>-->
@@ -18,7 +18,10 @@
                 <img [src]="userImage" alt="" class="sidebar-img">
                 <ion-item color="transparent">
                     <ion-label position="floating">Cuenta</ion-label>
-                    <ion-input formControlName="cuenta" type="text" [autofocus]="true"></ion-input>
+                    <ion-input formControlName="cuenta"
+                               [ngModel]="loginGroup.value.cuenta"
+                               (ngModelChange)="loginGroup.value.cuenta = loginGroup.value.cuenta?.toLowerCase()"
+                               type="text" [autofocus]="true"></ion-input>
                 </ion-item>
                 <br>
                 <ion-item color="transparent">

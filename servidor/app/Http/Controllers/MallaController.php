@@ -84,9 +84,7 @@ class MallaController extends Controller
     }
 
     public function getMallas() {
-        $items = \request()->input('items');
         $mallas = Malla::orderBy('tipoMalla')->get();
-        // $mallas = Malla::get();
         return response()->json($mallas, 200);
     }
 

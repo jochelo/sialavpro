@@ -46,15 +46,35 @@ import {EmpleadoIndexComponent} from './empleado/empleado-index/empleado-index.c
 import {EmpleadoCreateComponent} from './empleado/empleado-create/empleado-create.component';
 import {EmpleadoEditComponent} from './empleado/empleado-edit/empleado-edit.component';
 import {AdminComponent} from './admin.component';
-import { ReservaComponent } from './reserva/reserva.component';
-import { ReservaIndexComponent } from './reserva/reserva-index/reserva-index.component';
-import { ProduccionMallaComponent } from './produccion-malla/produccion-malla.component';
-import { ProduccionMallaIndexComponent } from './produccion-malla/produccion-malla-index/produccion-malla-index.component';
-import { ProduccionMallaCreateIndividualComponent } from './produccion-malla/produccion-malla-create-individual/produccion-malla-create-individual.component';
-import { ProduccionMallaCreateGrupalComponent } from './produccion-malla/produccion-malla-create-grupal/produccion-malla-create-grupal.component';
-import { ProduccionMallaCreateSincupoComponent } from './produccion-malla/produccion-malla-create-sincupo/produccion-malla-create-sincupo.component';
-import { AsistenciaComponent } from './asistencia/asistencia.component';
-import { AsistenciaCreateComponent } from './asistencia/asistencia-create/asistencia-create.component';
+import {ReservaComponent} from './reserva/reserva.component';
+import {ReservaIndexComponent} from './reserva/reserva-index/reserva-index.component';
+import {ProduccionMallaComponent} from './produccion-malla/produccion-malla.component';
+import {ProduccionMallaIndexComponent} from './produccion-malla/produccion-malla-index/produccion-malla-index.component';
+import {ProduccionMallaCreateIndividualComponent} from './produccion-malla/produccion-malla-create-individual/produccion-malla-create-individual.component';
+import {ProduccionMallaCreateGrupalComponent} from './produccion-malla/produccion-malla-create-grupal/produccion-malla-create-grupal.component';
+import {ProduccionMallaCreateSincupoComponent} from './produccion-malla/produccion-malla-create-sincupo/produccion-malla-create-sincupo.component';
+import {AsistenciaComponent} from './asistencia/asistencia.component';
+import {AsistenciaCreateComponent} from './asistencia/asistencia-create/asistencia-create.component';
+import {ProduccionGavionComponent} from './produccion-gavion/produccion-gavion.component';
+import {ProduccionGavionCreateGrupalComponent} from './produccion-gavion/produccion-gavion-create-grupal/produccion-gavion-create-grupal.component';
+import {ProduccionGavionCreateIndividualComponent} from './produccion-gavion/produccion-gavion-create-individual/produccion-gavion-create-individual.component';
+import {ProduccionGavionIndexComponent} from './produccion-gavion/produccion-gavion-index/produccion-gavion-index.component';
+import { PedidoComponent } from './pedido/pedido.component';
+import { PedidoIndexComponent } from './pedido/pedido-index/pedido-index.component';
+import { PedidoCreateComponent } from './pedido/pedido-create/pedido-create.component';
+import { PedidoEditComponent } from './pedido/pedido-edit/pedido-edit.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatListModule} from '@angular/material/list';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogPedidoComponent } from './dialog-pedido/dialog-pedido.component';
+import { AdquisicionComponent } from './adquisicion/adquisicion.component';
+import { AdquisicionAlambreIndexComponent } from './adquisicion/adquisicion-alambre-index/adquisicion-alambre-index.component';
+import { AdquisicionAlambreCreateComponent } from './adquisicion/adquisicion-alambre-create/adquisicion-alambre-create.component';
+import { AdquisicionCajaclavoIndexComponent } from './adquisicion/adquisicion-cajaclavo-index/adquisicion-cajaclavo-index.component';
+import { AdquisicionCajaclavoCreateComponent } from './adquisicion/adquisicion-cajaclavo-create/adquisicion-cajaclavo-create.component';
 
 @NgModule({
   declarations: [
@@ -91,8 +111,22 @@ import { AsistenciaCreateComponent } from './asistencia/asistencia-create/asiste
     ProduccionMallaCreateIndividualComponent,
     ProduccionMallaCreateGrupalComponent,
     ProduccionMallaCreateSincupoComponent,
+    ProduccionGavionComponent,
+    ProduccionGavionCreateGrupalComponent,
+    ProduccionGavionCreateIndividualComponent,
+    ProduccionGavionIndexComponent,
     AsistenciaComponent,
-    AsistenciaCreateComponent],
+    AsistenciaCreateComponent,
+    PedidoComponent,
+    PedidoIndexComponent,
+    PedidoCreateComponent,
+    PedidoEditComponent,
+    DialogPedidoComponent,
+    AdquisicionComponent,
+    AdquisicionAlambreIndexComponent,
+    AdquisicionAlambreCreateComponent,
+    AdquisicionCajaclavoIndexComponent,
+    AdquisicionCajaclavoCreateComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -109,12 +143,21 @@ import { AsistenciaCreateComponent } from './asistencia/asistencia-create/asiste
     // MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
+    MatStepperModule,
+    MatIconModule,
+    MatTabsModule,
+    MatListModule,
+    MatSlideToggleModule,
+    MatDialogModule,
     FontAwesomeModule,
     TooltipModule,
     NgxNavbarModule,
     NgxSpinnerModule,
     AlertModule,
     NgSelectModule,
+  ],
+  entryComponents: [
+    DialogPedidoComponent
   ]
 })
 export class AdminModule {

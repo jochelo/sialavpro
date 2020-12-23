@@ -1,0 +1,121 @@
+<div class="colorlib-narrow-content">
+  <div class="row">
+    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+      <span class="heading-meta">Pedidos</span>
+      <h2 class="colorlib-heading">Lista de Pedidos</h2>
+
+      <alert *ngIf="pedidoState.loading" class="text-center" type="info">
+        <fa-icon [icon]="faSpinner" [pulse]="true" size="2x"></fa-icon>
+        <br>
+        <strong>{{ pedidoState.message }}</strong>
+      </alert>
+      <alert *ngIf="pedidoState.error" class="text-center" type="danger" dismissible="true">
+        {{ pedidoState.message }}
+      </alert>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 offset-md-1 animate-box" data-animate-effect="fadeInLeft">
+      <div *ngIf="!pedidoState.loading">
+        <div *ngFor="let pedido of pedidoState.pedidos;let i = index">
+          <mat-card class="mt-3">
+            <mat-card-header>
+              <mat-card-title>
+                <span class="card-index">{{ pedidoState.paginacion.from + i }}</span>
+                <button (click)="pedido.show = true" *ngIf="!pedido.show" color="primary" mat-icon-button>
+                  <fa-icon [icon]="faEllipsisV"></fa-icon>
+                </button>
+                <button (click)="pedido.show = false" *ngIf="pedido.show" color="warn" mat-icon-button>
+                  <fa-icon [icon]="faTimes"></fa-icon>
+                </button>
+                <span class="text-black-50"><strong>{{ pedido.nombre_cliente | uppercase }}</strong></span>
+              </mat-card-title>
+
+              <mat-card-subtitle>
+                <p *ngIf="pedido.entregado" class="mb-0 text-success"><strong>{{ 'ENTREGADO' }}</strong></p>
+                <p *ngIf="!pedido.entregado" class="mb-0 text-warning"><strong>{{ 'PENDIENTE' }}</strong></p>
+                <p class="mb-0"><strong>{{ 'Fecha: ' }}</strong>{{ pedido.fecha | date: 'EEEE, d MMMM, y' }}</p>
+                <p class="mb-0"><strong>{{ 'Monto Total: ' }}</strong>{{ pedido.total | number: '1.2-2' }} {{ ' Bs.' }}
+                </p>
+                <p class="mb-0">
+                  <strong>{{ 'Cancelado: ' }}</strong>{{ pedido.cancelado > pedido.total ? pedido.total : pedido.cancelado | number: '1.2-2' }} {{ ' Bs.' }}
+                </p>
+                <p [class.text-danger]="pedido.total - pedido.cancelado > 0"
+                   [class.text-success]="pedido.total - pedido.cancelado <= 0">
+                  <strong>{{ 'Saldo: ' }}</strong>{{ (pedido.total - pedido.cancelado) < 0 ? 0 : pedido.total - pedido.cancelado | number: '1.2-2' }} {{ ' Bs.' }}
+                </p>
+              </mat-card-subtitle>
+
+            </mat-card-header>
+            <mat-card-content [collapse]="!pedido.show" [isAnimated]="true" class="text-black-50 ml-3">
+
+              <ul class="list-unstyled">
+                <li>
+                  <small><strong>PRODUCTOS</strong></small>
+                  <ul>
+                    <li *ngFor="let producto of pedido.lista_productos">
+                      <small class="text-primary"><strong>{{ producto.cantidadSolicitada }}
+                        <em>{{ '[U.] ' }}</em></strong></small>
+                      {{ producto.producto }}
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <!--<div class="col-md-5">
+                <img *ngIf="pedido.foto !== null" [src]="pedido.foto" alt="" class="img-fluid img-responsive">
+              </div>
+              <div class="col-md-7">
+                <p class="text-primary">
+                  <fa-icon [icon]="faHashtag"></fa-icon>
+                  {{ ' ' + pedido.cantidad + ' Rollos Disponibles'}}
+                </p>
+                <p><strong>{{ 'Precio: ' }}</strong>{{ pedido.precio + ' Bs.'}} {{ pedido.m2 ? ' m2' : '' }}</p>
+                <p *ngIf="pedido.descripcion !== null"><strong>{{ 'Descripción: ' }}</strong>{{ pedido.descripcion }}
+                </p>
+              </div>-->
+
+            </mat-card-content>
+            <mat-card-actions [collapse]="!pedido.show" [isAnimated]="true" align="end" class="text-black-50 ml-3">
+              <button (click)="onUpdatePago(pedido)"
+                      *ngIf="pedido.total - pedido.cancelado > 0"
+                      class="mr-3"
+                      mat-mini-fab
+                      color="accent"
+                      tooltip="Actualizar pago Pedido">
+                <mat-icon style="transform: scale(0.7);">payments</mat-icon>
+              </button>
+                <mat-checkbox (change)="onEntregar($event.checked, pedido)" *ngIf="!pedido.entregado" color="primary">
+                  <small>Entregar Pedido</small>
+                </mat-checkbox>
+                <!--<button (click)="onDelete(pedido)"
+                        class="btn btn-danger"
+                        tooltip="Eliminar Pedido">
+                  <fa-icon [icon]="faTrash"></fa-icon>
+                </button>-->
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+          <pagination (pageChanged)="onChangeState({
+                    type: 'paginate',
+                    payload: {
+                      items: $event.itemsPerPage,
+                      page: $event.page
+                    }
+                  })"
+                      *ngIf="pedidoState.paginacion !== null"
+                      [(ngModel)]="pedidoState.paginacion.current_page"
+                      [boundaryLinks]="true"
+                      [itemsPerPage]="5"
+                      [maxSize]="7"
+                      [totalItems]="pedidoState.paginacion.total"
+                      firstText="&laquo;" lastText="&raquo;" nextText="&rsaquo;" previousText="&lsaquo;">
+          </pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -7,6 +7,20 @@ export const irVistaCajaclavo = createAction(
   props<{ location: string }>()
 );
 
+export const getCajaclavos = createAction(
+  '[Cajaclavo] Lista de Cajaclavos'
+);
+
+export const getCajaclavosSuccess = createAction(
+  '[Cajaclavo] Lista de Cajaclavos Success',
+  props<{ cajaclavos: Cajaclavo[] }>()
+);
+
+export const getCajaclavosFailure = createAction(
+  '[Cajaclavo] Lista de Cajaclavos Failure',
+  props<{ error: any }>()
+);
+
 export const paginateCajaclavos = createAction(
   '[Cajaclavo] Paginacion de Cajaclavos',
   props<{ items: number, page: number }>()

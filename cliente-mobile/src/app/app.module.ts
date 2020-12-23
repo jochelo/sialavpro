@@ -10,6 +10,8 @@ import {LoginComponent} from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {AppInterceptor} from './app.interceptor';
+import {FingerprintAIO} from '@ionic-native/fingerprint-aio/ngx';
+import {KeychainTouchId} from '@ionic-native/keychain-touch-id/ngx';
 
 @NgModule({
     declarations: [AppComponent, LoginComponent],
@@ -24,6 +26,8 @@ import {AppInterceptor} from './app.interceptor';
     ],
     providers: [
         HttpClient,
+        KeychainTouchId,
+        FingerprintAIO,
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
         {
             provide: LOCALE_ID, useValue: 'es-Bo'

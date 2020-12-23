@@ -7,6 +7,20 @@ export const irVistaAlambre = createAction(
   props<{ location: string }>()
 );
 
+export const getAlambres = createAction(
+  '[Alambre] Lista de Alambres'
+);
+
+export const getAlambresSuccess = createAction(
+  '[Alambre] Lista de Alambres Success',
+  props<{ alambres: Alambre[] }>()
+);
+
+export const getAlambresFailure = createAction(
+  '[Alambre] Lista de Alambres Failure',
+  props<{ error: any }>()
+);
+
 export const paginateAlambres = createAction(
   '[Alambre] Paginacion de Alambres',
   props<{ items: number, page: number }>()

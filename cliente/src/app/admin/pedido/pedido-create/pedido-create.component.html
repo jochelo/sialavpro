@@ -1,0 +1,646 @@
+<ng-template #step2>
+  <h4 *ngIf="clienteState.cliente !== null">
+    <strong class="text-secondary">{{ clienteState.cliente.nombre_completo | uppercase }}</strong>
+    <br>
+    <small>CLIENTE</small>
+  </h4>
+  <mat-tab-group mat-align-tabs="end">
+    <mat-tab label="MALLAS">
+      <!--<div class="mt-3 mb-2">
+        <div class="row mr-0 ml-0">
+          <div class="col-lg-7"></div>
+          <div class="col-lg-5 col-12">
+            <form (submit)="onSearch()" tooltip="Buscar por tipo">
+              <input [formControl]="data" class="form-control"
+                     placeholder="Buscar por tipo <enter>"
+                     type="search">
+            </form>
+          </div>
+        </div>
+        <div *ngIf="mallaState.error" class="row">
+          <div class="col">
+            <div class="alert alert-danger">
+              {{ mallaState.error }}
+            </div>
+          </div>
+        </div>
+        <alert *ngIf="mallaState.message !== null" type="success">
+          {{ mallaState.message }}
+        </alert>
+        <alert *ngIf="mallaState.loading" class="text-center" type="info">
+          <fa-icon [icon]="faSyncAlt" class="loadingIcon"></fa-icon>
+          Buscando Mallas
+        </alert>
+
+      </div>-->
+      <mat-selection-list #listMallas *ngIf="!mallaState.loading" dense>
+        <div *ngFor="let malla of mallaState.mallas;let i = index">
+          <mat-list-option (click)="onShowDialog(malla, 'malla')"
+                           [value]="malla"
+                           class="mb-2 mt-2 pb-2 pt-2"
+                           color="primary">
+            <div matLine>
+              <img [src]="malla.foto" alt="" matListAvatar>
+              {{ 'Malla ' + malla.tipoMalla | uppercase }}
+              <small *ngIf="!smallScreen" class="text-primary">
+                <strong>{{ ' Dimensión: ' }}</strong>{{ malla.alto + ' x ' + malla.largo }}
+              </small>
+
+              <small *ngIf="!smallScreen">
+                <strong>{{ ' Precio: ' }}</strong>{{ malla.precio + ' Bs.' }}
+              </small>
+            </div>
+            <div *ngIf="smallScreen" matLine>
+              <small>
+                <strong>{{ 'Dimensión: ' }}</strong>{{ malla.alto + ' x ' + malla.largo }}
+              </small>
+            </div>
+            <div *ngIf="smallScreen" matLine>
+              <small>
+                <strong>{{ ' Precio: ' }}</strong>{{ malla.precio + ' Bs.' }}
+              </small>
+            </div>
+
+            <div class="row mr-0 ml-0 mt-2">
+              <div class="col-md-6">
+                <mat-form-field matLine>
+                  <mat-label class="text-primary">Disponible</mat-label>
+                  <input [(ngModel)]="malla.cantidad" [value]="malla.cantidad" class="text-primary"
+                         disabled
+                         matInput
+                         type="number">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field matLine>
+                  <mat-label
+                    [class.text-danger]="malla.cantidadSolicitada && malla.cantidadSolicitada > malla.cantidad"
+                    [class.text-success]="malla.cantidadSolicitada && malla.cantidadSolicitada <= malla.cantidad">
+                    Cantidad
+                  </mat-label>
+                  <input [(ngModel)]="malla.cantidadSolicitada"
+                         [class.text-danger]="malla.cantidadSolicitada && malla.cantidadSolicitada > malla.cantidad"
+                         [class.text-success]="malla.cantidadSolicitada && malla.cantidadSolicitada <= malla.cantidad"
+                         [value]="malla.cantidadSolicitada"
+                         disabled
+                         matInput
+                         type="number">
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-list-option>
+          <mat-divider></mat-divider>
+        </div>
+      </mat-selection-list>
+    </mat-tab>
+    <mat-tab label="GAVIONES">
+      <mat-selection-list #listGaviones *ngIf="!gavionState.loading" dense>
+        <div *ngFor="let gavion of gavionState.gaviones;let i = index">
+          <mat-list-option (click)="onShowDialog(gavion, 'gavion')"
+                           [value]="gavion"
+                           class="mb-2 mt-2 pb-2 pt-2"
+                           color="primary">
+            <div matLine>
+              <img [src]="gavion.foto" alt="" matListAvatar>
+              {{ gavion.tipoGavion | uppercase }}
+              <small *ngIf="!smallScreen" class="text-primary">
+                <strong>{{ 'Dimensión: ' }}</strong>{{ gavion.alto + ' x ' + gavion.largo + ' x ' + gavion.ancho }}
+              </small>
+              <small *ngIf="!smallScreen">
+                <strong>{{ ' Precio: ' }}</strong>{{ gavion.precio + ' Bs.' }}
+              </small>
+            </div>
+            <div *ngIf="smallScreen" matLine>
+              <small>
+                <strong>{{ 'Dimensión: ' }}</strong>{{ gavion.alto + ' x ' + gavion.largo + ' x ' + gavion.ancho }}
+              </small>
+            </div>
+            <div *ngIf="smallScreen" matLine>
+              <small>
+                <strong>{{ ' Precio: ' }}</strong>{{ gavion.precio + ' Bs.' }}
+              </small>
+            </div>
+            <div class="row mr-0 ml-0 mt-2">
+              <div class="col-md-6">
+                <mat-form-field matLine>
+                  <mat-label class="text-primary">Disponible</mat-label>
+                  <input [(ngModel)]="gavion.cantidad" [value]="gavion.cantidad" class="text-primary"
+                         disabled
+                         matInput
+                         type="number">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field matLine>
+                  <mat-label
+                    [class.text-danger]="gavion.cantidadSolicitada && gavion.cantidadSolicitada > gavion.cantidad"
+                    [class.text-success]="gavion.cantidadSolicitada && gavion.cantidadSolicitada <= gavion.cantidad">
+                    Cantidad
+                  </mat-label>
+                  <input [(ngModel)]="gavion.cantidadSolicitada"
+                         [class.text-danger]="gavion.cantidadSolicitada && gavion.cantidadSolicitada > gavion.cantidad"
+                         [class.text-success]="gavion.cantidadSolicitada && gavion.cantidadSolicitada <= gavion.cantidad"
+                         [value]="gavion.cantidadSolicitada"
+                         disabled
+                         matInput
+                         type="number">
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-list-option>
+          <mat-divider></mat-divider>
+        </div>
+      </mat-selection-list>
+    </mat-tab>
+    <mat-tab label="ALAMBRES">
+      <mat-selection-list #listAlambres *ngIf="!alambreState.loading" dense>
+        <div *ngFor="let alambre of alambreState.alambres;let i = index">
+          <mat-list-option (click)="onShowDialog(alambre, 'alambre')"
+                           [value]="alambre"
+                           class="mb-2 mt-2 pb-2 pt-2"
+                           color="primary">
+            <div matLine>
+              <img [src]="alambre.foto" alt="" matListAvatar>
+              {{ 'Alambre ' + alambre.tipoAlambre | uppercase }}
+              <small *ngIf="!smallScreen" class="text-primary">
+                <strong>{{ 'AWG: ' }}</strong>{{ alambre.awg }}
+              </small>
+              <small *ngIf="!smallScreen">
+                <strong>{{ 'Precio: ' }}</strong>{{ alambre.precio + ' Bs.'}}
+              </small>
+            </div>
+            <div *ngIf="smallScreen" matLine>
+              <small>
+                <strong>{{ 'AWG: ' }}</strong>{{ alambre.awg }}
+              </small>
+            </div>
+            <div *ngIf="smallScreen" matLine>
+              <small>
+                <strong>{{ 'Precio: ' }}</strong>{{ alambre.precio + ' Bs.'}}
+              </small>
+            </div>
+            <div class="row mr-0 ml-0 mt-2">
+              <div class="col-md-6">
+                <mat-form-field matLine>
+                  <mat-label class="text-primary">Disponible</mat-label>
+                  <input [(ngModel)]="alambre.cantidad" [value]="alambre.cantidad" class="text-primary"
+                         disabled
+                         matInput
+                         type="number">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field matLine>
+                  <mat-label
+                    [class.text-danger]="alambre.cantidadSolicitada && alambre.cantidadSolicitada > alambre.cantidad"
+                    [class.text-success]="alambre.cantidadSolicitada && alambre.cantidadSolicitada <= alambre.cantidad">
+                    Cantidad
+                  </mat-label>
+                  <input [(ngModel)]="alambre.cantidadSolicitada"
+                         [class.text-danger]="alambre.cantidadSolicitada && alambre.cantidadSolicitada > alambre.cantidad"
+                         [class.text-success]="alambre.cantidadSolicitada && alambre.cantidadSolicitada <= alambre.cantidad"
+                         [value]="alambre.cantidadSolicitada"
+                         disabled
+                         matInput
+                         type="number">
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-list-option>
+          <mat-divider></mat-divider>
+        </div>
+      </mat-selection-list>
+    </mat-tab>
+    <mat-tab label="CLAVOS">
+      <mat-selection-list #listClavos *ngIf="!cajaclavoState.loading" dense>
+        <div *ngFor="let cajaclavo of cajaclavoState.cajaclavos;let i = index">
+          <mat-list-option (click)="onShowDialog(cajaclavo, 'cajaclavo')"
+                           [value]="cajaclavo"
+                           class="mb-2 mt-2 pb-2 pt-2"
+                           color="primary">
+            <div matLine>
+              <img [src]="cajaclavo.foto" alt="" matListAvatar>
+              {{ 'Clavos de ' + cajaclavo.tipoClavo | uppercase }}
+              <small *ngIf="!smallScreen" class="text-primary">
+                <strong>{{ 'Dimensión: ' }}</strong>{{ cajaclavo.longitud}}'' {{ ' x ' + cajaclavo.bwg }}
+              </small>
+              <small *ngIf="!smallScreen">
+                <strong>{{ 'Precio por Caja: ' }}</strong>{{ cajaclavo.precio + ' Bs.'}}
+              </small>
+            </div>
+            <div *ngIf="smallScreen" matLine>
+              <small>
+                <strong>{{ 'Dimensión: ' }}</strong>{{ cajaclavo.longitud}}'' {{ ' x ' + cajaclavo.bwg }}
+              </small>
+            </div>
+            <div *ngIf="smallScreen" matLine>
+              <small>
+                <strong>{{ 'Precio por Caja: ' }}</strong>{{ cajaclavo.precio + ' Bs.'}}
+              </small>
+            </div>
+            <div class="row mr-0 ml-0 mt-2">
+              <div class="col-md-6">
+                <mat-form-field matLine>
+                  <mat-label class="text-primary">Disponible</mat-label>
+                  <input [(ngModel)]="cajaclavo.cantidad" [value]="cajaclavo.cantidad" class="text-primary"
+                         disabled
+                         matInput
+                         type="number">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field matLine>
+                  <mat-label
+                    [class.text-danger]="cajaclavo.cantidadSolicitada && cajaclavo.cantidadSolicitada > cajaclavo.cantidad"
+                    [class.text-success]="cajaclavo.cantidadSolicitada && cajaclavo.cantidadSolicitada <= cajaclavo.cantidad">
+                    Cantidad
+                  </mat-label>
+                  <input [(ngModel)]="cajaclavo.cantidadSolicitada"
+                         [class.text-danger]="cajaclavo.cantidadSolicitada && cajaclavo.cantidadSolicitada > cajaclavo.cantidad"
+                         [class.text-success]="cajaclavo.cantidadSolicitada && cajaclavo.cantidadSolicitada <= cajaclavo.cantidad"
+                         [value]="cajaclavo.cantidadSolicitada"
+                         disabled
+                         matInput
+                         type="number">
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-list-option>
+          <mat-divider></mat-divider>
+        </div>
+      </mat-selection-list>
+    </mat-tab>
+  </mat-tab-group>
+</ng-template>
+
+<ng-template #step3>
+  <h4 *ngIf="clienteState.cliente !== null">
+    <strong class="text-secondary">{{ clienteState.cliente.nombre_completo | uppercase }}</strong>
+    <br>
+    <small>CLIENTE</small>
+  </h4>
+
+  <mat-list dense>
+
+    <mat-divider *ngIf="ordenMallas.length > 0"></mat-divider>
+    <div *ngIf="ordenMallas.length > 0" mat-subheader>Mallas</div>
+    <mat-list-item *ngFor="let malla of ordenMallas;let i = index" class="mb-2 mt-2 pb-2 pt-2">
+      <div matLine>
+        <img [src]="malla.foto" alt="" matListAvatar>
+        {{ 'Malla ' + malla.tipoMalla | uppercase }}
+      </div>
+      <div matLine></div>
+      <div *ngIf="smallScreen" matLine></div>
+      <div class="row" matLine>
+        <div class="col-sm-6">
+          <small class="text-primary">
+            <strong>{{ ' Dimensión: ' }}</strong>{{ malla.alto + ' x ' + malla.largo }}
+          </small>
+        </div>
+        <div class="col-sm-2">
+          <mat-form-field class="full-width">
+            <mat-label>Precio Unitario [Bs.]</mat-label>
+            <input [(ngModel)]="malla.precio" [value]="malla.precio"
+                   disabled
+                   matInput
+                   type="number">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-2">
+          <mat-form-field class="full-width">
+            <mat-label>Cantidad</mat-label>
+            <input [(ngModel)]="malla.cantidadSolicitada" [value]="malla.cantidadSolicitada"
+                   disabled
+                   matInput
+                   type="number">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-2 text-right">
+          <mat-form-field class="full-width">
+            <mat-label class="text-primary">SubTotal [Bs.]</mat-label>
+            <input [value]="malla.cantidadSolicitada * malla.precio"
+                   class="text-primary"
+                   disabled
+                   matInput
+                   type="number">
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-list-item>
+
+    <mat-divider *ngIf="ordenGaviones.length > 0"></mat-divider>
+    <div *ngIf="ordenGaviones.length > 0" mat-subheader>Gaviones</div>
+    <mat-list-item *ngFor="let gavion of ordenGaviones;let i = index" class="mb-2 mt-2 pb-2 pt-2">
+      <div matLine>
+        <img [src]="gavion.foto" alt="" matListAvatar>
+        {{ gavion.tipoGavion | uppercase }}
+      </div>
+      <div matLine></div>
+      <div *ngIf="smallScreen" matLine></div>
+      <div class="row" matLine>
+        <div class="col-sm-6">
+          <small class="text-primary">
+            <strong>{{ ' Dimensión: ' }}</strong>{{ gavion.alto + ' x ' + gavion.largo + ' x ' + gavion.ancho }}
+          </small>
+        </div>
+        <div class="col-sm-2">
+          <mat-form-field class="full-width">
+            <mat-label>Precio Unitario [Bs.]</mat-label>
+            <input [(ngModel)]="gavion.precio" [value]="gavion.precio"
+                   disabled
+                   matInput
+                   type="number">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-2">
+          <mat-form-field class="full-width">
+            <mat-label>Cantidad</mat-label>
+            <input [(ngModel)]="gavion.cantidadSolicitada" [value]="gavion.cantidadSolicitada"
+                   disabled
+                   matInput
+                   type="number">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-2 text-right">
+          <mat-form-field class="full-width">
+            <mat-label class="text-primary">SubTotal [Bs.]</mat-label>
+            <input [value]="gavion.cantidadSolicitada * gavion.precio"
+                   class="text-primary"
+                   disabled
+                   matInput
+                   type="number">
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-list-item>
+
+    <mat-divider *ngIf="ordenAlambres.length > 0"></mat-divider>
+    <div *ngIf="ordenAlambres.length > 0" mat-subheader>Alambres</div>
+    <mat-list-item *ngFor="let alambre of ordenAlambres;let i = index" class="mb-2 mt-2 pb-2 pt-2">
+      <div matLine>
+        <img [src]="alambre.foto" alt="" matListAvatar>
+        {{ 'Alambre ' + alambre.tipoAlambre | uppercase }}
+      </div>
+      <div matLine></div>
+      <div *ngIf="smallScreen" matLine></div>
+      <div class="row" matLine>
+        <div class="col-sm-6">
+          <small class="text-primary">
+            <strong>{{ ' AWG: ' }}</strong>{{ alambre.awg }}
+          </small>
+        </div>
+        <div class="col-sm-2">
+          <mat-form-field class="full-width">
+            <mat-label>Precio Unitario [Bs.]</mat-label>
+            <input [(ngModel)]="alambre.precio" [value]="alambre.precio"
+                   disabled
+                   matInput
+                   type="number">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-2">
+          <mat-form-field class="full-width">
+            <mat-label>Cantidad</mat-label>
+            <input [(ngModel)]="alambre.cantidadSolicitada" [value]="alambre.cantidadSolicitada"
+                   disabled
+                   matInput
+                   type="number">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-2 text-right">
+          <mat-form-field class="full-width">
+            <mat-label class="text-primary">SubTotal [Bs.]</mat-label>
+            <input [value]="alambre.cantidadSolicitada * alambre.precio"
+                   class="text-primary"
+                   disabled
+                   matInput
+                   type="number">
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-list-item>
+
+    <mat-divider *ngIf="ordenCajaclavos.length > 0"></mat-divider>
+    <div *ngIf="ordenCajaclavos.length > 0" mat-subheader>Cajas de Clavos</div>
+    <mat-list-item *ngFor="let cajaclavo of ordenCajaclavos;let i = index" class="mb-2 mt-2 pb-2 pt-2">
+      <div matLine>
+        <img [src]="cajaclavo.foto" alt="" matListAvatar>
+        {{ 'Clavos de ' + cajaclavo.tipoClavo | uppercase }}
+      </div>
+      <div matLine></div>
+      <div *ngIf="smallScreen" matLine></div>
+      <div class="row" matLine>
+        <div class="col-sm-6">
+          <small class="text-primary">
+            <strong>{{ 'Dimensión: ' }}</strong>{{ cajaclavo.longitud + ' x ' + cajaclavo.bwg }}
+          </small>
+        </div>
+        <div class="col-sm-2">
+          <mat-form-field class="full-width">
+            <mat-label>Precio Unitario [Bs.]</mat-label>
+            <input [(ngModel)]="cajaclavo.precio" [value]="cajaclavo.precio"
+                   disabled
+                   matInput
+                   type="number">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-2">
+          <mat-form-field class="full-width">
+            <mat-label>Cantidad</mat-label>
+            <input [(ngModel)]="cajaclavo.cantidadSolicitada" [value]="cajaclavo.cantidadSolicitada"
+                   disabled
+                   matInput
+                   type="number">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-2 text-right">
+          <mat-form-field class="full-width">
+            <mat-label class="text-primary">SubTotal [Bs.]</mat-label>
+            <input [value]="cajaclavo.cantidadSolicitada * cajaclavo.precio"
+                   class="text-primary"
+                   disabled
+                   matInput
+                   type="number">
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-list-item>
+
+  </mat-list>
+
+  <div class="row mt-3" [formGroup]="pedidoGroup">
+    <div class="col-3 col-md-6">
+      <h4>{{ 'TOTAL' }}</h4>
+    </div>
+    <div class="col-9 col-md-6 text-right">
+      <h4 *ngIf="!editTotal">
+        <a mat-mini-fab size="small" color="primary" class="mr-3" (click)="editTotal = !editTotal" tooltip="Editar Total">
+          <mat-icon size="small">create</mat-icon>
+        </a>
+        <strong>{{ pedidoGroup.value.total | number: '1.2-2' }} {{ ' Bs. ' }}</strong>
+      </h4>
+      <mat-form-field class="full-width" *ngIf="editTotal">
+        <mat-label>Total</mat-label>
+        <input formControlName="total"
+               matInput
+               type="number">
+        <button class="text-danger" matSuffix mat-icon-button (click)="editTotal = !editTotal">
+          <fa-icon [icon]="faTimes"></fa-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div class="col-3 col-md-6"></div>
+    <div class="col-9 col-md-6 text-right">
+      <mat-form-field class="full-width">
+        <mat-label>Cancelado [Bs.]</mat-label>
+        <input formControlName="cancelado"
+               matInput
+               type="number">
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-9 text-left"></div>
+    <div class="col-lg-3 text-right">
+      <button (click)="onStore()"
+              class="btn btn-primary btn-block">
+        REGISTRAR PEDIDO
+      </button>
+    </div>
+
+  </div>
+</ng-template>
+
+<div class="colorlib-narrow-content">
+  <div class="row">
+    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+      <span class="heading-meta">Nuevo Pedido</span>
+      <h2 class="colorlib-heading">Registrar Pedido</h2>
+    </div>
+  </div>
+  <div class="row">
+  <div class="col-md-12 animate-box p-0" data-animate-effect="fadeInRight">
+    <mat-horizontal-stepper #stepper [linear]="true" *ngIf="!smallScreen">
+      <mat-step [stepControl]="searchGroup" label="Seleccione un Cliente">
+        <div *ngIf="!clienteState.loading && clienteState.location !== 'create'" class="card mt-2">
+          <div class="card-body">
+            <alert *ngIf="clienteState.loading" class="text-center" type="info">
+              <fa-icon [icon]="faSyncAlt" [pulse]="true" size="2x"></fa-icon>
+              {{ clienteState.message }}
+            </alert>
+            <form *ngIf="!clienteState.loading" [formGroup]="searchGroup">
+              <div class="row">
+                <div [class.col-lg-12]="searchGroup.value.cliente_id !== null" class="col-lg-9 form-group">
+                  <ng-select
+                    (change)="onGetCliente()"
+                    *ngIf="clienteState.cliente == null"
+                    [items]="clienteState.clientes"
+                    bindLabel="nombre_completo"
+                    bindValue="id"
+                    class="form-control"
+                    formControlName="cliente_id"
+                    tooltip="Seleccione un cliente"></ng-select>
+                  <h4 *ngIf="clienteState.cliente !== null">
+                    <br>
+                    <strong>{{ clienteState.cliente.nombre_completo | uppercase}}</strong>
+                    <br>
+                    <small>CLIENTE</small>
+                    -
+                    <a (click)="onResetCliente()" class="pointer">
+                      <small class="text-danger ">Cambiar de cliente
+                        <fa-icon [icon]="faTimes"></fa-icon>
+                      </small>
+                    </a>
+                  </h4>
+                </div>
+                <div *ngIf="searchGroup.value.cliente_id === null" class="col-lg-3 form-group">
+                  <button (click)="onCreateCliente()" [disabled]="searchGroup.valid"
+                          class="btn btn-primary btn-block btn-lg">
+                    <fa-icon [icon]="faPlus"></fa-icon>
+                    REGISTRAR
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <app-cliente-create *ngIf="clienteState.location === 'create'"
+                            [clienteState]="clienteState"></app-cliente-create>
+      </mat-step>
+      <mat-step [completed]="existeProductos()" label="Selección de Productos">
+        <ng-container [ngTemplateOutlet]="step2"></ng-container>
+      </mat-step>
+      <mat-step label="Finalizar Pedido">
+        <ng-container [ngTemplateOutlet]="step3"></ng-container>
+      </mat-step>
+    </mat-horizontal-stepper>
+
+    <mat-vertical-stepper #stepper [linear]="true" *ngIf="smallScreen">
+      <mat-step [stepControl]="searchGroup" label="Seleccione un Cliente">
+        <div *ngIf="!clienteState.loading && clienteState.location !== 'create'" class="card mt-2">
+          <div class="card-body">
+            <alert *ngIf="clienteState.loading" class="text-center" type="info">
+              <fa-icon [icon]="faSyncAlt" [pulse]="true" size="2x"></fa-icon>
+              {{ clienteState.message }}
+            </alert>
+            <form *ngIf="!clienteState.loading" [formGroup]="searchGroup">
+              <div class="row">
+                <div [class.col-lg-12]="searchGroup.value.cliente_id !== null" class="col-lg-9 form-group">
+                  <ng-select
+                    (change)="onGetCliente()"
+                    *ngIf="clienteState.cliente == null"
+                    [items]="clienteState.clientes"
+                    bindLabel="nombre_completo"
+                    bindValue="id"
+                    class="form-control"
+                    formControlName="cliente_id"
+                    tooltip="Seleccione un cliente"></ng-select>
+                  <h4 *ngIf="clienteState.cliente !== null">
+                    <br>
+                    <strong>{{ clienteState.cliente.nombre_completo | uppercase}}</strong>
+                    <br>
+                    <small>CLIENTE</small>
+                    -
+                    <a (click)="onResetCliente()" class="pointer">
+                      <small class="text-danger ">Cambiar de cliente
+                        <fa-icon [icon]="faTimes"></fa-icon>
+                      </small>
+                    </a>
+                  </h4>
+                </div>
+                <div *ngIf="searchGroup.value.cliente_id === null" class="col-lg-3 form-group">
+                  <button (click)="onCreateCliente()" [disabled]="searchGroup.valid"
+                          class="btn btn-primary btn-block btn-lg">
+                    <fa-icon [icon]="faPlus"></fa-icon>
+                    REGISTRAR
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <app-cliente-create *ngIf="clienteState.location === 'create'"
+                            [clienteState]="clienteState"></app-cliente-create>
+      </mat-step>
+      <mat-step [completed]="existeProductos()" label="Selección de Productos">
+        <div class="row mt-2 mb-2">
+          <div class="col-12 text-right">
+            <button (click)="onNexStep2()" color="warn" mat-mini-fab matStepperNext>
+              <fa-icon [icon]="faArrowRight"></fa-icon>
+            </button>
+          </div>
+        </div>
+        <ng-container [ngTemplateOutlet]="step2"></ng-container>
+      </mat-step>
+      <mat-step label="Finalizar Pedido">
+        <ng-container [ngTemplateOutlet]="step3"></ng-container>
+      </mat-step>
+    </mat-vertical-stepper>
+  </div>
+  </div>
+</div>
+
+<ngx-spinner>
+  <p class="text-white-50 text-center">
+    {{ pedidoState.message }}
+  </p>
+</ngx-spinner>

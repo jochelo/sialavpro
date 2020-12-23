@@ -1,0 +1,68 @@
+<div class="colorlib-narrow-content">
+  <div class="row">
+    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+      <span class="heading-meta">Pedidos</span>
+      <h2 class="colorlib-heading">Actualizar Pago del Pedido</h2>
+
+      <alert *ngIf="pedidoState.loading" class="text-center" type="info">
+        <fa-icon [icon]="faSpinner" [pulse]="true" size="2x"></fa-icon>
+        <br>
+        <strong>{{ pedidoState.message }}</strong>
+      </alert>
+      <alert *ngIf="pedidoState.error" class="text-center" type="danger">
+        {{ pedidoState.message }}
+      </alert>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 offset-md-2 animate-box" data-animate-effect="fadeInLeft">
+      <form [formGroup]="pedidoGroup">
+        <div class="row">
+          <div class="col-md-4">
+            <small>
+              <fa-icon [icon]="faCoins"></fa-icon>
+              {{ 'TOTAL' }}
+            </small>
+            <h3>{{ pedidoState.pedido.total }}</h3>
+          </div>
+          <div class="col-md-4">
+            <small>
+              <fa-icon [icon]="faDonate"></fa-icon>
+              {{ 'CANCELADO' }}
+            </small>
+            <h3>{{ pedidoState.pedido.cancelado + (pedidoGroup.value.importe ? pedidoGroup.value.importe : 0) }}</h3>
+          </div>
+          <div class="col-md-4 text-danger">
+            <small>
+              <fa-icon [icon]="faSearchDollar"></fa-icon>
+              {{ 'SALDO' }}
+            </small>
+            <h3 class="text-danger">
+              {{ pedidoState.pedido.total - pedidoState.pedido.cancelado - (pedidoGroup.value.importe ? pedidoGroup.value.importe : 0) }}
+            </h3>
+          </div>
+        </div>
+        <div class="form-group">
+          <mat-form-field class="full-width">
+            <mat-label>Importe</mat-label>
+            <input matInput
+                   [ngModel]="onChangeImporte()"
+                   formControlName="importe" min="0" name="importe" step="0.1"
+            type="number">
+          </mat-form-field>
+        </div>
+
+        <div class="form-group text-right">
+          <button (click)="onStore()" [disabled]="pedidoGroup.invalid" class="btn btn-primary btn-lg">ACTUALIZAR</button>
+          <button (click)="onCancel()" class="btn btn-default btn-lg">CANCELAR</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+<ngx-spinner>
+  <p class="text-white-50 text-center">
+    {{ pedidoState.message }}
+  </p>
+</ngx-spinner>

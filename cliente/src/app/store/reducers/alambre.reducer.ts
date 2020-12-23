@@ -3,7 +3,7 @@ import {Alambre} from '../../models/alambre';
 import {Paginate} from '../../models/paginate';
 import {
   deleteAlambre, deleteAlambreFailure, deleteAlambreSuccess,
-  editAlambre,
+  editAlambre, getAlambres, getAlambresFailure, getAlambresSuccess,
   irVistaAlambre,
   paginateAlambres,
   paginateAlambresFailure,
@@ -44,6 +44,26 @@ const alambreReducer = createReducer(
     ...state,
     location: props.location
   })),
+  on(getAlambres, (state: AlambreState, props) => ({
+    ...state,
+    loading: true,
+    loaded: false,
+    message: 'Cargando Lista de Alambres',
+  })),
+  on(getAlambresSuccess, (state: AlambreState, props) => ({
+    ...state,
+    loading: false,
+    loaded: true,
+    alambres: props.alambres,
+    message: null
+  })),
+  on(getAlambresFailure, (state: AlambreState, props) => ({
+    ...state,
+    loading: false,
+    loaded: false,
+    message: props.error.message,
+    error: props.error
+  })),
   on(paginateAlambres, (state: AlambreState, props) => ({
     ...state,
     loading: true,
@@ -77,6 +97,7 @@ const alambreReducer = createReducer(
     loaded: true,
     location: 'index',
     alambres: [...state.alambres, props.alambre],
+    alambre: props.alambre,
     message: null,
   })),
   on(storeAlambreFailure, (state: AlambreState, props) => ({

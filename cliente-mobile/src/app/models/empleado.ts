@@ -7,6 +7,7 @@ export class Empleado {
     public carnet: string,
     public rolEmpleado: string,
     public foto?: string,
+    public huella?: boolean,
     public direccion?: string,
     public created_at?: string,
     public updated_at?: string,

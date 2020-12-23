@@ -16,4 +16,13 @@ class AdquisicionAlambre extends Model
         'cantidad',
         'alambre_id',
     ];
+
+    protected $appends = [
+        'tipo_alambre_awg'
+    ];
+
+    public function getTipoAlambreAwgAttribute() {
+        $alambre = Alambre::find($this->alambre_id);
+        return $alambre->tipoAlambre . ' - AWG: ' . $alambre->awg;
+    }
 }

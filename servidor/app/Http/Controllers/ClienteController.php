@@ -13,11 +13,21 @@ class ClienteController extends Controller
         return response()->json($cliente, 201);
     }
 
+    public function showCliente($id) {
+        $cliente = Cliente::find($id);
+        return response()->json($cliente, 201);
+    }
+
     public function updateCliente() {
         $clienteRequest = \request()->all();
         $cliente = Cliente::find($clienteRequest['id']);
         $cliente->update($clienteRequest);
         return response()->json($cliente, 201);
+    }
+
+    public function getClientes() {
+        $clientes = Cliente::get();
+        return response()->json($clientes, 200);
     }
 
     public function paginateClientes() {

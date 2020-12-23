@@ -5,10 +5,10 @@ import {catchError, map, switchMap} from 'rxjs/operators';
 import {of, range} from 'rxjs';
 import {ClienteService} from '../../services/cliente.service';
 import {
-  deleteCliente, deleteClienteFailure, deleteClienteSuccess,
+  deleteCliente, deleteClienteFailure, deleteClienteSuccess, getClientes, getClientesFailure, getClientesSuccess,
   paginateClientes,
   paginateClientesFailure,
-  paginateClientesSuccess,
+  paginateClientesSuccess, showCliente, showClienteFailure, showClienteSuccess,
   storeCliente,
   storeClienteFailure,
   storeClienteSuccess, updateCliente, updateClienteFailure, updateClienteSuccess
@@ -20,6 +20,23 @@ import {NgxSpinnerService} from 'ngx-spinner';
 
 @Injectable()
 export class ClienteEffects {
+
+  getClientes$ = createEffect(() =>
+    this.actions$
+      .pipe(
+        ofType(getClientes),
+        switchMap(() => {
+          return this.clienteService.getClientes()
+            .pipe(
+              map((response: Cliente[]) => {
+                return getClientesSuccess({
+                  clientes: response
+                });
+              }),
+              catchError(error => of(getClientesFailure(error)))
+            );
+        })
+      ));
 
   paginateClientes$ = createEffect(() =>
     this.actions$
@@ -65,6 +82,26 @@ export class ClienteEffects {
                 });
               }),
               catchError(error => of(storeClienteFailure(error)))
+            );
+        })
+      ));
+
+  showCliente$ = createEffect(() =>
+    this.actions$
+      .pipe(
+        ofType(showCliente),
+        switchMap((props: { idcliente: number }) => {
+          this.spinner.show();
+          return this.clienteService.showCliente(props.idcliente)
+            .pipe(
+              map((response: Cliente) => {
+                this.spinner.hide();
+                this.toastr.success('Cliente Encontrado');
+                return showClienteSuccess({
+                  cliente: response
+                });
+              }),
+              catchError(error => of(showClienteFailure(error)))
             );
         })
       ));

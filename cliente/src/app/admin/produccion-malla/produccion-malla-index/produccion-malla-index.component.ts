@@ -8,7 +8,8 @@ import {
   faEllipsisV,
   faHashtag,
   faPlus,
-  faSpinner, faSyncAlt,
+  faSpinner,
+  faSyncAlt,
   faTimes,
   faTrash,
   faUserCog,
@@ -19,9 +20,9 @@ import {Store} from '@ngrx/store';
 import {AdminState} from '../../../store/reducers/admin.reducer';
 import {
   deleteProduccionMalla,
-  editProduccionMalla,
   irVistaProduccionMalla,
-  paginateProduccionMallas, updateProduccionMalla
+  paginateProduccionMallas,
+  updateProduccionMalla
 } from '../../../store/actions/produccion-malla.actions';
 import * as moment from 'moment';
 

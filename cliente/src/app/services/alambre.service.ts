@@ -13,6 +13,10 @@ export class AlambreService {
   constructor(private http: HttpClient) {
   }
 
+  getAlambres(): Observable<any> {
+    return this.http.get(`${this.base}get-alambres`);
+  }
+
   paginateAlambres(data: any): Observable<any> {
     return this.http.post(`${this.base}paginate-alambres`, data);
   }

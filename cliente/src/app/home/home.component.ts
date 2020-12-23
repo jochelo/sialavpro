@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {faCaretDown, faSignInAlt, faUserCircle} from '@fortawesome/free-solid-svg-icons';
+import {faGithub} from '@fortawesome/free-brands-svg-icons';
 
 declare const burgerMenu: any;
 
@@ -12,6 +13,7 @@ declare const burgerMenu: any;
 export class HomeComponent implements OnInit {
 
   faUserCircle = faUserCircle;
+  faGithub = faGithub;
   faSignInAlt = faSignInAlt;
   faCaretDown = faCaretDown;
 

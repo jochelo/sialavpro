@@ -52,10 +52,11 @@
                   <img *ngIf="cajaclavo.foto !== null" [src]="cajaclavo.foto" alt="" class="img-fluid img-responsive">
                 </div>
                 <div class="col-md-7">
-                  <p class="text-primary">
-                    <fa-icon [icon]="faHashtag"></fa-icon>
-                    {{ cajaclavo.cantidad + ' Cajas Disponibles'}}
-                  </p>
+                  <h3 class="text-primary">
+                    <small><fa-icon [icon]="faHashtag"></fa-icon></small>
+                    {{ ' ' + cajaclavo.cantidad }}
+                    <small>{{ ' Cajas Disponibles' }}</small>
+                  </h3>
                   <p><strong>{{ 'Precio Caja: ' }}</strong>{{ cajaclavo.precio+ ' Bs.'}}</p>
                   <p><strong>{{ 'Número de Bolsas: ' }}</strong>{{ cajaclavo.numeroBolsas }}</p>
                   <p *ngIf="cajaclavo.descripcion !== null"><strong>{{ 'Descripción: ' }}</strong>{{ cajaclavo.descripcion }}

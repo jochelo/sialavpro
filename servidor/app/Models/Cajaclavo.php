@@ -22,4 +22,12 @@ class Cajaclavo extends Model
         'cantidad',
         'descripcion',
     ];
+
+    protected $appends = [
+        'tipo_dimension'
+    ];
+
+    public function getTipoDimensionAttribute() {
+        return 'Clavos de ' . $this->tipoClavo . " | " . $this->longitud . "'' x " . $this->bwg;
+    }
 }

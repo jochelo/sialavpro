@@ -1,0 +1,64 @@
+<div *ngIf="cajaclavoState.location !== 'create'" class="colorlib-narrow-content">
+  <div class="row">
+    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+      <span class="heading-meta">Nueva Adquisición de Cajas de clavos</span>
+      <h2 class="colorlib-heading">Registrar Adquisición
+
+      </h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 offset-md-1 animate-box" data-animate-effect="fadeInLeft">
+      <form [formGroup]="adquisicionCajaclavoGroup">
+        <div class="form-group">
+          <label for="fecha">Fecha de Adquisición</label>
+          <input class="form-control" formControlName="fecha" id="fecha" type="date">
+        </div>
+
+        <div *ngIf="cajaclavoState !== null" class="form-group">
+          <label for="cajaclavo_id">Seleccione un tipo de Clavo</label>
+          <div class="row">
+            <div [class.col-sm-9]="adquisicionCajaclavoGroup.value.cajaclavo_id === null"
+                 [class.col-12]="adquisicionCajaclavoGroup.value.cajaclavo_id !== null">
+              <ng-select [items]="cajaclavoState.cajaclavos"
+                         bindLabel="tipo_dimension"
+                         bindValue="id"
+                         class="form-control"
+                         formControlName="cajaclavo_id"
+                         id="cajaclavo_id"></ng-select>
+            </div>
+            <div class="col-sm-3 mt-3 mt-md-0" *ngIf="adquisicionCajaclavoGroup.value.cajaclavo_id === null">
+              <button [disabled]="adquisicionCajaclavoGroup.value.cajaclavo_id !== null"
+                      (click)="onCreateCajaclavo()"
+                      tooltip="Registrar Nueva Caja de clavos"
+                      class="btn btn-primary btn-lg btn-block">
+                <fa-icon [icon]="faPlus"></fa-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cantidad">Cantidad</label>
+          <input class="form-control" formControlName="cantidad" id="cantidad" min="1" name="cantidad" step="1" type="number">
+        </div>
+
+        <div class="form-group text-right">
+          <button (click)="onStore()" [disabled]="adquisicionCajaclavoGroup.invalid" class="btn btn-primary btn-lg">
+            REGISTRAR
+          </button>
+          <button (click)="onCancel()" class="btn btn-default btn-lg">CANCELAR</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<app-cajaclavo-create [cajaclavoState]="cajaclavoState" *ngIf="cajaclavoState.location === 'create'"></app-cajaclavo-create>
+
+<ngx-spinner>
+  <p class="text-white-50 text-center">
+    {{ adquisicionCajaclavoState.message }}
+  </p>
+</ngx-spinner>

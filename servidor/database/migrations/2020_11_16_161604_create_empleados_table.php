@@ -20,6 +20,7 @@ class CreateEmpleadosTable extends Migration
             $table->string('celular');
             $table->string('carnet');
             $table->string('foto')->nullable();
+            $table->boolean('huella')->default(false);
             $table->string('direccion')->nullable();
             $table->enum('rolEmpleado', ['mallero', 'obrero']);
 

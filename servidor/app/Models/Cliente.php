@@ -18,4 +18,12 @@ class Cliente extends Model
         'direccion',
         'celular',
     ];
+
+    protected $appends = [
+        'nombre_completo'
+    ];
+
+    public function getNombreCompletoAttribute() {
+        return $this->nombres . ' ' . $this->apellidos;
+    }
 }

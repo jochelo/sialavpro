@@ -15,6 +15,7 @@ export class Malla {
     public updated_at?: string,
     public deleted_at?: string,
     public tipo_dimension?: string,
+    public cantidadSolicitada?: number,
     public id?: number) {
   }
 }

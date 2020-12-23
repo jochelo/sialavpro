@@ -2,15 +2,23 @@ import {Action, createReducer, on} from '@ngrx/store';
 import {Gavion} from '../../models/gavion';
 import {Paginate} from '../../models/paginate';
 import {
-  deleteGavion, deleteGavionFailure, deleteGavionSuccess,
+  deleteGavion,
+  deleteGavionFailure,
+  deleteGavionSuccess,
   editGavion,
+  getGaviones,
+  getGavionesFailure,
+  getGavionesSuccess,
   irVistaGavion,
   paginateGaviones,
   paginateGavionesFailure,
   paginateGavionesSuccess,
   storeGavion,
   storeGavionFailure,
-  storeGavionSuccess, updateGavion, updateGavionFailure, updateGavionSuccess
+  storeGavionSuccess,
+  updateGavion,
+  updateGavionFailure,
+  updateGavionSuccess
 } from '../actions/gavion.actions';
 import {HttpErrorResponse} from '@angular/common/http';
 
@@ -43,6 +51,26 @@ const gavionReducer = createReducer(
   on(irVistaGavion, (state: GavionState, props) => ({
     ...state,
     location: props.location
+  })),
+  on(getGaviones, (state: GavionState, props) => ({
+    ...state,
+    loading: true,
+    loaded: false,
+    message: 'Cargando Lista de Gaviones',
+  })),
+  on(getGavionesSuccess, (state: GavionState, props) => ({
+    ...state,
+    loading: false,
+    loaded: true,
+    gaviones: props.gaviones,
+    message: null,
+  })),
+  on(getGavionesFailure, (state: GavionState, props) => ({
+    ...state,
+    loading: false,
+    loaded: false,
+    message: props.error.message,
+    error: props.error
   })),
   on(paginateGaviones, (state: GavionState, props) => ({
     ...state,
@@ -77,6 +105,7 @@ const gavionReducer = createReducer(
     loaded: true,
     location: 'index',
     gaviones: [...state.gaviones, props.gavion],
+    gavion: props.gavion,
     message: null,
   })),
   on(storeGavionFailure, (state: GavionState, props) => ({
@@ -102,7 +131,7 @@ const gavionReducer = createReducer(
     loading: false,
     loaded: true,
     location: 'index',
-    gaviones: state.gaviones.map( (gavion: Gavion) => {
+    gaviones: state.gaviones.map((gavion: Gavion) => {
       if (gavion.id === props.gavion.id) {
         return props.gavion;
       }
@@ -127,7 +156,7 @@ const gavionReducer = createReducer(
     ...state,
     loading: false,
     loaded: true,
-    gaviones: state.gaviones.filter( (gavion: Gavion) => gavion.id !== props.idgavion),
+    gaviones: state.gaviones.filter((gavion: Gavion) => gavion.id !== props.idgavion),
     message: null,
   })),
   on(deleteGavionFailure, (state: GavionState, props) => ({

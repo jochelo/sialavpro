@@ -12,6 +12,10 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\ProduccionMallaController;
+use App\Http\Controllers\ProduccionGavionController;
+use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\AdquisicionAlambreController;
+use App\Http\Controllers\AdquisicionCajaclavoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +50,7 @@ Route::group(['middleware' => 'auth:api'], function() {
      * Gaviones
      * */
 
+    Route::get('get-gaviones', [GavionController::class, 'getGaviones']);
     Route::post('paginate-gaviones', [GavionController::class, 'paginateGaviones']);
     Route::post('store-gavion', [GavionController::class, 'storeGavion']);
     Route::post('update-gavion', [GavionController::class, 'updateGavion']);
@@ -55,6 +60,7 @@ Route::group(['middleware' => 'auth:api'], function() {
      * Alambres
      * */
 
+    Route::get('get-alambres', [AlambreController::class, 'getAlambres']);
     Route::post('paginate-alambres', [AlambreController::class, 'paginateAlambres']);
     Route::post('store-alambre', [AlambreController::class, 'storeAlambre']);
     Route::post('update-alambre', [AlambreController::class, 'updateAlambre']);
@@ -64,6 +70,7 @@ Route::group(['middleware' => 'auth:api'], function() {
      * Cajaclavos
      * */
 
+    Route::get('get-cajaclavos', [CajaclavoController::class, 'getCajaclavos']);
     Route::post('paginate-cajaclavos', [CajaclavoController::class, 'paginateCajaclavos']);
     Route::post('store-cajaclavo', [CajaclavoController::class, 'storeCajaclavo']);
     Route::post('update-cajaclavo', [CajaclavoController::class, 'updateCajaclavo']);
@@ -74,7 +81,9 @@ Route::group(['middleware' => 'auth:api'], function() {
      * */
 
     Route::post('paginate-clientes', [ClienteController::class, 'paginateClientes']);
+    Route::get('get-clientes', [ClienteController::class, 'getClientes']);
     Route::post('store-cliente', [ClienteController::class, 'storeCliente']);
+    Route::get('show-cliente/{id}', [ClienteController::class, 'showCliente']);
     Route::post('update-cliente', [ClienteController::class, 'updateCliente']);
     Route::delete('delete-cliente/{id}', [ClienteController::class, 'destroyCliente']);
 
@@ -109,6 +118,49 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::post('update-produccion-malla', [ProduccionMallaController::class, 'updateProduccionMalla']);
     Route::delete('delete-produccion-malla/{id}', [ProduccionMallaController::class, 'destroyProduccionMalla']);
 
+    /*
+     * ProduccionGaviones
+     * */
+
+    Route::post('paginate-produccion-gaviones-fecha', [ProduccionGavionController::class, 'paginateProduccionGavionesFecha']);
+    Route::post('store-produccion-gavion-individual', [ProduccionGavionController::class, 'storeProduccionGavionIndividual']);
+    Route::post('store-produccion-gavion-grupal', [ProduccionGavionController::class, 'storeProduccionGavionGrupal']);
+    Route::post('store-produccion-gavion-sin-cupo', [ProduccionGavionController::class, 'storeProduccionGavionSinCupo']);
+    Route::post('update-produccion-gavion', [ProduccionGavionController::class, 'updateProduccionGavion']);
+    Route::delete('delete-produccion-gavion/{id}', [ProduccionGavionController::class, 'destroyProduccionGavion']);
+
+    /*
+     * Pedidos
+     * */
+
+    Route::get('get-pedidos', [PedidoController::class, 'getPedidos']);
+    Route::post('paginate-pedidos', [PedidoController::class, 'paginatePedidos']);
+    Route::post('store-pedido', [PedidoController::class, 'storePedido']);
+
+    Route::post('update-importe-pedido', [PedidoController::class, 'updateImportePedido']);
+    Route::delete('delete-pedido/{id}', [PedidoController::class, 'destroyPedido']);
+
+    /*
+     * AdquisicionAlambres
+     * */
+
+    Route::get('get-adquisicion-alambres', [AdquisicionAlambreController::class, 'getAdquisicionAlambres']);
+    Route::post('paginate-adquisicion-alambres', [AdquisicionAlambreController::class, 'paginateAdquisicionAlambres']);
+    Route::post('store-adquisicion-alambre', [AdquisicionAlambreController::class, 'storeAdquisicionAlambre']);
+    Route::post('update-adquisicion-alambre', [AdquisicionAlambreController::class, 'updateAdquisicionAlambre']);
+    Route::delete('delete-adquisicion-alambre/{id}', [AdquisicionAlambreController::class, 'destroyAdquisicionAlambre']);
+
+    /*
+     * AdquisicionCajaclavos
+     * */
+
+    Route::get('get-adquisicion-cajaclavos', [AdquisicionCajaclavoController::class, 'getAdquisicionCajaclavos']);
+    Route::post('paginate-adquisicion-cajaclavos', [AdquisicionCajaclavoController::class, 'paginateAdquisicionCajaclavos']);
+    Route::post('store-adquisicion-cajaclavo', [AdquisicionCajaclavoController::class, 'storeAdquisicionCajaclavo']);
+    Route::post('update-adquisicion-cajaclavo', [AdquisicionCajaclavoController::class, 'updateAdquisicionCajaclavo']);
+    Route::delete('delete-adquisicion-cajaclavo/{id}', [AdquisicionCajaclavoController::class, 'destroyAdquisicionCajaclavo']);
+
+
 });
 
 Route::get('users', [UsuarioController::class, 'index']);
@@ -120,3 +172,6 @@ Route::post('login', [AuthController::class, 'login']);
  * */
 
 Route::post('store-reserva', [ReservaController::class, 'storeReserva']);
+
+
+Route::post('update-pedido', [PedidoController::class, 'updatePedido']);

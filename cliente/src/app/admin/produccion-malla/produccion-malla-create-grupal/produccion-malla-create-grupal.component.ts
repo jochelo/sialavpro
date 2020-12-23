@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ProduccionMallaState} from '../../../store/reducers/produccion-malla.reducer';
 import {faPlus, faTrash, faUsersCog} from '@fortawesome/free-solid-svg-icons';
 import {Empleado} from '../../../models/empleado';
@@ -11,11 +11,7 @@ import {Store} from '@ngrx/store';
 import {AdminState} from '../../../store/reducers/admin.reducer';
 import {getMallas, irVistaMalla} from '../../../store/actions/malla.actions';
 import {getEmpleadosMalleros} from '../../../store/actions/empleado.actions';
-import {
-  irVistaProduccionMalla,
-  storeProduccionMallaGrupal,
-  storeProduccionMallaIndividual
-} from '../../../store/actions/produccion-malla.actions';
+import {irVistaProduccionMalla, storeProduccionMallaGrupal} from '../../../store/actions/produccion-malla.actions';
 import * as moment from 'moment';
 
 declare const contentWayPoint: any;
@@ -24,8 +20,7 @@ declare const mobileMenuOutsideClick: any;
 @Component({
   selector: 'app-produccion-malla-create-grupal',
   templateUrl: './produccion-malla-create-grupal.component.html',
-  styles: [
-  ]
+  styles: []
 })
 export class ProduccionMallaCreateGrupalComponent implements OnInit {
 

@@ -17,6 +17,10 @@ export class GavionService {
     return this.http.post(`${this.base}paginate-gaviones`, data);
   }
 
+  getGaviones(): Observable<any> {
+    return this.http.get(`${this.base}get-gaviones`);
+  }
+
   storeGavion(data: any): Observable<any> {
     return this.http.post(`${this.base}store-gavion`, data);
   }

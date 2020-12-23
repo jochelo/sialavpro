@@ -46,20 +46,22 @@
             </div>
           </div>
         </div>-->
+        <div class="row">
+          <div *ngIf="!mallaGroup.get('m2').value" class="col-md-6 form-group">
+            <label for="alto">Alto</label>
+            <input class="form-control" formControlName="alto" id="alto" min="0" name="alto" step="0.1" type="number">
+          </div>
 
-        <div *ngIf="!mallaGroup.get('m2').value" class="form-group">
-          <label for="alto">Alto</label>
-          <input class="form-control" formControlName="alto" id="alto" name="alto" type="number" min="0" step="0.1">
+          <div *ngIf="!mallaGroup.get('m2').value" class="col-md-6 form-group">
+            <label for="largo">Largo</label>
+            <input class="form-control" formControlName="largo" id="largo" min="0" name="largo" step="0.1"
+                   type="number">
+          </div>
         </div>
-
-        <div *ngIf="!mallaGroup.get('m2').value" class="form-group">
-          <label for="largo">Largo</label>
-          <input class="form-control" formControlName="largo" id="largo" name="largo" type="number" min="0" step="0.1">
-        </div>
-
         <div class="form-group">
           <label for="precio">Precio {{ mallaGroup.get('m2').value ? 'por metro cuadrado' : '' }}</label>
-          <input class="form-control" formControlName="precio" id="precio" name="precio" type="number" min="0" step="0.1">
+          <input class="form-control" formControlName="precio" id="precio" min="0" name="precio" step="0.1"
+                 type="number">
         </div>
 
         <hr>
@@ -80,7 +82,8 @@
 
         <div class="form-group">
           <label for="descripcion">Descripción</label>
-          <textarea name="descripcion" id="descripcion" formControlName="descripcion" class="form-control" cols="30" rows="10"></textarea>
+          <textarea class="form-control" cols="30" formControlName="descripcion" id="descripcion" name="descripcion"
+                    rows="10"></textarea>
         </div>
 
         <div class="form-group text-right">
