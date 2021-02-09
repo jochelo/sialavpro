@@ -24,7 +24,7 @@ export interface MallaState {
   loaded: boolean;
   loading: boolean;
   message: string;
-  error: HttpErrorResponse;
+  error: any;
 }
 
 export const initialState: MallaState = {
@@ -56,6 +56,7 @@ const mallaReducer = createReducer(
     loaded: true,
     mallas: props.mallas,
     message: null,
+    error: null,
   })),
   on(getMallasFailure, (state: MallaState, props) => ({
     ...state,
@@ -76,6 +77,7 @@ const mallaReducer = createReducer(
     loaded: true,
     mallas: props.mallas,
     paginacion: props.paginacion,
+    error: null,
     message: null
   })),
   on(paginateMallasFailure, (state: MallaState, props) => ({
@@ -89,7 +91,8 @@ const mallaReducer = createReducer(
     ...state,
     loading: true,
     loaded: false,
-    message: 'Registrando Malla'
+    message: 'Registrando Malla',
+    error: null,
   })),
   on(storeMallaSuccess, (state: MallaState, props) => ({
     ...state,
@@ -130,6 +133,7 @@ const mallaReducer = createReducer(
       return malla;
     }),
     message: null,
+    error: null,
   })),
   on(updateMallaFailure, (state: MallaState, props) => ({
     ...state,
@@ -150,6 +154,7 @@ const mallaReducer = createReducer(
     loaded: true,
     // location: 'index',
     mallas: state.mallas.filter( (malla: Malla) => malla.id !== props.idmalla),
+    error: null,
     message: null,
   })),
   on(deleteMallaFailure, (state: MallaState, props) => ({

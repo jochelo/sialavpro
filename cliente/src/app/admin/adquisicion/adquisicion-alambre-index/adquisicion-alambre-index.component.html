@@ -14,11 +14,10 @@
       <span class="heading-meta">Adquisición de Alambres</span>
       <h2 class="colorlib-heading">Lista de Adquisición de Alambres</h2>
 
-      <alert *ngIf="adquisicionAlambreState.loading" class="text-center" type="info">
-        <fa-icon [icon]="faSpinner" [pulse]="true" size="2x"></fa-icon>
-        <br>
+      <div *ngIf="adquisicionAlambreState.loading" class="text-center">
+        <mat-spinner class="center-block"></mat-spinner>
         <strong>{{ adquisicionAlambreState.message }}</strong>
-      </alert>
+      </div>
       <alert *ngIf="adquisicionAlambreState.error" class="text-center" type="danger">
         {{ adquisicionAlambreState.message }}
       </alert>

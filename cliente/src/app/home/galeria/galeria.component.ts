@@ -18,8 +18,8 @@ export class GaleriaComponent implements OnInit {
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
-    fullHeight();
-    counter();
+    // fullHeight();
+    // counter();
     contentWayPoint();
     mobileMenuOutsideClick();
   }

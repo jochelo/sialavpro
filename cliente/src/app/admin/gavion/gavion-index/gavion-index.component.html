@@ -14,11 +14,10 @@
       <span class="heading-meta">Gaviones</span>
       <h2 class="colorlib-heading">Lista de Gaviones</h2>
 
-      <alert *ngIf="gavionState.loading" class="text-center" type="info">
-        <fa-icon [icon]="faSpinner" [pulse]="true" size="2x"></fa-icon>
-        <br>
+      <div *ngIf="gavionState.loading" class="text-center">
+        <mat-spinner class="center-block"></mat-spinner>
         <strong>{{ gavionState.message }}</strong>
-      </alert>
+      </div>
       <alert *ngIf="gavionState.error" class="text-center" type="danger">
         {{ gavionState.message }}
       </alert>

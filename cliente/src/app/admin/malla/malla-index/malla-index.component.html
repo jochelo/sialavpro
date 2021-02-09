@@ -14,11 +14,15 @@
       <span class="heading-meta">Mallas</span>
       <h2 class="colorlib-heading">Lista de Mallas</h2>
 
-      <alert *ngIf="mallaState.loading" class="text-center" type="info">
+      <!--<alert *ngIf="mallaState.loading" class="text-center" type="info">
         <fa-icon [icon]="faSpinner" [pulse]="true" size="2x"></fa-icon>
         <br>
         <strong>{{ mallaState.message }}</strong>
-      </alert>
+      </alert>-->
+      <div *ngIf="mallaState.loading" class="text-center">
+        <mat-spinner class="center-block"></mat-spinner>
+        <strong>{{ mallaState.message }}</strong>
+      </div>
       <alert *ngIf="mallaState.error" class="text-center" type="danger">
         {{ mallaState.message }}
       </alert>
@@ -26,7 +30,7 @@
   </div>
   <div class="row">
     <div class="col-md-10 offset-md-1 animate-box" data-animate-effect="fadeInLeft">
-      <div *ngIf="!mallaState.loading">
+      <div *ngIf="!mallaState.loading && mallaState.mallas.length > 0">
         <div *ngFor="let malla of mallaState.mallas;let i = index">
           <mat-card class="mt-3">
             <mat-card-header>

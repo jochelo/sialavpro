@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Malla;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class MallaController extends Controller
 {
-    public function storeMalla() {
+    public function storeMalla()
+    {
+        $this->validar(\request());
         $mallaRequest = \request()->all();
         if (\request()->hasFile('foto')) {
             $path = \request()->file('foto')->store('imgMallas', 's3');
@@ -44,7 +47,19 @@ class MallaController extends Controller
         return response()->json($malla, 201);
     }
 
-    public function updateMalla() {
+    protected function validar(Request $request)
+    {
+        $this->validate($request, [
+            'tipoMalla' => 'required|in:hexagonal,olimpica,ganadera,milimetrica puntas abiertas,milimetrica puntas cerradas,presoldada',
+            'alto' => 'required|numeric|min:0.4|max:5|',
+            'largo' => 'required|numeric|min:2|max:300|',
+            'precio' => 'required|numeric|min:0.1|max:2000|',
+        ]);
+    }
+
+    public function updateMalla()
+    {
+        $this->validar(\request());
         $mallaRequest = \request()->all();
         $malla = Malla::find($mallaRequest['id']);
         if (\request()->hasFile('foto')) {
@@ -83,19 +98,22 @@ class MallaController extends Controller
         return response()->json($malla, 201);
     }
 
-    public function getMallas() {
+    public function getMallas()
+    {
         $mallas = Malla::orderBy('tipoMalla')->get();
         return response()->json($mallas, 200);
     }
 
-    public function paginateMallas() {
+    public function paginateMallas()
+    {
         $items = \request()->input('items');
         $mallas = Malla::orderBy('tipoMalla')->paginate($items);
         // $mallas = Malla::get();
         return response()->json($mallas, 200);
     }
 
-    public function destroyMalla($id) {
+    public function destroyMalla($id)
+    {
         $malla = Malla::find($id);
         $malla->delete();
 

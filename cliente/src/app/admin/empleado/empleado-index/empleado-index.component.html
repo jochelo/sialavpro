@@ -4,7 +4,7 @@
       <div class="col-12 text-right">
         <button (click)="onCreate()" class="btn btn-primary">
           <fa-icon [icon]="faPlus"></fa-icon>
-          NUEVO TRABAJOR
+          NUEVO TRABAJADOR
         </button>
       </div>
     </div>
@@ -14,11 +14,10 @@
       <span class="heading-meta">Trabajadores</span>
       <h2 class="colorlib-heading">Lista de Trabajadores</h2>
 
-      <alert *ngIf="empleadoState.loading" class="text-center" type="info">
-        <fa-icon [icon]="faSpinner" [pulse]="true" size="2x"></fa-icon>
-        <br>
+      <div *ngIf="empleadoState.loading" class="text-center">
+        <mat-spinner class="center-block"></mat-spinner>
         <strong>{{ empleadoState.message }}</strong>
-      </alert>
+      </div>
       <alert *ngIf="empleadoState.error" class="text-center" type="danger">
         {{ empleadoState.message }}
       </alert>

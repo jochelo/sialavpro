@@ -14,11 +14,11 @@
       <span class="heading-meta">Alambres</span>
       <h2 class="colorlib-heading">Lista de Alambres</h2>
 
-      <alert *ngIf="alambreState.loading" class="text-center" type="info">
-        <fa-icon [icon]="faSpinner" [pulse]="true" size="2x"></fa-icon>
-        <br>
+      <div *ngIf="alambreState.loading" class="text-center">
+        <mat-spinner class="center-block"></mat-spinner>
         <strong>{{ alambreState.message }}</strong>
-      </alert>
+      </div>
+
       <alert *ngIf="alambreState.error" class="text-center" type="danger">
         {{ alambreState.message }}
       </alert>
@@ -42,7 +42,7 @@
               </mat-card-title>
 
               <mat-card-subtitle>
-                <p><strong>{{ 'PRECIO: ' }}</strong>{{ alambre.precio + ' Bs.'}}</p>
+                <p><strong>{{ 'AWG: ' }}</strong>{{ alambre.awg }}</p>
               </mat-card-subtitle>
 
             </mat-card-header>
@@ -57,7 +57,7 @@
                     {{ ' ' + alambre.cantidad }}
                     <small>{{ ' Rollos Disponibles' }}</small>
                   </h3>
-                  <p><strong>{{ 'AWG: ' }}</strong>{{ alambre.awg }}</p>
+                  <p><strong>{{ 'Precio: ' }}</strong>{{ alambre.precio + ' Bs.'}}</p>
                   <p><strong>{{ 'Peso: ' }}</strong>{{ alambre.peso }}</p>
                   <p *ngIf="alambre.descripcion !== null"><strong>{{ 'Descripción: ' }}</strong>{{ alambre.descripcion }}
                   </p>

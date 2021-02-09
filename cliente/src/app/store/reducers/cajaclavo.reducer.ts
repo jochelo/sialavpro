@@ -24,7 +24,7 @@ export interface CajaclavoState {
   loaded: boolean;
   loading: boolean;
   message: string;
-  error: HttpErrorResponse;
+  error: any;
 }
 
 export const initialState: CajaclavoState = {
@@ -55,7 +55,8 @@ const cajaclavoReducer = createReducer(
     loading: false,
     loaded: true,
     cajaclavos: props.cajaclavos,
-    message: null
+    message: null,
+    error: null
   })),
   on(getCajaclavosFailure, (state: CajaclavoState, props) => ({
     ...state,
@@ -76,7 +77,8 @@ const cajaclavoReducer = createReducer(
     loaded: true,
     cajaclavos: props.cajaclavos,
     paginacion: props.paginacion,
-    message: null
+    message: null,
+    error: null
   })),
   on(paginateCajaclavosFailure, (state: CajaclavoState, props) => ({
     ...state,
@@ -99,6 +101,7 @@ const cajaclavoReducer = createReducer(
     cajaclavos: [...state.cajaclavos, props.cajaclavo],
     cajaclavo: props.cajaclavo,
     message: null,
+    error: null
   })),
   on(storeCajaclavoFailure, (state: CajaclavoState, props) => ({
     ...state,
@@ -130,6 +133,7 @@ const cajaclavoReducer = createReducer(
       return cajaclavo;
     }),
     message: null,
+    error: null
   })),
   on(updateCajaclavoFailure, (state: CajaclavoState, props) => ({
     ...state,
@@ -151,6 +155,7 @@ const cajaclavoReducer = createReducer(
     // location: 'index',
     cajaclavos: state.cajaclavos.filter( (cajaclavo: Cajaclavo) => cajaclavo.id !== props.idcajaclavo),
     message: null,
+    error: null
   })),
   on(deleteCajaclavoFailure, (state: CajaclavoState, props) => ({
     ...state,

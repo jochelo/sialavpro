@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\Storage;
 
 class GavionController extends Controller
 {
-    public function storeGavion() {
+    public function storeGavion()
+    {
+        $this->validar(\request());
         $gavionRequest = \request()->all();
         if (\request()->hasFile('foto')) {
             $path = \request()->file('foto')->store('imgGaviones', 's3');
@@ -28,7 +30,21 @@ class GavionController extends Controller
         return response()->json($gavion, 201);
     }
 
-    public function updateGavion() {
+    protected function validar(Request $request)
+    {
+        $this->validate($request, [
+            'tipoGavion' => 'required|in:gavion,colchoneta',
+            'alto' => 'required|numeric|min:0.5|max:6|',
+            'largo' => 'required|numeric|min:0.5|max:100|',
+            'ancho' => 'required|numeric|min:0.5|max:100|',
+            'precio' => 'required|numeric|min:10|max:2000|',
+            'numeroDiafragma' => 'nullable|numeric|min:0|max:7'
+        ]);
+    }
+
+    public function updateGavion()
+    {
+        $this->validar(\request());
         $gavionRequest = \request()->all();
         $gavion = Gavion::find($gavionRequest['id']);
         if (\request()->hasFile('foto')) {
@@ -48,19 +64,22 @@ class GavionController extends Controller
         return response()->json($gavion, 201);
     }
 
-    public function getGaviones() {
+    public function getGaviones()
+    {
         $gaviones = Gavion::orderBy('tipoGavion')->get();
         return response()->json($gaviones, 200);
     }
 
-    public function paginateGaviones() {
+    public function paginateGaviones()
+    {
         $items = \request()->input('items');
         $gaviones = Gavion::orderBy('tipoGavion')->paginate($items);
         // $gaviones = Gavion::get();
         return response()->json($gaviones, 200);
     }
 
-    public function destroyGavion($id) {
+    public function destroyGavion($id)
+    {
         $gavion = Gavion::find($id);
         $gavion->delete();
 

@@ -63,17 +63,15 @@ export class PedidoIndexComponent implements OnInit {
     }));
   }
 
-  onEntregar(check: boolean, pedido: Pedido): void {
+  onEntregar(pedido: Pedido): void {
     if (confirm('¿Esta seguro de actualizar el estado del pedido a ENTREGADO?')) {
-      if (check) {
-        const data = {
-          id: pedido.id,
-          entregado: true
-        };
-        this.store.dispatch(updatePedido({
-          pedido: data
-        }));
-      }
+      const data = {
+        id: pedido.id,
+        entregado: true
+      };
+      this.store.dispatch(updatePedido({
+        pedido: data
+      }));
     }
   }
 

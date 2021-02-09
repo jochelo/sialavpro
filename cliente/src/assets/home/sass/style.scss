@@ -178,7 +178,7 @@ figure {
   //padding-top: 3em;
   padding-bottom: 40px;
   padding-left: 3em;
-  padding-right: 3em;
+  padding-right: 1em;
   width: 23%;
   position: fixed;
   bottom: 0;
@@ -450,13 +450,13 @@ figure {
 						color: rgba($brand-black,.8);
 					}
 				}
-				.heading-section{
-					font-size: 50px;
-					@media screen and (max-width: $screen-sm){
-						font-size: 30px;
-					}
-				}s
-				.colorlib-lead{
+				.heading-section {
+          font-size: 50px;
+          @media screen and (max-width: $screen-sm) {
+            font-size: 30px;
+          }
+        }
+        .colorlib-lead{
 					font-size: 20px;
 					color: $brand-white;
 				}
@@ -500,7 +500,9 @@ body {
 			z-index: 999;
 			position: fixed;
 		}
-		#colorlib-main, .colorlib-nav-toggle {
+		#colorlib-main {
+      top: 0;
+    } .colorlib-nav-toggle {
 			top: 0;
 			@include translateX(270px);
 		}

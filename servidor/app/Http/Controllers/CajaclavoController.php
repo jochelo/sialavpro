@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 class CajaclavoController extends Controller
 {
     public function storeCajaclavo() {
+        $this->validar(\request());
         $cajaclavoRequest = \request()->all();
         if (\request()->hasFile('foto')) {
             $path = \request()->file('foto')->store('imgCajaclavos', 's3');
@@ -28,7 +29,18 @@ class CajaclavoController extends Controller
         return response()->json($cajaclavo, 201);
     }
 
+    protected function validar(Request $request) {
+        $this->validate($request, [
+            'tipoClavo' => 'required|in:construccion,calamina',
+            'largo' => 'required|numeric|min:0.2|max:30|',
+            'bwg' => 'required|numeric|min:4|max:25|',
+            'precio' => 'required|numeric|min:5|max:700|',
+            'numeroBolsas' => 'required|numeric|min:1|max:200|',
+        ]);
+    }
+
     public function updateCajaclavo() {
+        $this->validar(\request());
         $cajaclavoRequest = \request()->all();
         $cajaclavo = Cajaclavo::find($cajaclavoRequest['id']);
         if (\request()->hasFile('foto')) {

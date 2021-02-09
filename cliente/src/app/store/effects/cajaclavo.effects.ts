@@ -76,12 +76,15 @@ export class CajaclavoEffects {
             .pipe(
               map((response: Cajaclavo) => {
                 this.spinner.hide();
-                this.toastr.success('Cajaclavo registrada Exitosamente');
+                this.toastr.success('Caja de clavos registrada Exitosamente');
                 return storeCajaclavoSuccess({
                   cajaclavo: response
                 });
               }),
-              catchError(error => of(storeCajaclavoFailure(error)))
+              catchError(error => {
+                this.spinner.hide();
+                return of(storeCajaclavoFailure(error));
+              })
             );
         })
       ));
@@ -96,12 +99,15 @@ export class CajaclavoEffects {
             .pipe(
               map((response: Cajaclavo) => {
                 this.spinner.hide();
-                this.toastr.success('Cajaclavo actualizada Exitosamente');
+                this.toastr.success('Caja de clavos actualizada Exitosamente');
                 return updateCajaclavoSuccess({
                   cajaclavo: response
                 });
               }),
-              catchError(error => of(updateCajaclavoFailure(error)))
+              catchError(error => {
+                this.spinner.hide();
+                return of(updateCajaclavoFailure(error));
+              })
             );
         })
       ));
@@ -116,7 +122,7 @@ export class CajaclavoEffects {
             .pipe(
               map((response: number) => {
                 this.spinner.hide();
-                this.toastr.success('Cajaclavo eliminada Exitosamente');
+                this.toastr.success('Caja de clavos eliminada Exitosamente');
                 return deleteCajaclavoSuccess({
                   idcajaclavo: response
                 });

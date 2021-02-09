@@ -59,22 +59,24 @@ import {ProduccionGavionComponent} from './produccion-gavion/produccion-gavion.c
 import {ProduccionGavionCreateGrupalComponent} from './produccion-gavion/produccion-gavion-create-grupal/produccion-gavion-create-grupal.component';
 import {ProduccionGavionCreateIndividualComponent} from './produccion-gavion/produccion-gavion-create-individual/produccion-gavion-create-individual.component';
 import {ProduccionGavionIndexComponent} from './produccion-gavion/produccion-gavion-index/produccion-gavion-index.component';
-import { PedidoComponent } from './pedido/pedido.component';
-import { PedidoIndexComponent } from './pedido/pedido-index/pedido-index.component';
-import { PedidoCreateComponent } from './pedido/pedido-create/pedido-create.component';
-import { PedidoEditComponent } from './pedido/pedido-edit/pedido-edit.component';
+import {PedidoComponent} from './pedido/pedido.component';
+import {PedidoIndexComponent} from './pedido/pedido-index/pedido-index.component';
+import {PedidoCreateComponent} from './pedido/pedido-create/pedido-create.component';
+import {PedidoEditComponent} from './pedido/pedido-edit/pedido-edit.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
-import { DialogPedidoComponent } from './dialog-pedido/dialog-pedido.component';
-import { AdquisicionComponent } from './adquisicion/adquisicion.component';
-import { AdquisicionAlambreIndexComponent } from './adquisicion/adquisicion-alambre-index/adquisicion-alambre-index.component';
-import { AdquisicionAlambreCreateComponent } from './adquisicion/adquisicion-alambre-create/adquisicion-alambre-create.component';
-import { AdquisicionCajaclavoIndexComponent } from './adquisicion/adquisicion-cajaclavo-index/adquisicion-cajaclavo-index.component';
-import { AdquisicionCajaclavoCreateComponent } from './adquisicion/adquisicion-cajaclavo-create/adquisicion-cajaclavo-create.component';
+import {DialogPedidoComponent} from './dialog-pedido/dialog-pedido.component';
+import {AdquisicionComponent} from './adquisicion/adquisicion.component';
+import {AdquisicionAlambreIndexComponent} from './adquisicion/adquisicion-alambre-index/adquisicion-alambre-index.component';
+import {AdquisicionAlambreCreateComponent} from './adquisicion/adquisicion-alambre-create/adquisicion-alambre-create.component';
+import {AdquisicionCajaclavoIndexComponent} from './adquisicion/adquisicion-cajaclavo-index/adquisicion-cajaclavo-index.component';
+import {AdquisicionCajaclavoCreateComponent} from './adquisicion/adquisicion-cajaclavo-create/adquisicion-cajaclavo-create.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -149,6 +151,8 @@ import { AdquisicionCajaclavoCreateComponent } from './adquisicion/adquisicion-c
     MatListModule,
     MatSlideToggleModule,
     MatDialogModule,
+    MatSidenavModule,
+    MatProgressSpinnerModule,
     FontAwesomeModule,
     TooltipModule,
     NgxNavbarModule,

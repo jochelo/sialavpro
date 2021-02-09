@@ -14,11 +14,10 @@
       <span class="heading-meta">Clientes</span>
       <h2 class="colorlib-heading">Lista de Clientes</h2>
 
-      <alert *ngIf="clienteState.loading" class="text-center" type="info">
-        <fa-icon [icon]="faSpinner" [pulse]="true" size="2x"></fa-icon>
-        <br>
+      <div *ngIf="clienteState.loading" class="text-center">
+        <mat-spinner class="center-block"></mat-spinner>
         <strong>{{ clienteState.message }}</strong>
-      </alert>
+      </div>
       <alert *ngIf="clienteState.error" class="text-center" type="danger">
         {{ clienteState.message }}
       </alert>

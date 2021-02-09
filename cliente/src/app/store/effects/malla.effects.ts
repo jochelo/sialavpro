@@ -81,7 +81,10 @@ export class MallaEffects {
                   malla: response
                 });
               }),
-              catchError(error => of(storeMallaFailure(error)))
+              catchError(error => {
+                this.spinner.hide();
+                return of(storeMallaFailure(error));
+              })
             );
         })
       ));
@@ -101,7 +104,10 @@ export class MallaEffects {
                   malla: response
                 });
               }),
-              catchError(error => of(updateMallaFailure(error)))
+              catchError(error => {
+                this.spinner.hide();
+                return of(updateMallaFailure(error));
+              })
             );
         })
       ));

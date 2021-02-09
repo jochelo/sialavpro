@@ -10,7 +10,9 @@
       <form [formGroup]="mallaGroup">
         <div class="form-group">
           <label for="tipoMalla">Tipo de Malla</label>
-          <select class="form-control" formControlName="tipoMalla" id="tipoMalla"
+          <select class="form-control"
+                  [class.is-invalid]="mallaState.error !== null && mallaState.error.errors.tipoMalla !== undefined"
+                  formControlName="tipoMalla" id="tipoMalla"
                   name="tipoMalla">
             <!--<option [selected]="true">Seleccione el tipo de Malla</option>-->
             <option value="hexagonal">Malla Hexagonal</option>
@@ -20,6 +22,9 @@
             <option value="milimetrica puntas cerradas">Malla Milimetrica de puntas cerradas</option>
             <option value="presoldada">Malla Presoldada</option>
           </select>
+          <p *ngIf="mallaState.error !== null" class="text-danger">
+            <small>{{ mallaState.error.errors?.tipoMalla }}</small>
+          </p>
         </div>
 <!--
         <div class="form-group">
@@ -50,19 +55,35 @@
         <div class="row">
           <div *ngIf="!mallaGroup.get('m2').value" class="col-md-6 form-group">
             <label for="alto">Alto</label>
-            <input class="form-control" formControlName="alto" id="alto" min="0" name="alto" step="0.1" type="number">
+            <input class="form-control"
+                   [class.is-invalid]="mallaState.error !== null && mallaState.error.errors.alto !== undefined"
+                   formControlName="alto" id="alto" min="0" name="alto" step="0.1" type="number">
+            <p *ngIf="mallaState.error !== null" class="text-danger">
+              <small>{{ mallaState.error.errors?.alto }}</small>
+            </p>
           </div>
 
           <div *ngIf="!mallaGroup.get('m2').value" class="col-md-6 form-group">
             <label for="largo">Largo</label>
-            <input class="form-control" formControlName="largo" id="largo" min="0" name="largo" step="0.1"
+            <input class="form-control"
+                   [class.is-invalid]="mallaState.error !== null && mallaState.error.errors.largo !== undefined"
+                   formControlName="largo" id="largo" min="0" name="largo" step="0.1"
                    type="number">
+            <p *ngIf="mallaState.error !== null" class="text-danger">
+              <small>{{ mallaState.error.errors?.largo }}</small>
+            </p>
           </div>
         </div>
 
         <div class="form-group">
           <label for="precio">Precio {{ mallaGroup.get('m2').value ? 'por metro cuadrado' : '' }}</label>
-          <input class="form-control" formControlName="precio" id="precio" name="precio" type="number" min="0" step="0.1">
+          <input class="form-control"
+                 [class.is-invalid]="mallaState.error !== null && mallaState.error.errors.precio !== undefined"
+                 formControlName="precio" id="precio" min="0" name="precio" step="0.1"
+                 type="number">
+          <p *ngIf="mallaState.error !== null" class="text-danger">
+            <small>{{ mallaState.error.errors?.precio }}</small>
+          </p>
         </div>
 
         <hr>

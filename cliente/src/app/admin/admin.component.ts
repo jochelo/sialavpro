@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {faCaretDown, faCaretUp, faSignOutAlt, faUserCircle} from '@fortawesome/free-solid-svg-icons';
 import {Router} from '@angular/router';
 import {items} from './admin-items';
@@ -11,6 +11,9 @@ import {AdminState} from '../store/reducers/admin.reducer';
 import {AuthService} from '../auth.service';
 import {ToastrService} from 'ngx-toastr';
 import {setAuth} from '../store/actions/auth.actions';
+import {MatDrawer} from '@angular/material/sidenav';
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import {faGithub} from '@fortawesome/free-brands-svg-icons';
 
 declare const burgerMenu: any;
 declare const $: any;
@@ -22,12 +25,17 @@ declare const $: any;
 })
 export class AdminComponent implements OnInit {
 
+  @ViewChild('menu') menu: MatDrawer;
+
   BASE_URL = environment.base;
 
   faUserCircle = faUserCircle;
+  faGithub = faGithub;
   faSignOutAlt = faSignOutAlt;
   faCaretDown = faCaretDown;
   faCaretUp = faCaretUp;
+
+  smallScreen: boolean;
 
   items = [];
   isCollapse = false;
@@ -40,7 +48,14 @@ export class AdminComponent implements OnInit {
   constructor(public router: Router,
               private toastr: ToastrService,
               private authService: AuthService,
+              private breakPoint: BreakpointObserver,
               private store$: Store<AdminState>) {
+    this.breakPoint.observe([
+      Breakpoints.Small,
+      Breakpoints.XSmall
+    ]).subscribe(result => {
+      this.smallScreen = result.matches;
+    });
   }
 
   ngOnInit(): void {
@@ -61,6 +76,14 @@ export class AdminComponent implements OnInit {
     }
   }
 
+  /*onShowNav(): boolean {
+    if (!this.smallScreen) {
+      return true;
+    } else {
+      this.menu.toggle();
+    }
+  }*/
+
   onLimpiar(): any {
     this.items = this.items.map((it: any) => {
       it.isCollapsed = true;
@@ -79,9 +102,13 @@ export class AdminComponent implements OnInit {
 
   onCollapseMenu(): void {
     if ($('body').hasClass('offcanvas')) {
-      $('body').removeClass('offcanvas');
-      $('.js-colorlib-nav-toggle').removeClass('active');
-
+      if (this.smallScreen) {
+        $('body').removeClass('offcanvas');
+        $('.js-colorlib-nav-toggle').removeClass('active');
+      }
+    }
+    if (this.smallScreen) {
+      // this.menu.toggle();
     }
   }
 

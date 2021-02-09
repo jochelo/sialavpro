@@ -10,29 +10,49 @@
       <form [formGroup]="alambreGroup">
         <div class="form-group">
           <label for="tipoAlambre">Tipo de Alambre</label>
-          <select class="form-control" formControlName="tipoAlambre" id="tipoAlambre"
+          <select class="form-control"
+                  [class.is-invalid]="alambreState.error !== null && alambreState.error.errors.tipoGavion !== undefined"
+                  formControlName="tipoAlambre" id="tipoAlambre"
                   name="tipoAlambre">
             <option value="amarre">Alambre de Amarre</option>
             <option value="galvanizado">Alambre Galvanizado</option>
             <option value="puas">Alambre de Puas</option>
           </select>
+          <p *ngIf="alambreState.error !== null" class="text-danger">
+            <small>{{ alambreState.error.errors?.tipoGavion }}</small>
+          </p>
         </div>
 
         <div class="form-group">
           <label for="awg">{{ 'AWG (Número de Alambre)' }}</label>
-          <input class="custom-range" formControlName="awg" id="awg" max="22" min="1" name="awg" step="1"
+          <input class="custom-range"
+                 [class.is-invalid]="alambreState.error !== null && alambreState.error.errors.awg !== undefined"
+                 formControlName="awg" id="awg" max="22" min="1" name="awg" step="1"
                  type="range">
           <p class="text-right"><strong>{{ alambreGroup.get('awg').value ? alambreGroup.get('awg').value : 0 }}</strong></p>
+          <p *ngIf="alambreState.error !== null" class="text-danger">
+            <small>{{ alambreState.error.errors?.awg }}</small>
+          </p>
         </div>
 
         <div class="form-group">
           <label for="peso">Peso</label>
-          <input class="form-control" formControlName="peso" id="peso" name="peso" type="number" min="0" step="0.01">
+          <input class="form-control"
+                 [class.is-invalid]="alambreState.error !== null && alambreState.error.errors.peso !== undefined"
+                 formControlName="peso" id="peso" name="peso" type="number" min="0" step="0.01">
+          <p *ngIf="alambreState.error !== null" class="text-danger">
+            <small>{{ alambreState.error.errors?.peso }}</small>
+          </p>
         </div>
 
         <div class="form-group">
           <label for="precio">Precio</label>
-          <input class="form-control" formControlName="precio" id="precio" name="precio" type="number" min="0" step="0.1">
+          <input class="form-control"
+                 [class.is-invalid]="alambreState.error !== null && alambreState.error.errors.precio !== undefined"
+                 formControlName="precio" id="precio" name="precio" type="number" min="0" step="0.1">
+          <p *ngIf="alambreState.error !== null" class="text-danger">
+            <small>{{ alambreState.error.errors?.precio }}</small>
+          </p>
         </div>
 
         <hr>

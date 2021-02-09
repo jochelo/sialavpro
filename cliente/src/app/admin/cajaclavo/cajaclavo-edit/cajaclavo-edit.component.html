@@ -10,11 +10,16 @@
       <form [formGroup]="cajaclavoGroup">
         <div class="form-group">
           <label for="tipoClavo">Tipo de Clavo</label>
-          <select class="form-control" formControlName="tipoClavo" id="tipoClavo"
+          <select class="form-control"
+                  [class.is-invalid]="cajaclavoState.error !== null && cajaclavoState.error.errors.tipoClavo !== undefined"
+                  formControlName="tipoClavo" id="tipoClavo"
                   name="tipoClavo">
             <option value="calamina">Clavo de Calamina</option>
             <option value="construccion">Clavo de Construcción</option>
           </select>
+          <p *ngIf="cajaclavoState.error !== null" class="text-danger">
+            <small>{{ cajaclavoState.error.errors?.tipoClavo }}</small>
+          </p>
         </div>
 
         <div class="form-group">
@@ -22,12 +27,16 @@
           <div class="row">
             <div class="col-6">
               <input (ngModelChange)="onChangeLongitud()"
+                     [class.is-invalid]="cajaclavoState.error !== null && cajaclavoState.error.errors.largo !== undefined"
                      class="form-control"
                      tooltip="Entero"
                      placeholder="Entero"
                      formControlName="largo"
                      id="largo"
                      name="largo" type="number">
+              <p *ngIf="cajaclavoState.error !== null" class="text-danger">
+                <small>{{ cajaclavoState.error.errors?.largo }}</small>
+              </p>
             </div>
             <div class="col-6">
               <ng-select [items]="fracciones" bindLabel="fraccion"
@@ -43,22 +52,37 @@
 
         <div class="form-group">
           <label for="bwg">BWG (Calibre)</label>
-          <input class="custom-range" formControlName="bwg" id="bwg" max="22" min="5" name="bwg"
+          <input class="custom-range"
+                 [class.is-invalid]="cajaclavoState.error !== null && cajaclavoState.error.errors.bwg !== undefined"
+                 formControlName="bwg" id="bwg" max="22" min="5" name="bwg"
                  type="range">
           <p class="text-right">
             <strong>{{ cajaclavoGroup.get('bwg').value ? cajaclavoGroup.get('bwg').value : 0 }}</strong></p>
+          <p *ngIf="cajaclavoState.error !== null" class="text-danger">
+            <small>{{ cajaclavoState.error.errors?.bwg }}</small>
+          </p>
         </div>
 
         <div class="form-group">
           <label for="precio">Precio de la Caja</label>
-          <input class="form-control" formControlName="precio" id="precio" min="0" name="precio"
+          <input class="form-control"
+                 [class.is-invalid]="cajaclavoState.error !== null && cajaclavoState.error.errors.precio !== undefined"
+                 formControlName="precio" id="precio" min="0" name="precio"
                  step="0.1" type="number">
+          <p *ngIf="cajaclavoState.error !== null" class="text-danger">
+            <small>{{ cajaclavoState.error.errors?.precio }}</small>
+          </p>
         </div>
 
         <div class="form-group">
           <label for="numeroBolsas">Número de Bolsas</label>
-          <input class="form-control" formControlName="numeroBolsas" id="numeroBolsas" min="0" name="numeroBolsas"
-                 step="0.1" type="number">
+          <input class="form-control"
+                 [class.is-invalid]="cajaclavoState.error !== null && cajaclavoState.error.errors.numeroBolsas !== undefined"
+                 formControlName="numeroBolsas" id="numeroBolsas" min="0" name="numeroBolsas"
+                 step="1" type="number">
+          <p *ngIf="cajaclavoState.error !== null" class="text-danger">
+            <small>{{ cajaclavoState.error.errors?.numeroBolsas }}</small>
+          </p>
         </div>
 
         <hr>

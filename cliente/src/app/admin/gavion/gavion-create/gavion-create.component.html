@@ -10,12 +10,17 @@
       <form [formGroup]="gavionGroup">
         <div class="form-group">
           <label for="tipoGavion">Tipo de Gavion</label>
-          <select (change)="onTipoGavion()" class="form-control" formControlName="tipoGavion" id="tipoGavion"
+          <select (change)="onTipoGavion()"
+                  [class.is-invalid]="gavionState.error !== null && gavionState.error.errors.tipoGavion !== undefined"
+                  class="form-control" formControlName="tipoGavion" id="tipoGavion"
                   name="tipoGavion">
             <option [selected]="true">Seleccione el tipo de Gavion</option>
             <option value="gavion">Gavion</option>
             <option value="colchoneta">Colchoneta</option>
           </select>
+          <p *ngIf="gavionState.error !== null" class="text-danger">
+            <small>{{ gavionState.error.errors?.tipoGavion }}</small>
+          </p>
         </div>
         <!--
                 <div class="form-group">
@@ -35,31 +40,56 @@
         <div class="row">
           <div class="col-md-4 form-group">
             <label for="alto">Alto</label>
-            <input class="form-control" formControlName="alto" id="alto" min="0" name="alto" step="0.1" type="number">
+            <input class="form-control"
+                   [class.is-invalid]="gavionState.error !== null && gavionState.error.errors.alto !== undefined"
+                   formControlName="alto" id="alto" min="0" name="alto" step="0.1" type="number">
+            <p *ngIf="gavionState.error !== null" class="text-danger">
+              <small>{{ gavionState.error.errors?.alto }}</small>
+            </p>
           </div>
 
           <div class="col-md-4 form-group">
             <label for="largo">Largo</label>
-            <input class="form-control" formControlName="largo" id="largo" min="0" name="largo" step="0.1"
+            <input class="form-control"
+                   [class.is-invalid]="gavionState.error !== null && gavionState.error.errors.largo !== undefined"
+                   formControlName="largo" id="largo" min="0" name="largo" step="0.1"
                    type="number">
+            <p *ngIf="gavionState.error !== null" class="text-danger">
+              <small>{{ gavionState.error.errors?.largo }}</small>
+            </p>
           </div>
 
           <div class="col-md-4 form-group">
             <label for="ancho">Ancho</label>
-            <input class="form-control" formControlName="ancho" id="ancho" min="0" name="ancho" step="0.1"
+            <input class="form-control"
+                   [class.is-invalid]="gavionState.error !== null && gavionState.error.errors.ancho !== undefined"
+                   formControlName="ancho" id="ancho" min="0" name="ancho" step="0.1"
                    type="number">
+            <p *ngIf="gavionState.error !== null" class="text-danger">
+              <small>{{ gavionState.error.errors?.ancho }}</small>
+            </p>
           </div>
         </div>
         <div *ngIf="gavionGroup.get('tipoGavion').value === 'colchoneta'" class="form-group">
           <label for="numeroDiafragma">Cantidad de Diafragmas</label>
-          <input class="form-control" formControlName="numeroDiafragma" id="numeroDiafragma" min="0"
+          <input class="form-control"
+                 [class.is-invalid]="gavionState.error !== null && gavionState.error.errors.numeroDiafragma !== undefined"
+                 formControlName="numeroDiafragma" id="numeroDiafragma" min="0"
                  name="numeroDiafragma" step="0.1" type="number">
+          <p *ngIf="gavionState.error !== null" class="text-danger">
+            <small>{{ gavionState.error.errors?.numeroDiafragma }}</small>
+          </p>
         </div>
 
         <div class="form-group">
           <label for="precio">Precio</label>
-          <input class="form-control" formControlName="precio" id="precio" min="0" name="precio" step="0.1"
+          <input class="form-control"
+                 [class.is-invalid]="gavionState.error !== null && gavionState.error.errors.precio !== undefined"
+                 formControlName="precio" id="precio" min="0" name="precio" step="0.1"
                  type="number">
+          <p *ngIf="gavionState.error !== null" class="text-danger">
+            <small>{{ gavionState.error.errors?.precio }}</small>
+          </p>
         </div>
 
         <hr>

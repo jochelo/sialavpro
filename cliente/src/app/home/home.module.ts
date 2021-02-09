@@ -18,6 +18,7 @@ import {EffectsModule} from '@ngrx/effects';
 import {adminEffects} from '../store/effects/admin.effects';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxSpinnerModule} from 'ngx-spinner';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import {NgxSpinnerModule} from 'ngx-spinner';
       apiKey: 'AIzaSyBx7k91omz7bxO7JtikAN0VV60yWUsbHtA',
       libraries: ['places']
     }),
+    MatSidenavModule,
     AlertModule
   ],
 })

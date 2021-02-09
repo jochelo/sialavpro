@@ -4,11 +4,10 @@
       <span class="heading-meta">Reservas</span>
       <h2 class="colorlib-heading">Lista de Reservas</h2>
 
-      <alert *ngIf="reservaState.loading" class="text-center" type="info">
-        <fa-icon [icon]="faSpinner" [pulse]="true" size="2x"></fa-icon>
-        <br>
+      <div *ngIf="reservaState.loading" class="text-center">
+        <mat-spinner class="center-block"></mat-spinner>
         <strong>{{ reservaState.message }}</strong>
-      </alert>
+      </div>
       <alert *ngIf="reservaState.error" class="text-center" type="danger">
         {{ reservaState.message }}
       </alert>

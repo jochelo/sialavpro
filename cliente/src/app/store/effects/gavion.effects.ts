@@ -83,7 +83,10 @@ export class GavionEffects {
                   gavion: response
                 });
               }),
-              catchError(error => of(storeGavionFailure(error)))
+              catchError(error => {
+                this.spinner.hide();
+                return of(storeGavionFailure(error));
+              })
             );
         })
       ));
@@ -103,7 +106,10 @@ export class GavionEffects {
                   gavion: response
                 });
               }),
-              catchError(error => of(updateGavionFailure(error)))
+              catchError(error => {
+                this.spinner.hide();
+                return of(updateGavionFailure(error));
+              })
             );
         })
       ));

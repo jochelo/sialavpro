@@ -2,7 +2,7 @@ import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {PedidoState} from '../../../store/reducers/pedido.reducer';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 import {faArrowRight, faEdit, faEllipsisV, faPlus, faSyncAlt, faTimes, faTrash} from '@fortawesome/free-solid-svg-icons';
-import {irVistaPedido, storePedido} from '../../../store/actions/pedido.actions';
+import {storePedido} from '../../../store/actions/pedido.actions';
 import {Store} from '@ngrx/store';
 import {AdminState} from '../../../store/reducers/admin.reducer';
 import {ClienteState} from '../../../store/reducers/cliente.reducer';
@@ -370,7 +370,8 @@ export class PedidoCreateComponent implements OnInit {
       });
 
       this.pedidoGroup.patchValue({
-        cliente_id: this.searchGroup.value.cliente_id
+        cliente_id: this.searchGroup.value.cliente_id,
+        cancelado: this.pedidoGroup.value.cancelado ? this.pedidoGroup.value.cancelado : 0
       });
 
       this.store.dispatch(storePedido({

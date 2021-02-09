@@ -14,11 +14,10 @@
       <span class="heading-meta">Adquisición de Cajas de clavos</span>
       <h2 class="colorlib-heading">Lista de Adquisición de Cajas de clavos</h2>
 
-      <alert *ngIf="adquisicionCajaclavoState.loading" class="text-center" type="info">
-        <fa-icon [icon]="faSpinner" [pulse]="true" size="2x"></fa-icon>
-        <br>
+      <div *ngIf="adquisicionCajaclavoState.loading" class="text-center">
+        <mat-spinner class="center-block"></mat-spinner>
         <strong>{{ adquisicionCajaclavoState.message }}</strong>
-      </alert>
+      </div>
       <alert *ngIf="adquisicionCajaclavoState.error" class="text-center" type="danger">
         {{ adquisicionCajaclavoState.message }}
       </alert>

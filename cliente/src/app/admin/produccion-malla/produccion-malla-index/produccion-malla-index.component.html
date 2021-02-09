@@ -41,11 +41,10 @@
         </button>
       </h2>
 
-      <alert *ngIf="produccionMallaState.loading" class="text-center" type="info">
-        <fa-icon [icon]="faSpinner" [pulse]="true" size="2x"></fa-icon>
-        <br>
+      <div *ngIf="produccionMallaState.loading" class="text-center">
+        <mat-spinner class="center-block"></mat-spinner>
         <strong>{{ produccionMallaState.message }}</strong>
-      </alert>
+      </div>
       <alert *ngIf="produccionMallaState.error" class="text-center" type="danger">
         {{ produccionMallaState.message }}
       </alert>

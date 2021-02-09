@@ -81,7 +81,10 @@ export class AlambreEffects {
                   alambre: response
                 });
               }),
-              catchError(error => of(storeAlambreFailure(error)))
+              catchError(error => {
+                this.spinner.hide();
+                return of(storeAlambreFailure(error));
+              })
             );
         })
       ));
@@ -101,7 +104,10 @@ export class AlambreEffects {
                   alambre: response
                 });
               }),
-              catchError(error => of(updateAlambreFailure(error)))
+              catchError(error => {
+                this.spinner.hide();
+                return of(updateAlambreFailure(error));
+              })
             );
         })
       ));

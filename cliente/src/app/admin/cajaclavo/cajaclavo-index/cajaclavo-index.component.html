@@ -14,11 +14,10 @@
       <span class="heading-meta">Cajas de Clavos</span>
       <h2 class="colorlib-heading">Lista de Cajas de Clavos</h2>
 
-      <alert *ngIf="cajaclavoState.loading" class="text-center" type="info">
-        <fa-icon [icon]="faSpinner" [pulse]="true" size="2x"></fa-icon>
-        <br>
+      <div *ngIf="cajaclavoState.loading" class="text-center">
+        <mat-spinner class="center-block"></mat-spinner>
         <strong>{{ cajaclavoState.message }}</strong>
-      </alert>
+      </div>
       <alert *ngIf="cajaclavoState.error" class="text-center" type="danger">
         {{ cajaclavoState.message }}
       </alert>

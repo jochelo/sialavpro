@@ -32,7 +32,7 @@ export interface GavionState {
   loaded: boolean;
   loading: boolean;
   message: string;
-  error: HttpErrorResponse;
+  error: any;
 }
 
 export const initialState: GavionState = {
@@ -64,6 +64,7 @@ const gavionReducer = createReducer(
     loaded: true,
     gaviones: props.gaviones,
     message: null,
+    error: null
   })),
   on(getGavionesFailure, (state: GavionState, props) => ({
     ...state,
@@ -84,7 +85,8 @@ const gavionReducer = createReducer(
     loaded: true,
     gaviones: props.gaviones,
     paginacion: props.paginacion,
-    message: null
+    message: null,
+    error: null
   })),
   on(paginateGavionesFailure, (state: GavionState, props) => ({
     ...state,
@@ -107,6 +109,7 @@ const gavionReducer = createReducer(
     gaviones: [...state.gaviones, props.gavion],
     gavion: props.gavion,
     message: null,
+    error: null
   })),
   on(storeGavionFailure, (state: GavionState, props) => ({
     ...state,
@@ -138,6 +141,7 @@ const gavionReducer = createReducer(
       return gavion;
     }),
     message: null,
+    error: null
   })),
   on(updateGavionFailure, (state: GavionState, props) => ({
     ...state,
@@ -158,6 +162,7 @@ const gavionReducer = createReducer(
     loaded: true,
     gaviones: state.gaviones.filter((gavion: Gavion) => gavion.id !== props.idgavion),
     message: null,
+    error: null
   })),
   on(deleteGavionFailure, (state: GavionState, props) => ({
     ...state,

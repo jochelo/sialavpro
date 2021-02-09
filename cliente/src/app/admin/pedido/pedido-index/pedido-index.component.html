@@ -4,19 +4,18 @@
       <span class="heading-meta">Pedidos</span>
       <h2 class="colorlib-heading">Lista de Pedidos</h2>
 
-      <alert *ngIf="pedidoState.loading" class="text-center" type="info">
-        <fa-icon [icon]="faSpinner" [pulse]="true" size="2x"></fa-icon>
-        <br>
+      <div *ngIf="pedidoState.loading" class="text-center">
+        <mat-spinner class="center-block"></mat-spinner>
         <strong>{{ pedidoState.message }}</strong>
-      </alert>
-      <alert *ngIf="pedidoState.error" class="text-center" type="danger" dismissible="true">
+      </div>
+      <alert *ngIf="pedidoState.error" class="text-center" dismissible="true" type="danger">
         {{ pedidoState.message }}
       </alert>
     </div>
   </div>
   <div class="row">
     <div class="col-md-10 offset-md-1 animate-box" data-animate-effect="fadeInLeft">
-      <div *ngIf="!pedidoState.loading">
+      <div *ngIf="!pedidoState.loading && pedidoState.pedidos.length > 0">
         <div *ngFor="let pedido of pedidoState.pedidos;let i = index">
           <mat-card class="mt-3">
             <mat-card-header>
@@ -38,11 +37,11 @@
                 <p class="mb-0"><strong>{{ 'Monto Total: ' }}</strong>{{ pedido.total | number: '1.2-2' }} {{ ' Bs.' }}
                 </p>
                 <p class="mb-0">
-                  <strong>{{ 'Cancelado: ' }}</strong>{{ pedido.cancelado > pedido.total ? pedido.total : pedido.cancelado | number: '1.2-2' }} {{ ' Bs.' }}
+                  <strong>{{ 'Cancelado: ' }}</strong>{{ pedido.cancelado > pedido.total ? (pedido.total | number: '1.2-2') : (pedido.cancelado | number: '1.2-2') }} {{ ' Bs.' }}
                 </p>
                 <p [class.text-danger]="pedido.total - pedido.cancelado > 0"
                    [class.text-success]="pedido.total - pedido.cancelado <= 0">
-                  <strong>{{ 'Saldo: ' }}</strong>{{ (pedido.total - pedido.cancelado) < 0 ? 0 : pedido.total - pedido.cancelado | number: '1.2-2' }} {{ ' Bs.' }}
+                  <strong>{{ 'Saldo: ' }}</strong>{{ (pedido.total - pedido.cancelado) < 0 ? (0 | number: '1.2-2') : (pedido.total - pedido.cancelado | number: '1.2-2') }} {{ ' Bs.' }}
                 </p>
               </mat-card-subtitle>
 
@@ -55,8 +54,8 @@
                   <ul>
                     <li *ngFor="let producto of pedido.lista_productos">
                       <small class="text-primary"><strong>{{ producto.cantidadSolicitada }}
-                        <em>{{ '[U.] ' }}</em></strong></small>
-                      {{ producto.producto }}
+                        <em>{{ ' u. ' }}</em></strong></small>
+                      {{ ' - ' + producto.producto }}
                     </li>
                   </ul>
                 </li>
@@ -78,20 +77,21 @@
             <mat-card-actions [collapse]="!pedido.show" [isAnimated]="true" align="end" class="text-black-50 ml-3">
               <button (click)="onUpdatePago(pedido)"
                       *ngIf="pedido.total - pedido.cancelado > 0"
-                      class="mr-3"
-                      mat-mini-fab
                       color="accent"
+                      mat-icon-button
                       tooltip="Actualizar pago Pedido">
-                <mat-icon style="transform: scale(0.7);">payments</mat-icon>
+                <mat-icon>payments</mat-icon>
               </button>
-                <mat-checkbox (change)="onEntregar($event.checked, pedido)" *ngIf="!pedido.entregado" color="primary">
-                  <small>Entregar Pedido</small>
-                </mat-checkbox>
-                <!--<button (click)="onDelete(pedido)"
-                        class="btn btn-danger"
-                        tooltip="Eliminar Pedido">
-                  <fa-icon [icon]="faTrash"></fa-icon>
-                </button>-->
+              <button (click)="onEntregar(pedido)" *ngIf="!pedido.entregado" color="primary"
+                      tooltip="Entregar Pedido"
+                      mat-icon-button>
+                <mat-icon>published_with_changes</mat-icon>
+              </button>
+              <!--<button (click)="onDelete(pedido)"
+                      class="btn btn-danger"
+                      tooltip="Eliminar Pedido">
+                <fa-icon [icon]="faTrash"></fa-icon>
+              </button>-->
             </mat-card-actions>
           </mat-card>
         </div>

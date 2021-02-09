@@ -24,7 +24,7 @@ export interface AlambreState {
   loaded: boolean;
   loading: boolean;
   message: string;
-  error: HttpErrorResponse;
+  error: any;
 }
 
 export const initialState: AlambreState = {
@@ -55,7 +55,8 @@ const alambreReducer = createReducer(
     loading: false,
     loaded: true,
     alambres: props.alambres,
-    message: null
+    message: null,
+    error: null
   })),
   on(getAlambresFailure, (state: AlambreState, props) => ({
     ...state,
@@ -76,7 +77,8 @@ const alambreReducer = createReducer(
     loaded: true,
     alambres: props.alambres,
     paginacion: props.paginacion,
-    message: null
+    message: null,
+    error: null
   })),
   on(paginateAlambresFailure, (state: AlambreState, props) => ({
     ...state,
@@ -99,6 +101,7 @@ const alambreReducer = createReducer(
     alambres: [...state.alambres, props.alambre],
     alambre: props.alambre,
     message: null,
+    error: null
   })),
   on(storeAlambreFailure, (state: AlambreState, props) => ({
     ...state,
@@ -130,6 +133,7 @@ const alambreReducer = createReducer(
       return alambre;
     }),
     message: null,
+    error: null
   })),
   on(updateAlambreFailure, (state: AlambreState, props) => ({
     ...state,
@@ -151,6 +155,7 @@ const alambreReducer = createReducer(
     // location: 'index',
     alambres: state.alambres.filter( (alambre: Alambre) => alambre.id !== props.idalambre),
     message: null,
+    error: null
   })),
   on(deleteAlambreFailure, (state: AlambreState, props) => ({
     ...state,
