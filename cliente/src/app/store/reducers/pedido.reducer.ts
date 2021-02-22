@@ -9,10 +9,17 @@ import {
   getPedidos,
   getPedidosFailure,
   getPedidosSuccess,
+  historialPagosPedido,
+  historialPagosPedidoFailure,
+  historialPagosPedidoSuccess,
+  irVistaHistorialPagosPedido,
   irVistaPedido,
   paginatePedidos,
   paginatePedidosFailure,
   paginatePedidosSuccess,
+  searchPedidos,
+  searchPedidosFailure,
+  searchPedidosSuccess,
   storePedido,
   storePedidoFailure,
   storePedidoSuccess,
@@ -24,6 +31,7 @@ import {
   updatePedidoSuccess
 } from '../actions/pedido.actions';
 import {HttpErrorResponse} from '@angular/common/http';
+import { ImportePedido } from 'src/app/models/importe-pedido';
 
 export const pedidoFeatureKey = 'pedido';
 
@@ -31,6 +39,7 @@ export interface PedidoState {
   pedido: Pedido;
   pedidos: Pedido[];
   paginacion: Paginate;
+  importesPedido: ImportePedido[];
   location: string;
   loaded: boolean;
   loading: boolean;
@@ -42,6 +51,7 @@ export const initialState: PedidoState = {
   pedido: null,
   pedidos: [],
   paginacion: null,
+  importesPedido: [],
   location: null,
   loaded: false,
   loading: false,
@@ -54,6 +64,12 @@ const pedidoReducer = createReducer(
   on(irVistaPedido, (state: PedidoState, props) => ({
     ...state,
     location: props.location,
+    error: null
+  })),
+  on(irVistaHistorialPagosPedido, (state: PedidoState, props) => ({
+    ...state,
+    location: props.location,
+    pedido: props.pedido,
     error: null
   })),
   on(getPedidos, (state: PedidoState, props) => ({
@@ -99,6 +115,28 @@ const pedidoReducer = createReducer(
     message: props.error.message,
     error: props.error
   })),
+  on(searchPedidos, (state: PedidoState, props) => ({
+    ...state,
+    loading: true,
+    loaded: false,
+    message: 'Cargando Lista de Pedidos',
+  })),
+  on(searchPedidosSuccess, (state: PedidoState, props) => ({
+    ...state,
+    loading: false,
+    loaded: true,
+    pedidos: props.pedidos,
+    paginacion: props.paginacion,
+    message: null,
+    error: null
+  })),
+  on(searchPedidosFailure, (state: PedidoState, props) => ({
+    ...state,
+    loading: false,
+    loaded: false,
+    message: props.error.message,
+    error: props.error
+  })),
   on(storePedido, (state: PedidoState, props) => ({
     ...state,
     loading: true,
@@ -110,7 +148,7 @@ const pedidoReducer = createReducer(
     loading: false,
     loaded: true,
     location: 'index',
-    pedidos: [...state.pedidos, props.pedido],
+    pedidos: [props.pedido, ...state.pedidos],
     pedido: props.pedido,
     message: null,
     error: null
@@ -198,6 +236,28 @@ const pedidoReducer = createReducer(
     error: null
   })),
   on(deletePedidoFailure, (state: PedidoState, props) => ({
+    ...state,
+    loading: false,
+    loaded: false,
+    message: props.error.message,
+    error: props.error
+  })),
+  on(historialPagosPedido, (state: PedidoState, props) => ({
+    ...state,
+    loading: true,
+    loaded: false,
+    pedido: props.pedido,
+    message: 'Cargando lista de importes'
+  })),
+  on(historialPagosPedidoSuccess, (state: PedidoState, props) => ({
+    ...state,
+    loading: false,
+    loaded: true,
+    importesPedido: props.importesPedido,
+    message: null,
+    error: null
+  })),
+  on(historialPagosPedidoFailure, (state: PedidoState, props) => ({
     ...state,
     loading: false,
     loaded: false,

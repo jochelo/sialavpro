@@ -21,6 +21,10 @@ export class PedidoService {
     return this.http.post(`${this.base}paginate-pedidos`, data);
   }
 
+  searchPedidos(data: any): Observable<any> {
+    return this.http.post(`${this.base}search-pedidos`, data);
+  }
+
   storePedido(data: any): Observable<any> {
     return this.http.post(`${this.base}store-pedido`, data);
   }
@@ -31,6 +35,10 @@ export class PedidoService {
 
   updateImportePedido(data: any): Observable<any> {
     return this.http.post(`${this.base}update-importe-pedido`, data);
+  }
+
+  historialPagosPedido(idpedido: number): Observable<any> {
+    return this.http.delete(`${this.base}historial-pagos-pedido/${idpedido}`);
   }
 
   deletePedido(idpedido: number): Observable<any> {

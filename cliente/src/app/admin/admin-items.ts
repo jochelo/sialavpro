@@ -8,6 +8,7 @@ import {
   faClock,
   faDesktop,
   faDollyFlatbed,
+  faFile,
   faHandshake,
   faShoppingCart,
   faTools, faTruckLoading,
@@ -15,7 +16,8 @@ import {
   faUserPlus,
   faUsers,
   faUsersCog,
-  faUserTie
+  faUserTie,
+  faWarehouse
 } from '@fortawesome/free-solid-svg-icons';
 
 export const items = [
@@ -225,5 +227,26 @@ export const items = [
     label: 'Reservas',
     urlPermiso: 'reservas',
     show: true,
+  },
+  {
+    type: 'menu',
+    isCollapsed: true,
+    icon: faFile,
+    routerLink: null,
+    search: null,
+    label: 'Reportes',
+    urlPermiso: 'reportes',
+    show: true,
+    items: [
+      {
+        type: 'item',
+        icon: faWarehouse,
+        routerLink: '/admin/reportes/inventarios',
+        search: 'reportes/inventarios',
+        label: 'Inventario de Productos',
+        urlPermiso: 'inventario-reporte',
+        show: true,
+      }
+    ]
   },
 ];

@@ -77,6 +77,9 @@ import {AdquisicionCajaclavoIndexComponent} from './adquisicion/adquisicion-caja
 import {AdquisicionCajaclavoCreateComponent} from './adquisicion/adquisicion-cajaclavo-create/adquisicion-cajaclavo-create.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { InventarioComponent } from './reporte/inventario/inventario.component';
+import { DialogEntregaPedidoComponent } from './dialog-entrega-pedido/dialog-entrega-pedido.component';
+import { PedidoHistorialPagoComponent } from './pedido/pedido-historial-pago/pedido-historial-pago.component';
 
 @NgModule({
   declarations: [
@@ -128,7 +131,10 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     AdquisicionAlambreIndexComponent,
     AdquisicionAlambreCreateComponent,
     AdquisicionCajaclavoIndexComponent,
-    AdquisicionCajaclavoCreateComponent],
+    AdquisicionCajaclavoCreateComponent,
+    InventarioComponent,
+    DialogEntregaPedidoComponent,
+    PedidoHistorialPagoComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -161,7 +167,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     NgSelectModule,
   ],
   entryComponents: [
-    DialogPedidoComponent
+    DialogPedidoComponent,
+    DialogEntregaPedidoComponent
   ]
 })
 export class AdminModule {

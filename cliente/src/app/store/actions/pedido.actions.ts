@@ -1,10 +1,16 @@
 import {createAction, props} from '@ngrx/store';
 import {Pedido} from '../../models/pedido';
 import {Paginate} from '../../models/paginate';
+import { ImportePedido } from 'src/app/models/importe-pedido';
 
 export const irVistaPedido = createAction(
   '[Pedido] Ir a una vista de pedidos',
   props<{ location: string }>()
+);
+
+export const irVistaHistorialPagosPedido = createAction(
+  '[Pedido] Ir a la vista de pagos de pedido',
+  props<{ location: string, pedido: Pedido }>()
 );
 
 export const getPedidos = createAction(
@@ -33,6 +39,21 @@ export const paginatePedidosSuccess = createAction(
 
 export const paginatePedidosFailure = createAction(
   '[Pedido] Paginacion de Pedidos Failure',
+  props<{ error: any }>()
+);
+
+export const searchPedidos = createAction(
+  '[Pedido] Busqueda de Pedidos',
+  props<{ items: number, page: number, data: any }>()
+);
+
+export const searchPedidosSuccess = createAction(
+  '[Pedido] Busqueda de Pedidos Success',
+  props<{ pedidos: Pedido[], paginacion: Paginate }>()
+);
+
+export const searchPedidosFailure = createAction(
+  '[Pedido] Busqueda de Pedidos Failure',
   props<{ error: any }>()
 );
 
@@ -98,5 +119,20 @@ export const deletePedidoSuccess = createAction(
 
 export const deletePedidoFailure = createAction(
   '[Pedido] Delete Pedido Failure',
+  props<{ error: any }>()
+);
+
+export const historialPagosPedido = createAction(
+  '[Pedido] Historial de Pagos de Pedido',
+  props<{ pedido: Pedido }>()
+);
+
+export const historialPagosPedidoSuccess = createAction(
+  '[Pedido] Historial de Pagos de Pedido Success',
+  props<{ importesPedido: ImportePedido[] }>()
+);
+
+export const historialPagosPedidoFailure = createAction(
+  '[Pedido] Historial de Pagos de Pedido Failure',
   props<{ error: any }>()
 );

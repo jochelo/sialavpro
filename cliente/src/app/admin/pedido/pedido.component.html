@@ -1,3 +1,5 @@
 <app-pedido-index [pedidoState]="pedidoState" *ngIf="pedidoState.location === 'index'"></app-pedido-index>
 <app-pedido-create [pedidoState]="pedidoState" *ngIf="pedidoState.location === 'create'"></app-pedido-create>
 <app-pedido-edit [pedidoState]="pedidoState" *ngIf="pedidoState.location === 'edit'"></app-pedido-edit>
+
+<app-pedido-historial-pago [pedidoState]="pedidoState" *ngIf="pedidoState.location === 'historial-pago'"></app-pedido-historial-pago>

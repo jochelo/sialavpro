@@ -2,6 +2,7 @@ export class Pedido {
   constructor(
     public show: boolean,
     public fecha: string,
+    public fecha_entrega: string,
     public total: number,
     public cancelado: number,
     public entregado: boolean,

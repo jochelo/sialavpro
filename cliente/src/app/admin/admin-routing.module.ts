@@ -15,6 +15,7 @@ import {ProduccionGavionComponent} from './produccion-gavion/produccion-gavion.c
 import {PedidoComponent} from './pedido/pedido.component';
 import {AdquisicionAlambreIndexComponent} from './adquisicion/adquisicion-alambre-index/adquisicion-alambre-index.component';
 import {AdquisicionCajaclavoIndexComponent} from './adquisicion/adquisicion-cajaclavo-index/adquisicion-cajaclavo-index.component';
+import { InventarioComponent } from './reporte/inventario/inventario.component';
 
 const routes: Routes = [
   {
@@ -91,6 +92,15 @@ const routes: Routes = [
       {
         path: 'pedidos/:tipo',
         component: PedidoComponent
+      },
+      {
+        path: 'reportes',
+        children: [
+          {
+            path: 'inventarios',
+            component: InventarioComponent
+          },
+        ]
       },
       {
         path: '',

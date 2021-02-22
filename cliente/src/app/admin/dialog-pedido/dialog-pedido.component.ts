@@ -20,7 +20,7 @@ export class DialogPedidoComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataGroup = this.fb.group({
-      cantidadSolicitada: new FormControl(this.data.cantidadSolicitada, [Validators.required])
+      cantidadSolicitada: new FormControl(this.data.cantidad, [Validators.required])
     });
     setTimeout( () => {
       this.inputCantidad.nativeElement.focus();

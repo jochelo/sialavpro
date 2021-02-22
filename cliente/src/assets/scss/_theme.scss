@@ -169,5 +169,14 @@
   width: 100%;
 }
 
-
+.form-check {
+  padding-left: 0;
+  .form-check-input {
+    position: static;
+    margin-right: 5px;
+  }
+  .form-check-label {
+    display: inline-block;
+  }
+}
 

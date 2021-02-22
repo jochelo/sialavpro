@@ -1,9 +1,9 @@
-import {Injectable} from '@angular/core';
-import {Actions, createEffect, ofType} from '@ngrx/effects';
-import {Router} from '@angular/router';
-import {catchError, map, switchMap} from 'rxjs/operators';
-import {of, range} from 'rxjs';
-import {PedidoService} from '../../services/pedido.service';
+import { Injectable } from '@angular/core';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { Router } from '@angular/router';
+import { catchError, map, switchMap } from 'rxjs/operators';
+import { of, range } from 'rxjs';
+import { PedidoService } from '../../services/pedido.service';
 import {
   deletePedido,
   deletePedidoFailure,
@@ -11,9 +11,15 @@ import {
   getPedidos,
   getPedidosFailure,
   getPedidosSuccess,
+  historialPagosPedido,
+  historialPagosPedidoFailure,
+  historialPagosPedidoSuccess,
   paginatePedidos,
   paginatePedidosFailure,
   paginatePedidosSuccess,
+  searchPedidos,
+  searchPedidosFailure,
+  searchPedidosSuccess,
   storePedido,
   storePedidoFailure,
   storePedidoSuccess,
@@ -24,10 +30,11 @@ import {
   updatePedidoFailure,
   updatePedidoSuccess
 } from '../actions/pedido.actions';
-import {Paginate} from '../../models/paginate';
-import {Pedido} from '../../models/pedido';
-import {ToastrService} from 'ngx-toastr';
-import {NgxSpinnerService} from 'ngx-spinner';
+import { Paginate } from '../../models/paginate';
+import { Pedido } from '../../models/pedido';
+import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ImportePedido } from 'src/app/models/importe-pedido';
 
 @Injectable()
 export class PedidoEffects {
@@ -73,6 +80,34 @@ export class PedidoEffects {
                 });
               }),
               catchError(error => of(paginatePedidosFailure(error)))
+            );
+        })
+      ));
+
+  searchPedidos$ = createEffect(() =>
+    this.actions$
+      .pipe(
+        ofType(searchPedidos),
+        switchMap((props: { items: number, page: number, data: any }) => {
+          return this.pedidoService.searchPedidos(props)
+            .pipe(
+              map((response: any) => {
+                const pages: number[] = [];
+                range(1, 10).subscribe(item => pages.push(item * 10));
+                return searchPedidosSuccess({
+                  pedidos: response.data,
+                  paginacion: new Paginate(
+                    response.current_page,
+                    response.from,
+                    response.last_page,
+                    response.per_page,
+                    response.to,
+                    response.total,
+                    pages
+                  )
+                });
+              }),
+              catchError(error => of(searchPedidosFailure(error)))
             );
         })
       ));
@@ -147,6 +182,26 @@ export class PedidoEffects {
         })
       ));
 
+  historialPagosPedido$ = createEffect(() =>
+    this.actions$
+      .pipe(
+        ofType(historialPagosPedido),
+        switchMap((props: { pedido: Pedido }) => {
+          this.spinner.show();
+          return this.pedidoService.historialPagosPedido(props.pedido.id)
+            .pipe(
+              map((response: ImportePedido[]) => {
+                this.spinner.hide();
+                this.toastr.success('Lista de Importes rescatada Exitosamente');
+                return historialPagosPedidoSuccess({
+                  importesPedido: response
+                });
+              }),
+              catchError(error => of(historialPagosPedidoFailure(error)))
+            );
+        })
+      ));
+
   deletePedido$ = createEffect(() =>
     this.actions$
       .pipe(
@@ -168,10 +223,10 @@ export class PedidoEffects {
       ));
 
   constructor(private actions$: Actions,
-              private toastr: ToastrService,
-              private spinner: NgxSpinnerService,
-              private pedidoService: PedidoService,
-              private router: Router) {
+    private toastr: ToastrService,
+    private spinner: NgxSpinnerService,
+    private pedidoService: PedidoService,
+    private router: Router) {
   }
 
 }

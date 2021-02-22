@@ -8,16 +8,16 @@
 </h1>
 <form (submit)="onOnSubmit()" [formGroup]="dataGroup">
   <div mat-dialog-content>
-    <p>¿Cuántos desea?</p>
-    <mat-form-field>
-      <mat-label>Cantidad</mat-label>
+    <p>Ingrese la Fecha de entrega</p>
+    <div class="form-group">
+      <label>Fecha Entrega</label>
       <input
-        #inputCantidad
-        matInput
-        formControlName="cantidadSolicitada"
-        type="number"
+        #inputFechaEntrega
+        class="form-control"
+        formControlName="fecha_entrega"
+        type="date"
       />
-    </mat-form-field>
+    </div>
   </div>
   <div mat-dialog-actions align="end">
     <!--<button mat-button (click)="onNoClick()">Cancelar</button>-->
@@ -28,7 +28,7 @@
       [disabled]="dataGroup.invalid"
       type="submit"
     >
-      Registrar
+      Entregar
     </button>
   </div>
 </form>
