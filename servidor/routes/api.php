@@ -135,9 +135,11 @@ Route::group(['middleware' => 'auth:api'], function() {
 
     Route::get('get-pedidos', [PedidoController::class, 'getPedidos']);
     Route::post('paginate-pedidos', [PedidoController::class, 'paginatePedidos']);
+    Route::post('search-pedidos', [PedidoController::class, 'searchPedidos']);
     Route::post('store-pedido', [PedidoController::class, 'storePedido']);
 
     Route::post('update-importe-pedido', [PedidoController::class, 'updateImportePedido']);
+    Route::delete('historial-pagos-pedido/{id}', [PedidoController::class, 'historialPagosPedido']);
     Route::delete('delete-pedido/{id}', [PedidoController::class, 'destroyPedido']);
 
     /*

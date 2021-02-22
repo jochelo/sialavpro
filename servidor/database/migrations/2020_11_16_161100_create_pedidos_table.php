@@ -16,6 +16,7 @@ class CreatePedidosTable extends Migration
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
             $table->date('fecha');
+            $table->date('fecha_entrega')->nullable();
             $table->double('total', 9,2);
             $table->double('cancelado', 9,2);
             $table->boolean('entregado')->default(false);

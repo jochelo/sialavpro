@@ -13,6 +13,10 @@ use App\Models\OrdenGavion;
 use App\Models\OrdenMalla;
 use App\Models\Pedido;
 use Carbon\Carbon;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Collection;
+
 
 class PedidoController extends Controller
 {
@@ -27,6 +31,7 @@ class PedidoController extends Controller
 
         $pedido = Pedido::create([
             'fecha' => Carbon::now()->toDateString(),
+            'fecha_entrega' => $pedido['entregado'] ? Carbon::now()->toDateString() : null,
             'total' => $pedido['total'],
             'cancelado' => $pedido['cancelado'],
             'entregado' => $pedido['entregado'],
@@ -169,7 +174,7 @@ class PedidoController extends Controller
                     $cajaclavo->save();
                 }
             } else {
-                return response()->json(['message' => 'Falta de productos en almacen'], 500);
+                return response()->json(['message' => 'Faltan productos en almacen'], 500);
             }
         }
 
@@ -203,11 +208,93 @@ class PedidoController extends Controller
         return response()->json($pedidos, 200);
     }
 
+    public function searchPedidos()
+    {
+        $data = \request()->input('data');
+        $fechaRegistro = $data['fecha_registro'];
+        $fechaEntrega = $data['fecha_entrega'];
+        $nombreCliente = $data['nombre_cliente'];
+        $option = $data['option'];
+
+        $items = \request()->input('items');
+        if ($fechaRegistro !== null) {
+            $pedidos = collect(Pedido::where('fecha', $fechaRegistro)
+                ->orderBy('entregado', 'asc')
+                ->orderBy('fecha', 'desc')->get());
+        } else {
+            $pedidos = collect(Pedido::orderBy('entregado', 'asc')
+                ->orderBy('fecha', 'desc')->get());
+        }
+        if ($fechaEntrega !== null) {
+            $pedidos = $pedidos->where('fecha_entrega', $fechaEntrega);
+        }
+
+        switch($option) {
+            case 'option2':
+                $pedidos = $pedidos->where('entregado', false);
+                break;
+            case 'option3':
+                if ($fechaRegistro !== null) {
+                    $pedidos = collect(Pedido::where('fecha', $fechaRegistro)
+                        ->whereRaw('total > cancelado')
+                        ->orderBy('entregado', 'asc')
+                        ->orderBy('fecha', 'desc')->get());
+                } else {
+                    $pedidos = collect(Pedido::whereRaw('total > cancelado')
+                        ->orderBy('entregado', 'asc')
+                        ->orderBy('fecha', 'desc')->get());
+                }
+                if ($fechaEntrega !== null) {
+                    $pedidos = $pedidos->where('fecha_entrega', $fechaEntrega);
+                }
+                break;
+            case 'option4':
+                if ($fechaRegistro !== null) {
+                    $pedidos = collect(Pedido::where('fecha', $fechaRegistro)
+                        ->whereRaw('total <= cancelado')
+                        ->orderBy('entregado', 'asc')
+                        ->orderBy('fecha', 'desc')->get());
+                } else {
+                    $pedidos = collect(Pedido::whereRaw('total <= cancelado')
+                        ->orderBy('entregado', 'asc')
+                        ->orderBy('fecha', 'desc')->get());
+                }
+                if ($fechaEntrega !== null) {
+                    $pedidos = $pedidos->where('fecha_entrega', $fechaEntrega);
+                }
+                break;
+        }
+        // $pedidos = $pedidos->where('nombre_cliente', 'like', "%{$nombreCliente}%")->values()->all();
+        if ($nombreCliente !== null && $nombreCliente !== '') {
+            $pedidos = $pedidos->filter(function ($item) use ($nombreCliente) {
+                return false !== stristr($item->nombre_cliente, $nombreCliente);
+            });
+        }
+        $pedidos = $pedidos->values()->all();
+        return response()->json($this->paginateCollect($pedidos, $items), 200);
+    }
+
+    public function historialPagosPedido($id)
+    {
+        // $pedido = Pedido::find($id);
+        $importesPedido = ImportePedido::where('pedido_id', $id)->orderBy('created_at')->get();
+        return response()->json($importesPedido, 200);
+    }
+
     public function destroyPedido($id)
     {
         $pedido = Pedido::find($id);
         $pedido->delete();
 
         return response()->json($pedido['id'], 200);
+    }
+
+    public function paginateCollect($items, $perPage = 15, $page = null, $options = [])
+    {
+        $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
+
+        $items = $items instanceof Collection ? $items : Collection::make($items);
+
+        return new LengthAwarePaginator(array_values($items->forPage($page, $perPage)->toArray()), $items->count(), $perPage, $page, $options);
     }
 }

@@ -1,0 +1,42 @@
+REPORTES
+	add fecha de impresion
+	1)reporte de inventario
+		rango de fechas
+		tipo producto(m, g, cc, al)
+		subtipo
+		
+		TITULO ESTADO ACTUAL INVENTARIO DEL ... AL ....
+			(SUBTIPO PRODUCTO)
+		fecha
+			cantidad actual
+			produccion
+			ventas
+			total
+			vs medidas
+	
+	2) Reporte general de inventario
+		producto, subtipo, cantidad
+
+	CLIENTES
+*	3)Modificar lista de pedidos de clientes buscar por nombre del cliente, checks(todos, pendientes, cance, mora)
+		opciones: ver,imprimir historial de pagos 
+			-historial de lo pedidos
+				en el encabezado Nombre, Total, M.Cancelado ,Saldo 	
+				fecha, monto
+		reporte: detalle de productos adquiridos, pagos
+		imprimir Nota de entrega
+
+		Buscar fecha_Pedido, fecha_entrega, nombre, 
+	4)Reporte de Pedidos Con Mora
+		nombre cliente, fecha_pedido(fecha entrega), valor total, cancelado, a cuenta.
+	
+	NOTA: AÑADIR EL CAMPO "FECHA ENTREGA DE PEDIDOS"
+
+
+	ordenar por fecha en forma desc
+
+
+--DASHBOARD
+	numero de productos pendientes de fabricacion o adquisicion	
+	graficas por ventas(ingresos monetarios) diarias
+	

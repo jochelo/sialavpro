@@ -15,6 +15,7 @@ class Pedido extends Model
     protected $primaryKey = 'id';
     protected $fillable = [
         'fecha',
+        'fecha_entrega',
         'total',
         'cancelado',
         'entregado',
@@ -28,7 +29,7 @@ class Pedido extends Model
 
     public function getNombreClienteAttribute() {
         $cliente = Cliente::find($this->cliente_id);
-        return $cliente->nombres . ' ' . $cliente->apellidos;
+        return $cliente['nombres'] . ' ' . $cliente['apellidos'];
     }
 
     public function getListaProductosAttribute() {
