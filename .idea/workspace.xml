@@ -2,86 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f13f5fa-3f92-466f-88ba-82ba958635fd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cliente/src/app/home/whatsapp/whatsapp.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cliente/src/app/home/whatsapp/whatsapp.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cliente/src/assets/home/images/img-banner-gavion.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cliente/src/assets/home/images/img-banner-hexagonal.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cliente/src/assets/home/images/img-banner-olimpica.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cliente/src/assets/home/images/img-ganadera.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cliente/src/assets/home/images/img-gavion.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cliente/src/assets/home/images/img-hexagonal.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cliente/src/assets/home/images/img-milimetrica.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cliente/src/assets/home/images/img-olimpica.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cliente/src/assets/home/images/img-web-all.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cliente/src/assets/scss/_scrolls.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/admin-items.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/admin-items.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/admin.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/admin.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/admin.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/admin.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/adquisicion/adquisicion-alambre-create/adquisicion-alambre-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/adquisicion/adquisicion-alambre-create/adquisicion-alambre-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/adquisicion/adquisicion-cajaclavo-create/adquisicion-cajaclavo-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/adquisicion/adquisicion-cajaclavo-create/adquisicion-cajaclavo-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/alambre/alambre-create/alambre-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/alambre/alambre-create/alambre-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/alambre/alambre-edit/alambre-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/alambre/alambre-edit/alambre-edit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/alambre/alambre-index/alambre-index.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/alambre/alambre-index/alambre-index.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-create/pedido-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-create/pedido-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-create/pedido-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-create/pedido-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-index/pedido-index.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-index/pedido-index.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/produccion-gavion/produccion-gavion-create-grupal/produccion-gavion-create-grupal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/produccion-gavion/produccion-gavion-create-grupal/produccion-gavion-create-grupal.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/produccion-gavion/produccion-gavion-create-individual/produccion-gavion-create-individual.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/produccion-gavion/produccion-gavion-create-individual/produccion-gavion-create-individual.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/produccion-malla/produccion-malla-create-grupal/produccion-malla-create-grupal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/produccion-malla/produccion-malla-create-grupal/produccion-malla-create-grupal.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/produccion-malla/produccion-malla-create-individual/produccion-malla-create-individual.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/produccion-malla/produccion-malla-create-individual/produccion-malla-create-individual.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/produccion-malla/produccion-malla-index/produccion-malla-index.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/produccion-malla/produccion-malla-index/produccion-malla-index.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/app.interceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/app.interceptor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/helpers/reportes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/helpers/reportes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/home/contactos/contactos.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/home/contactos/contactos.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/home/contactos/contactos.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/home/contactos/contactos.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/home/galeria/galeria.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/home/galeria/galeria.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/home/galeria/galeria.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/home/galeria/galeria.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/home/home.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/home/home.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/home/inicio/inicio.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/home/inicio/inicio.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/home/inicio/inicio.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/home/inicio/inicio.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/home/images/img-011.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/home/images/img-02.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/home/images/img-03.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/home/images/img-04.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/home/images/img-05.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/home/images/img-06.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/home/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/assets/home/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/home/sass/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/assets/home/sass/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.12.48.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.12.54.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.12.55 (1).jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.12.55.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.12.56 (1).jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.12.56 (2).jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.12.56.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.12.59.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.13.00 (1).jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.13.00.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.13.02.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.13.06 (1).jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.13.06.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.13.07 (1).jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.13.07.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.13.08 (1).jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/scss/_maps.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/assets/scss/_maps.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/scss/_theme.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/assets/scss/_theme.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/environments/environment.prod.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servidor/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,18 +30,25 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="mallas@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="mallas@mallas.cpmg9yxyxney.sa-east-1.rds.amazonaws.com" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="mallas@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="mallas@mallas.cpmg9yxyxney.sa-east-1.rds.amazonaws.com" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="mallas@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="mallas@mallas.cpmg9yxyxney.sa-east-1.rds.amazonaws.com" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="mallas: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="mallas@mallas.cpmg9yxyxney.sa-east-1.rds.amazonaws.com" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="mallas: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="users: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -127,24 +58,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cliente/src/assets/scss/_theme.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="286" column="1" selection-start-line="286" selection-start-column="1" selection-end-line="286" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cliente/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cliente/src/app/app.module.ts">
           <provider selected="true" editor-type-id="text-editor">
@@ -179,7 +92,7 @@
         <entry file="file://D:/cealm-master/cliente/src/environments/environment.prod.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="54">
-              <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="50" />
+              <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -197,29 +110,43 @@
         <entry file="file://$PROJECT_DIR$/servidor/.env">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="424">
-              <caret line="43" lean-forward="true" selection-end-line="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/servidor/.env.example">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+              <caret line="43" selection-end-line="46" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-create/pedido-create.component.html">
+        <entry file="file://$PROJECT_DIR$/servidor/.env.example">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="476" column="67" selection-start-line="476" selection-start-column="67" selection-end-line="476" selection-end-column="67" />
-              <folding>
-                <element signature="n#ng-template#0;n#!!top" />
-                <element signature="n#ng-template#1;n#!!top" />
-              </folding>
+            <state relative-caret-position="317">
+              <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/servidor/routes/api.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="173" column="2" selection-start-line="173" selection-start-column="2" selection-end-line="173" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/servidor/database/seeders/DatabaseSeeder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/servidor/database/migrations/2014_10_12_000000_create_users_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="401">
+              <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -272,14 +199,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/cliente/src/app/store/actions/auth.actions.ts" />
         <option value="$PROJECT_DIR$/cliente/src/app/store/reducers/auth.reducer.ts" />
         <option value="$PROJECT_DIR$/cliente/src/app/store/effects/auth.effects.ts" />
         <option value="$PROJECT_DIR$/servidor/config/filesystems.php" />
         <option value="$PROJECT_DIR$/cliente/src/app/admin/alambre/alambre-create/alambre-create.component.html" />
         <option value="$PROJECT_DIR$/cliente/src/app/admin/alambre/alambre-edit/alambre-edit.component.html" />
         <option value="$PROJECT_DIR$/cliente/src/app/admin/alambre/alambre-index/alambre-index.component.html" />
-        <option value="$PROJECT_DIR$/servidor/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/cliente/src/app/admin/adquisicion/adquisicion-alambre-create/adquisicion-alambre-create.component.ts" />
         <option value="$PROJECT_DIR$/cliente/src/app/admin/admin-items.ts" />
         <option value="$USER_HOME$/Downloads/Compressed/LazcanoPractica2/Preg2/src/keys.js" />
@@ -323,6 +248,8 @@
         <option value="$PROJECT_DIR$/cliente/src/app/home/home.module.ts" />
         <option value="$PROJECT_DIR$/cliente/src/app/admin/admin.module.ts" />
         <option value="$PROJECT_DIR$/servidor/.env.example" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a61da73b-9a0f-4047-bfcf-364d2914aecd/console_1.sql" />
+        <option value="$PROJECT_DIR$/servidor/database/migrations/2014_10_12_000000_create_users_table.php" />
       </list>
     </option>
   </component>
@@ -480,7 +407,7 @@
             <path>
               <item name="sialavpro" type="b2602c69:ProjectViewProjectNode" />
               <item name="sialavpro" type="462c0819:PsiDirectoryNode" />
-              <item name="servidor" type="462c0819:PsiDirectoryNode" />
+              <item name="cliente" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -489,7 +416,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DatabaseDriversLRU" value="redshift&#10;mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="editor.config.ad.shown" value="true" />
@@ -603,18 +530,18 @@
       <workItem from="1625325985523" duration="15378000" />
       <workItem from="1625376169928" duration="7168000" />
       <workItem from="1625410382361" duration="29317000" />
-      <workItem from="1625501902194" duration="24390000" />
+      <workItem from="1625501902194" duration="29366000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="884940000" />
+    <option name="totallyTimeSpent" value="889916000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49590835" visible="true" weight="0.23903178" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49590835" visible="true" weight="0.23903178" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5040917" side_tool="true" weight="0.3184569" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -636,7 +563,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="PlantUML" order="3" weight="0.32980332" />
-      <window_info anchor="right" id="Database" order="4" weight="0.23600605" />
+      <window_info active="true" anchor="right" id="Database" order="4" visible="true" weight="0.23600605" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -648,47 +575,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/login/login.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://7cefa1c2-820b-4701-a372-a9ece513c71f/schema/mallas/table/oauth_access_tokens">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/app/Providers/AuthServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="30" column="57" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/app.interceptor.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/home/reservas/reservas.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/home/reservas/reservas.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/cliente/src/app/guard/auth.guard.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1028,7 +914,7 @@
     <entry file="file://D:/cealm-master/cliente/src/environments/environment.prod.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
-          <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="50" />
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -1042,14 +928,52 @@
     <entry file="file://$PROJECT_DIR$/servidor/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
-          <caret line="43" lean-forward="true" selection-end-line="46" />
+          <caret line="43" selection-end-line="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/servidor/.env.example">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        <state relative-caret-position="317">
+          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a61da73b-9a0f-4047-bfcf-364d2914aecd/console_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="23" selection-start-column="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a61da73b-9a0f-4047-bfcf-364d2914aecd/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/database/factories/UserFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="173" column="2" selection-start-line="173" selection-start-column="2" selection-end-line="173" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/database/seeders/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/database/migrations/2014_10_12_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
         </state>
       </provider>
     </entry>
