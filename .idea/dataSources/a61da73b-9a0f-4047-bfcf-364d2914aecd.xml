@@ -6781,7 +6781,7 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="1477" parent="390" name="nomre">
+    <column id="1477" parent="390" name="nombre">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
