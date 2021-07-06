@@ -68,7 +68,7 @@ export class ProduccionMallaCreateGrupalComponent implements OnInit {
         });
       }
     });
-
+    this.store.dispatch(irVistaMalla({location: 'index'}));
     this.store.dispatch(getMallas());
     this.store.dispatch(getEmpleadosMalleros());
   }

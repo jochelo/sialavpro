@@ -23,7 +23,7 @@ import {PedidoService} from 'src/app/services/pedido.service';
 import {ImportePedido} from 'src/app/models/importe-pedido';
 import {map} from 'rxjs/operators';
 import * as moment from 'moment';
-import {justificarParr} from 'src/app/helpers/reportes';
+import {firstCharUpper, justificarParr} from 'src/app/helpers/reportes';
 
 declare const contentWayPoint: any;
 declare const mobileMenuOutsideClick: any;
@@ -270,7 +270,7 @@ export class PedidoIndexComponent implements OnInit {
 
       doc.setFontSize(8);
       doc.text(`Cliente: `, 15, 25);
-      doc.text(`${pedido.nombre_cliente.charAt(0).toUpperCase() + pedido.nombre_cliente.slice(1)}`, 37, 25);
+      doc.text(`${firstCharUpper(pedido.nombre_cliente)}`, 37, 25);
 
       doc.text(`Fecha Registro: `, 15, 30);
       doc.text(`${moment(pedido.created_at).locale('es').format('LL')}`, 37, 30);
@@ -285,6 +285,9 @@ export class PedidoIndexComponent implements OnInit {
       table.startY = (doc as any).previousAutoTable.finalY + 12;
 
       (doc as any).autoTable(table);
+
+      doc.setFontSize(5);
+      doc.text(`Fecha de Impresión: ${moment().locale('es').format('LLL')}`, 105, (doc as any).previousAutoTable.finalY + 5);
 
       doc.save(`historialPagosPedido${pedido.id}.pdf`);
     });

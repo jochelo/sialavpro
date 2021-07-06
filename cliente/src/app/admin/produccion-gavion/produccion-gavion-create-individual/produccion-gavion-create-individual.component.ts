@@ -68,7 +68,7 @@ export class ProduccionGavionCreateIndividualComponent implements OnInit {
         });
       }
     });
-
+    this.store.dispatch(irVistaGavion({location: 'index'}));
     this.store.dispatch(getGaviones());
     this.store.dispatch(getEmpleadosMalleros());
   }

@@ -17,6 +17,7 @@ import {
   storeProduccionGavionGrupal,
   storeProduccionGavionIndividual
 } from '../../../store/actions/produccion-gavion.actions';
+import {irVistaAlambre} from '../../../store/actions/alambre.actions';
 
 declare const contentWayPoint: any;
 declare const mobileMenuOutsideClick: any;
@@ -73,7 +74,7 @@ export class ProduccionGavionCreateGrupalComponent implements OnInit {
         });
       }
     });
-
+    this.store.dispatch(irVistaGavion({location: 'index'}));
     this.store.dispatch(getGaviones());
     this.store.dispatch(getEmpleadosMalleros());
   }

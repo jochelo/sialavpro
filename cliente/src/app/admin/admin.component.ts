@@ -114,13 +114,7 @@ export class AdminComponent implements OnInit {
 
   logout(): void {
     this.dropdown = false;
-    this.authService.logout()
-      .subscribe((res: any) => {
-        if (res) {
-          this.toastr.success('Saliendo del sistema', 'Cerrando sesión');
-          this.router.navigate(['/']);
-        }
-      });
+    this.authService.logout().subscribe();
   }
 
 }

@@ -128,7 +128,7 @@ export class PedidoCreateComponent implements OnInit {
     this.searchGroup.patchValue({
       cliente_id: null
     });
-
+    this.store.dispatch(irVistaCliente({location: 'index'}));
     this.store.dispatch(getClientes());
 
     this.store.dispatch(getMallas());

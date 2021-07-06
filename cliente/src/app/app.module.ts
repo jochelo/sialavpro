@@ -57,7 +57,7 @@ registerLocaleData(localeEsBo, 'es-Bo');
     AlertModule.forRoot(),
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
-    CarouselModule.forRoot(),
+    CarouselModule.forRoot()
     // NgxPermissionsModule.forRoot()
   ],
   providers: [

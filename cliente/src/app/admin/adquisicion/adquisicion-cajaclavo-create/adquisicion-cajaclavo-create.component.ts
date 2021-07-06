@@ -16,8 +16,7 @@ declare const mobileMenuOutsideClick: any;
 @Component({
   selector: 'app-adquisicion-cajaclavo-create',
   templateUrl: './adquisicion-cajaclavo-create.component.html',
-  styles: [
-  ]
+  styles: []
 })
 export class AdquisicionCajaclavoCreateComponent implements OnInit {
 
@@ -55,7 +54,7 @@ export class AdquisicionCajaclavoCreateComponent implements OnInit {
         });
       }
     });
-
+    this.store.dispatch(irVistaCajaclavo({location: 'index'}));
     this.store.dispatch(getCajaclavos());
   }
 

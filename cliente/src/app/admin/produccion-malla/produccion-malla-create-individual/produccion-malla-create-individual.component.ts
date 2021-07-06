@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ProduccionMallaState} from '../../../store/reducers/produccion-malla.reducer';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {NgxSpinnerService} from 'ngx-spinner';
@@ -68,7 +68,7 @@ export class ProduccionMallaCreateIndividualComponent implements OnInit {
         });
       }
     });
-
+    this.store.dispatch(irVistaMalla({location: 'index'}));
     this.store.dispatch(getMallas());
     this.store.dispatch(getEmpleadosMalleros());
   }

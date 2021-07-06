@@ -25,7 +25,7 @@
         </div>
 
         <div class="form-group">
-          <label for="awg">{{ 'AWG (Número de Alambre)' }}</label>
+          <label for="awg">{{ 'BWG (Número de Alambre)' }}</label>
           <input class="custom-range"
                  [class.is-invalid]="alambreState.error !== null && alambreState.error.errors.awg !== undefined"
                  formControlName="awg" id="awg" max="22" min="1" name="awg" step="1"

@@ -1363,12 +1363,14 @@ content: "\ea1c";
   &.active i {
 		&::before, &::after {
 			background: $brand-black;
+      box-shadow: rgba(200, 200, 200, 0.58) 0 0 2px;
 		}
   }
   &.dark {
   	&.active i {
 			&::before, &::after {
 				background: $brand-black;
+        box-shadow: rgba(200, 200, 200, 0.58) 0 0 2px;
 			}
 	  }
   }
@@ -1386,12 +1388,14 @@ content: "\ea1c";
 	  text-transform: uppercase;
 	  text-indent:-55px;
 	  background: $brand-black;
+    box-shadow: rgba(200, 200, 200, 0.58) 0 0 2px;
 	  transition: all .2s ease-out;
 		 &::before, &::after {
 	  	  content:'';
 		  width: 30px;
 		  height: 2px;
 		  background: $brand-black;
+      box-shadow: rgba(200, 200, 200, 0.58) 0 0 2px;
 		  position: absolute;
 		  left:0;
 		  @include transition(.2s);
@@ -1425,6 +1429,7 @@ content: "\ea1c";
 }
 .colorlib-nav-toggle.active i {
 	background: transparent;
+  box-shadow: none;
 }
 .colorlib-nav-toggle.active i::before {
   top:0;

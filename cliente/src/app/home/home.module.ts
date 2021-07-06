@@ -19,10 +19,12 @@ import {adminEffects} from '../store/effects/admin.effects';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxSpinnerModule} from 'ngx-spinner';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { WhatsappComponent } from './whatsapp/whatsapp.component';
+import {NgxImageGalleryModule} from 'ngx-image-gallery';
 
 
 @NgModule({
-  declarations: [HomeComponent, InicioComponent, GaleriaComponent, ServiciosComponent, ReservasComponent, ContactosComponent],
+  declarations: [HomeComponent, InicioComponent, GaleriaComponent, ServiciosComponent, ReservasComponent, ContactosComponent, WhatsappComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
@@ -38,7 +40,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
       libraries: ['places']
     }),
     MatSidenavModule,
-    AlertModule
+    AlertModule,
+    NgxImageGalleryModule
   ],
 })
 export class HomeModule {

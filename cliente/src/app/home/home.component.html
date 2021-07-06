@@ -2,7 +2,7 @@
   <!--<mat-drawer-container [hasBackdrop]="false">
     <mat-drawer #menu mode="over" [opened]="!smallScreen">-->
       <aside class="js-fullheight" id="colorlib-aside" role="complementary">
-        <h1 id="colorlib-logo"><a [routerLink]="['/home']">Prodag</a></h1>
+        <h1 id="colorlib-logo"><a (click)="onCollapseMenu()" [routerLink]="['/home']">KE - MALLA</a></h1>
         <nav id="colorlib-main-menu" role="navigation">
           <ul>
             <li [class.colorlib-active]="router.url.search('inicio') !== -1">
@@ -28,7 +28,7 @@
         <div class="colorlib-footer">
           <p>
             <small>
-              Copyright &copy; 2020 "PRODAG"
+              Copyright &copy; 2021 "KE - MALLA"
               <br>
               <fa-icon [icon]="faGithub"></fa-icon>
               Desarrollado por
@@ -48,6 +48,7 @@
     <mat-drawer-content>-->
       <a class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
       <div id="colorlib-main">
+        <app-whatsapp></app-whatsapp>
         <router-outlet></router-outlet>
       </div>
     <!--</mat-drawer-content>

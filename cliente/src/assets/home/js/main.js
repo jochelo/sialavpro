@@ -138,10 +138,10 @@ var burgerMenu = function () {
     } else {
       $this.addClass('active');
       $('body').addClass('offcanvas');
-/*      $('#colorlib-aside').css('position', 'relative');
-      setTimeout( () => {
-        $('#colorlib-aside').css('position', 'fixed');
-      }, 550);*/
+      /*      $('#colorlib-aside').css('position', 'relative');
+            setTimeout( () => {
+              $('#colorlib-aside').css('position', 'fixed');
+            }, 550);*/
     }
   });
 };

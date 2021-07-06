@@ -54,7 +54,7 @@ export class AdquisicionAlambreCreateComponent implements OnInit {
         });
       }
     });
-
+    this.store.dispatch(irVistaAlambre({location: 'index'}));
     this.store.dispatch(getAlambres());
   }
 

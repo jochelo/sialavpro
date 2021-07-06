@@ -2,11 +2,86 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f13f5fa-3f92-466f-88ba-82ba958635fd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/cliente/src/app/home/whatsapp/whatsapp.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cliente/src/app/home/whatsapp/whatsapp.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cliente/src/assets/home/images/img-banner-gavion.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cliente/src/assets/home/images/img-banner-hexagonal.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cliente/src/assets/home/images/img-banner-olimpica.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cliente/src/assets/home/images/img-ganadera.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cliente/src/assets/home/images/img-gavion.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cliente/src/assets/home/images/img-hexagonal.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cliente/src/assets/home/images/img-milimetrica.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cliente/src/assets/home/images/img-olimpica.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cliente/src/assets/home/images/img-web-all.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cliente/src/assets/scss/_scrolls.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cliente/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/angular.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cliente/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cliente/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/admin-items.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/admin-items.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/admin.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/admin.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/admin.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/admin.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/adquisicion/adquisicion-alambre-create/adquisicion-alambre-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/adquisicion/adquisicion-alambre-create/adquisicion-alambre-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/adquisicion/adquisicion-cajaclavo-create/adquisicion-cajaclavo-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/adquisicion/adquisicion-cajaclavo-create/adquisicion-cajaclavo-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/alambre/alambre-create/alambre-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/alambre/alambre-create/alambre-create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/alambre/alambre-edit/alambre-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/alambre/alambre-edit/alambre-edit.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/alambre/alambre-index/alambre-index.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/alambre/alambre-index/alambre-index.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-create/pedido-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-create/pedido-create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-create/pedido-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-create/pedido-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-index/pedido-index.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-index/pedido-index.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/produccion-gavion/produccion-gavion-create-grupal/produccion-gavion-create-grupal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/produccion-gavion/produccion-gavion-create-grupal/produccion-gavion-create-grupal.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/produccion-gavion/produccion-gavion-create-individual/produccion-gavion-create-individual.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/produccion-gavion/produccion-gavion-create-individual/produccion-gavion-create-individual.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/produccion-malla/produccion-malla-create-grupal/produccion-malla-create-grupal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/produccion-malla/produccion-malla-create-grupal/produccion-malla-create-grupal.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/produccion-malla/produccion-malla-create-individual/produccion-malla-create-individual.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/produccion-malla/produccion-malla-create-individual/produccion-malla-create-individual.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/produccion-malla/produccion-malla-index/produccion-malla-index.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/produccion-malla/produccion-malla-index/produccion-malla-index.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/app.interceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/app.interceptor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/helpers/reportes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/helpers/reportes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/home/contactos/contactos.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/home/contactos/contactos.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/home/contactos/contactos.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/home/contactos/contactos.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/home/galeria/galeria.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/home/galeria/galeria.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/home/galeria/galeria.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/home/galeria/galeria.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/home/home.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/home/home.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/home/inicio/inicio.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/home/inicio/inicio.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/home/inicio/inicio.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/home/inicio/inicio.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/home/images/img-011.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/home/images/img-02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/home/images/img-03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/home/images/img-04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/home/images/img-05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/home/images/img-06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/home/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/assets/home/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/home/sass/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/assets/home/sass/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.12.48.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.12.54.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.12.55 (1).jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.12.55.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.12.56 (1).jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.12.56 (2).jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.12.56.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.12.59.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.13.00 (1).jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.13.00.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.13.02.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.13.06 (1).jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.13.06.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.13.07 (1).jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.13.07.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/productos/WhatsApp Image 2020-11-16 at 20.13.08 (1).jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/scss/_maps.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/assets/scss/_maps.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/assets/scss/_theme.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/assets/scss/_theme.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servidor/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servidor/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servidor/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servidor/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servidor/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servidor/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,93 +128,98 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-index/pedido-index.component.ts">
+        <entry file="file://$PROJECT_DIR$/cliente/src/assets/scss/_theme.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="283" selection-start-line="283" selection-end-line="283" />
-              <folding>
-                <element signature="e#0#55#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="401">
+              <caret line="286" column="1" selection-start-line="286" selection-start-column="1" selection-end-line="286" selection-end-column="1" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cliente/src/app/models/importe-pedido.ts">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cliente/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+            <state relative-caret-position="351">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cliente/src/app/app-routing.module.ts">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cliente/src/app/app.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="108">
+              <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#0#56#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cliente/package-lock.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57687">
-              <caret line="14305" column="12" selection-start-line="14305" selection-start-column="12" selection-end-line="14305" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cliente/angular.json">
+        <entry file="file://$PROJECT_DIR$/cliente/src/app/home/home.module.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="162">
-              <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+              <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/servidor/database/migrations/2020_11_16_161035_create_clientes_table.php">
+        <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/admin.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="38" />
+            <state relative-caret-position="181">
+              <caret line="166" column="19" selection-start-line="166" selection-start-column="19" selection-end-line="166" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/servidor/database/seeders/DatabaseSeeder.php">
+        <entry file="file://D:/cealm-master/cliente/src/environments/environment.prod.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+            <state relative-caret-position="54">
+              <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/servidor/app/Models/Cliente.php">
+        <entry file="file://$PROJECT_DIR$/servidor/app/Http/Controllers/AdquisicionAlambreController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="19" column="6" selection-start-line="12" selection-start-column="4" selection-end-line="19" selection-end-column="6" />
+            <state relative-caret-position="162">
+              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/servidor/app/Models/Pedido.php">
+        <entry file="file://$PROJECT_DIR$/servidor/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="22" column="6" selection-start-line="13" selection-start-column="4" selection-end-line="17" selection-end-column="9" />
+            <state relative-caret-position="424">
+              <caret line="43" lean-forward="true" selection-end-line="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/servidor/.env.example">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-create/pedido-create.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="476" column="67" selection-start-line="476" selection-start-column="67" selection-end-line="476" selection-end-column="67" />
+              <folding>
+                <element signature="n#ng-template#0;n#!!top" />
+                <element signature="n#ng-template#1;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,17 +228,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>@</find>
-      <find>@view</find>
-      <find>soli</find>
-      <find>dia</find>
-      <find>colorlib-na</find>
-      <find>colorlib-narr</find>
-      <find>animate-box</find>
-      <find>dialo</find>
-      <find>number:</find>
-      <find>onstore</find>
-      <find>cance</find>
       <find>chec</find>
       <find>70</find>
       <find>auto</find>
@@ -178,6 +247,17 @@
       <find>Carbon-&gt;now</find>
       <find>Carbon::now()-&gt;</find>
       <find>typescr</find>
+      <find>node-sass</find>
+      <find>enum</find>
+      <find>logi</find>
+      <find>select</find>
+      <find>aw</find>
+      <find>PRO</find>
+      <find>proda</find>
+      <find>torcion</find>
+      <find>breakpoint</find>
+      <find>colorlib-nav-toggle</find>
+      <find>toolt</find>
     </findStrings>
     <dirStrings>
       <dir>D:\CIMA\sialavpro\servidor</dir>
@@ -192,57 +272,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/cliente/src/app/home/galeria/galeria.component.html" />
-        <option value="$PROJECT_DIR$/cliente/capacitor.config.json" />
-        <option value="$PROJECT_DIR$/cliente/src/app/home/inicio/inicio.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/home/reservas/reservas.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/store/reducers/malla.reducer.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/malla/malla-create/malla-create.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/malla/malla-edit/malla-edit.component.html" />
-        <option value="$PROJECT_DIR$/servidor/app/Http/Controllers/MallaController.php" />
-        <option value="$PROJECT_DIR$/cliente/src/app/store/effects/malla.effects.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/store/reducers/gavion.reducer.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/store/effects/gavion.effects.ts" />
-        <option value="$PROJECT_DIR$/servidor/app/Http/Controllers/GavionController.php" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/gavion/gavion-create/gavion-create.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/gavion/gavion-edit/gavion-edit.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/store/reducers/alambre.reducer.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/store/effects/alambre.effects.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/store/actions/auth.actions.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/store/reducers/auth.reducer.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/store/effects/auth.effects.ts" />
+        <option value="$PROJECT_DIR$/servidor/config/filesystems.php" />
         <option value="$PROJECT_DIR$/cliente/src/app/admin/alambre/alambre-create/alambre-create.component.html" />
-        <option value="$PROJECT_DIR$/servidor/app/Http/Controllers/AlambreController.php" />
         <option value="$PROJECT_DIR$/cliente/src/app/admin/alambre/alambre-edit/alambre-edit.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/store/reducers/cajaclavo.reducer.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/store/effects/cajaclavo.effects.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/cajaclavo/cajaclavo-create/cajaclavo-create.component.html" />
-        <option value="$PROJECT_DIR$/servidor/app/Http/Controllers/CajaclavoController.php" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/cajaclavo/cajaclavo-edit/cajaclavo-edit.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/home/home.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/home/home.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/assets/home/js/main.js" />
-        <option value="$PROJECT_DIR$/cliente/src/assets/home/sass/style.scss" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/admin.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/admin.module.ts" />
         <option value="$PROJECT_DIR$/cliente/src/app/admin/alambre/alambre-index/alambre-index.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/gavion/gavion-index/gavion-index.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/cajaclavo/cajaclavo-index/cajaclavo-index.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/adquisicion/adquisicion-alambre-index/adquisicion-alambre-index.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/adquisicion/adquisicion-cajaclavo-index/adquisicion-cajaclavo-index.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/cliente/cliente-index/cliente-index.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/empleado/empleado-index/empleado-index.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/produccion-gavion/produccion-gavion-index/produccion-gavion-index.component.html" />
+        <option value="$PROJECT_DIR$/servidor/database/migrations/2014_10_12_000000_create_users_table.php" />
+        <option value="$PROJECT_DIR$/cliente/src/app/admin/adquisicion/adquisicion-alambre-create/adquisicion-alambre-create.component.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/admin/admin-items.ts" />
+        <option value="$USER_HOME$/Downloads/Compressed/LazcanoPractica2/Preg2/src/keys.js" />
+        <option value="$USER_HOME$/Downloads/Compressed/Practica 2 - Ugarte Jenny/Pregunta_2/src/keys.js" />
         <option value="$PROJECT_DIR$/cliente/src/app/admin/produccion-malla/produccion-malla-index/produccion-malla-index.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/reserva/reserva-index/reserva-index.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/malla/malla-index/malla-index.component.html" />
-        <option value="$PROJECT_DIR$/cliente/tsconfig.json" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-create/pedido-create.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-create/pedido-create.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-index/pedido-index.component.html" />
+        <option value="$PROJECT_DIR$/servidor/routes/api.php" />
+        <option value="$PROJECT_DIR$/servidor/config/app.php" />
+        <option value="$PROJECT_DIR$/cliente/src/app/admin/admin.component.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/auth.service.ts" />
+        <option value="$PROJECT_DIR$/servidor/app/Http/Controllers/AuthController.php" />
+        <option value="$PROJECT_DIR$/cliente/src/app/guard/auth.guard.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/app.interceptor.ts" />
+        <option value="$PROJECT_DIR$/servidor/app/Providers/AuthServiceProvider.php" />
+        <option value="$PROJECT_DIR$/cliente/src/app/home/contactos/contactos.component.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/assets/home/js/main.js" />
+        <option value="$PROJECT_DIR$/cliente/src/app/home/inicio/inicio.component.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/home/inicio/inicio.component.html" />
+        <option value="$PROJECT_DIR$/cliente/src/styles.scss" />
+        <option value="$PROJECT_DIR$/cliente/src/assets/scss/_scrolls.scss" />
+        <option value="$PROJECT_DIR$/cliente/src/app/home/whatsapp/whatsapp.component.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/home/whatsapp/whatsapp.component.html" />
+        <option value="$PROJECT_DIR$/cliente/src/app/home/home.component.html" />
         <option value="$PROJECT_DIR$/cliente/src/app/admin/admin.component.html" />
+        <option value="$PROJECT_DIR$/cliente/src/assets/home/css/style.css" />
+        <option value="$PROJECT_DIR$/cliente/src/assets/home/sass/style.scss" />
+        <option value="$PROJECT_DIR$/cliente/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/home/galeria/galeria.component.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/home/galeria/galeria.component.html" />
+        <option value="$PROJECT_DIR$/cliente/src/index.html" />
         <option value="$PROJECT_DIR$/cliente/src/environments/environment.prod.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/models/producto-pedido.ts" />
-        <option value="$PROJECT_DIR$/cliente/package-lock.json" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-index/pedido-index.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/package.json" />
+        <option value="$PROJECT_DIR$/cliente/src/app/home/contactos/contactos.component.html" />
+        <option value="$PROJECT_DIR$/cliente/src/assets/scss/_maps.scss" />
+        <option value="$PROJECT_DIR$/cliente/src/app/admin/adquisicion/adquisicion-cajaclavo-create/adquisicion-cajaclavo-create.component.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/admin/produccion-gavion/produccion-gavion-create-grupal/produccion-gavion-create-grupal.component.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/admin/produccion-gavion/produccion-gavion-create-individual/produccion-gavion-create-individual.component.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/admin/produccion-malla/produccion-malla-create-individual/produccion-malla-create-individual.component.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/admin/produccion-malla/produccion-malla-create-grupal/produccion-malla-create-grupal.component.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-create/pedido-create.component.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/assets/scss/_theme.scss" />
+        <option value="$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-create/pedido-create.component.html" />
+        <option value="$PROJECT_DIR$/cliente/src/app/home/home.module.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/admin/admin.module.ts" />
+        <option value="$PROJECT_DIR$/servidor/.env.example" />
       </list>
     </option>
   </component>
@@ -400,20 +480,7 @@
             <path>
               <item name="sialavpro" type="b2602c69:ProjectViewProjectNode" />
               <item name="sialavpro" type="462c0819:PsiDirectoryNode" />
-              <item name="cliente" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sialavpro" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sialavpro" type="462c0819:PsiDirectoryNode" />
-              <item name="cliente" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sialavpro" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sialavpro" type="462c0819:PsiDirectoryNode" />
-              <item name="cliente" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="servidor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -426,7 +493,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/postulacion" />
+    <property name="last_opened_file_path" value="D:/HARD/sidirdepmas" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="D:\CIMA\sialavpro\cliente\node_modules\tslint" />
@@ -516,18 +583,38 @@
       <workItem from="1611614715016" duration="1651000" />
       <workItem from="1612493723834" duration="1195000" />
       <workItem from="1613748168044" duration="1214000" />
-      <workItem from="1614007849403" duration="7823000" />
+      <workItem from="1614007849403" duration="16196000" />
+      <workItem from="1614565997332" duration="1377000" />
+      <workItem from="1615842018334" duration="3288000" />
+      <workItem from="1616093373297" duration="1507000" />
+      <workItem from="1617292382853" duration="2389000" />
+      <workItem from="1619985654040" duration="5455000" />
+      <workItem from="1623091655879" duration="9637000" />
+      <workItem from="1623117825988" duration="1279000" />
+      <workItem from="1623119298086" duration="6095000" />
+      <workItem from="1623163230204" duration="9365000" />
+      <workItem from="1623314476079" duration="3266000" />
+      <workItem from="1623653877773" duration="9757000" />
+      <workItem from="1623805458516" duration="4654000" />
+      <workItem from="1623903770716" duration="41000" />
+      <workItem from="1623943697137" duration="511000" />
+      <workItem from="1624045251055" duration="9206000" />
+      <workItem from="1624637929432" duration="615000" />
+      <workItem from="1625325985523" duration="15378000" />
+      <workItem from="1625376169928" duration="7168000" />
+      <workItem from="1625410382361" duration="29317000" />
+      <workItem from="1625501902194" duration="24390000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="731872000" />
+    <option name="totallyTimeSpent" value="884940000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49590835" weight="0.22768533" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49590835" visible="true" weight="0.23903178" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5040917" side_tool="true" weight="0.3184569" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -549,7 +636,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="PlantUML" order="3" weight="0.32980332" />
-      <window_info anchor="right" id="Database" order="4" weight="0.2367223" />
+      <window_info anchor="right" id="Database" order="4" weight="0.23600605" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,396 +648,408 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/servidor/app/Http/Controllers/CajaclavoController.php">
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/login/login.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="37" column="61" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="61" />
+        <state relative-caret-position="266">
+          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/cajaclavo/cajaclavo-create/cajaclavo-create.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="85" column="14" lean-forward="true" selection-start-line="79" selection-start-column="10" selection-end-line="85" selection-end-column="14" />
+    <entry file="das://7cefa1c2-820b-4701-a372-a9ece513c71f/schema/mallas/table/oauth_access_tokens">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/cajaclavo/cajaclavo-edit/cajaclavo-edit.component.html">
+    <entry file="file://$PROJECT_DIR$/servidor/app/Providers/AuthServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="99" column="14" lean-forward="true" selection-start-line="99" selection-start-column="14" selection-end-line="99" selection-end-column="14" />
+        <state relative-caret-position="756">
+          <caret line="30" column="57" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/assets/scss/_theme.scss">
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/app.interceptor.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="39" column="3" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/home/home.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        <state relative-caret-position="702">
+          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
           <folding>
-            <element signature="n#aside#0;n#mat-drawer#0;n#mat-drawer-container#0;n#div#0;n#!!top" />
-            <element signature="n#div#0;n#mat-drawer-content#0;n#mat-drawer-container#0;n#div#0;n#!!top" />
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/home/home.component.ts">
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/home/reservas/reservas.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+        <state relative-caret-position="189">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/home/reservas/reservas.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/guard/auth.guard.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="12" column="83" selection-start-line="12" selection-start-column="83" selection-end-line="12" selection-end-column="83" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/auth.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="891">
+          <caret line="39" column="48" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/facu/inf 3911 web/1-2021/Ejercicios/bootstrap/css/estilo.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/home/contactos/contactos.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/produccion-malla/produccion-malla-create-sincupo/produccion-malla-create-sincupo.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/malla/malla-index/malla-index.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="999">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/home/inicio/inicio.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6831">
+          <caret line="253" column="11" selection-start-line="253" selection-start-column="11" selection-end-line="253" selection-end-column="11" />
+          <folding>
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#aside#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#aside#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#aside#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/assets/scss/_scrolls.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cliente/src/assets/home/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="144" column="5" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
+        <state relative-caret-position="4941">
+          <caret line="184" selection-start-line="184" selection-end-line="184" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/assets/home/sass/style.scss">
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/home/inicio/inicio.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="459" column="8" selection-start-line="459" selection-start-column="8" selection-end-line="459" selection-end-column="8" />
+        <state relative-caret-position="1134">
+          <caret line="44" column="23" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/admin.component.ts">
+    <entry file="file://D:/facu/inf 3911 web/1-2021/Ejercicios/html clase 6/js/script.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/facu/inf 3911 web/1-2021/Ejercicios/html clase 6/css/estilos.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+        <state relative-caret-position="401">
+          <caret line="264" column="44" lean-forward="true" selection-start-line="264" selection-start-column="8" selection-end-line="264" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/home/whatsapp/whatsapp.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/admin.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="61" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
+          <folding>
+            <element signature="e#1942#1948#0" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#span#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/home/whatsapp/whatsapp.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="106" selection-start-line="5" selection-start-column="106" selection-end-line="5" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/assets/home/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="1159" column="4" selection-start-line="1159" selection-start-column="4" selection-end-line="1159" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/styles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/home/home.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="48" column="58" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/assets/home/sass/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="1390" column="34" lean-forward="true" selection-start-line="1390" selection-start-column="34" selection-end-line="1390" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/main.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/home/galeria/galeria.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="96" column="4" selection-start-line="96" selection-start-column="4" selection-end-line="96" selection-end-column="4" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/documentacion/diseño/balay/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/admin.module.ts">
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/home/galeria/galeria.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="154" column="29" selection-start-line="154" selection-start-column="29" selection-end-line="154" selection-end-column="29" />
+        <state relative-caret-position="306">
+          <caret line="18" column="58" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/alambre/alambre-index/alambre-index.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/cliente/src/favicon.ico">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/gavion/gavion-index/gavion-index.component.html">
+    <entry file="file://$PROJECT_DIR$/cliente/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/cajaclavo/cajaclavo-index/cajaclavo-index.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/adquisicion/adquisicion-alambre-index/adquisicion-alambre-index.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/adquisicion/adquisicion-cajaclavo-index/adquisicion-cajaclavo-index.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/cliente/cliente-index/cliente-index.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/empleado/empleado-index/empleado-index.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/produccion-malla/produccion-malla-index/produccion-malla-index.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-index/pedido-index.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/assets/home/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161055">
-          <caret line="5965" column="1" selection-start-line="5965" selection-start-column="1" selection-end-line="5965" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/malla/malla-create/malla-create.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="63" column="26" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#78#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/malla/malla-create/malla-create.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/admin.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
-          <caret line="60" column="46" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#span#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-create/pedido-create.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="458" column="33" selection-start-line="458" selection-start-column="33" selection-end-line="458" selection-end-column="33" />
-          <folding>
-            <element signature="n#ng-template#0;n#!!top" />
-            <element signature="n#ng-template#1;n#!!top" />
-            <element signature="n#h4#0;n#ng-template#1;n#!!top" />
-            <element signature="n#mat-list-item#0;n#mat-list#0;n#ng-template#1;n#!!top" />
-            <element signature="n#mat-list-item#1;n#mat-list#0;n#ng-template#1;n#!!top" />
-            <element signature="n#mat-list-item#2;n#mat-list#0;n#ng-template#1;n#!!top" />
-            <element signature="n#mat-step#0;n#mat-horizontal-stepper#0;n#div#0;n#div#1;n#div#0;n#!!top" />
-            <element signature="n#mat-step#1;n#mat-horizontal-stepper#0;n#div#0;n#div#1;n#div#0;n#!!top" />
-            <element signature="n#mat-step#2;n#mat-horizontal-stepper#0;n#div#0;n#div#1;n#div#0;n#!!top" />
-            <element signature="n#mat-step#1;n#mat-vertical-stepper#0;n#div#0;n#div#1;n#div#0;n#!!top" />
-            <element signature="n#mat-step#2;n#mat-vertical-stepper#0;n#div#0;n#div#1;n#div#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-create/pedido-create.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8289">
-          <caret line="335" column="5" selection-start-line="335" selection-start-column="5" selection-end-line="335" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/produccion-gavion/produccion-gavion-index/produccion-gavion-index.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1269">
-          <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/tslint.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4104">
-          <caret line="152" selection-start-line="152" selection-end-line="152" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/reserva/reserva-index/reserva-index.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/malla/malla-index/malla-index.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="32" column="69" selection-start-line="32" selection-start-column="69" selection-end-line="32" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/login/login.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/database/migrations/2020_11_16_161436_create_orden_mallas_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/database/migrations/2020_11_16_161100_create_pedidos_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="17" column="34" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/app/Models/OrdenMalla.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="21" column="6" selection-start-line="12" selection-start-column="4" selection-end-line="21" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/app/Models/Malla.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+        <state relative-caret-position="252">
+          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cliente/src/environments/environment.prod.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/database/migrations/2020_11_16_161035_create_clientes_table.php">
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/home/contactos/contactos.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="38" />
+        <state relative-caret-position="351">
+          <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/database/seeders/DatabaseSeeder.php">
+    <entry file="file://$PROJECT_DIR$/cliente/src/assets/scss/_maps.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+        <state relative-caret-position="243">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/app/Models/Cliente.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="19" column="6" selection-start-line="12" selection-start-column="4" selection-end-line="19" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/app/Models/Pedido.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="22" column="6" selection-start-line="13" selection-start-column="4" selection-end-line="17" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/models/producto-pedido.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/models/importe-pedido.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/angular.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/node_modules/typescript/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57687">
-          <caret line="14305" column="12" selection-start-line="14305" selection-start-column="12" selection-end-line="14305" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-index/pedido-index.component.ts">
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/adquisicion/adquisicion-alambre-create/adquisicion-alambre-create.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
-          <caret line="283" selection-start-line="283" selection-end-line="283" />
+          <caret line="56" column="61" lean-forward="true" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="61" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/package.json">
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/produccion-gavion/produccion-gavion-create-grupal/produccion-gavion-create-grupal.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        <state relative-caret-position="270">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/app-routing.module.ts">
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/adquisicion/adquisicion-cajaclavo-create/adquisicion-cajaclavo-create.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/produccion-gavion/produccion-gavion-create-grupal/produccion-gavion-create-grupal.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="77" column="4" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/produccion-gavion/produccion-gavion-create-individual/produccion-gavion-create-individual.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="70" column="37" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/produccion-malla/produccion-malla-create-individual/produccion-malla-create-individual.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="70" column="59" selection-start-line="70" selection-start-column="59" selection-end-line="70" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/produccion-malla/produccion-malla-create-grupal/produccion-malla-create-grupal.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="70" column="59" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-create/pedido-create.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="132" selection-start-line="132" selection-end-line="132" />
+          <folding>
+            <element signature="e#0#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/assets/scss/_theme.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="286" column="1" selection-start-line="286" selection-start-column="1" selection-end-line="286" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/pedido/pedido-create/pedido-create.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="476" column="67" selection-start-line="476" selection-start-column="67" selection-end-line="476" selection-end-column="67" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#ng-template#0;n#!!top" />
+            <element signature="n#ng-template#1;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/home/home.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/admin.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="166" column="19" selection-start-line="166" selection-start-column="19" selection-end-line="166" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/cealm-master/cliente/src/environments/environment.prod.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/app/Http/Controllers/AdquisicionAlambreController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="43" lean-forward="true" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/.env.example">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
         </state>
       </provider>
     </entry>

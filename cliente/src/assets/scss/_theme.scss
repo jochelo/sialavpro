@@ -1,17 +1,21 @@
 @import "~src/assets/home/sass/style";
 .overlay-title {
+  color: #cdcdcd;
+  text-shadow: #1b1e21 3px 3px 15px;
   margin-top: 90px;
-  margin-left: 110px;
+  margin-left: 20px;
   margin-bottom: 5px;
   font-size: 6.2rem !important;
   @media (max-width: 425px){
     margin-top: 70px;
     margin-left: 40px;
-    font-size: 4rem !important;
+    font-size: 3.5rem !important;
   }
 }
 .overlay-subtitle {
-  margin-left: 110px;
+  color: #cdcdcd;
+  text-shadow: #1b1e21 2px 2px 10px;
+  margin-left: 40px;
   font-size: 2rem !important;
   @media (max-width: 425px){
     margin-left: 40px;
@@ -180,3 +184,104 @@
   }
 }
 
+.fs-2 {
+  font-size: 1.3em;
+}
+
+.bg-dark-80 {
+  background: rgba(0,0,0,.8) !important;
+}
+
+#btn-wsp {
+  cursor: pointer;
+  position: fixed;
+  z-index: 9999;
+  bottom: 15px;
+  right: 15px;
+
+  width: 52px;
+  height: 52px;
+
+  color: whitesmoke;
+  background-color: #21a940;
+  padding: 9px 13px;
+  border-radius: 25%;
+  animation-name: move-up-down;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  transition-duration: 500ms;
+  box-shadow: inset -1px -1px 7px #136e29;
+}
+
+#btn-wsp:hover {
+  animation: none;
+  background-color: #45af4a;
+  box-shadow: inset -1px -1px 5px #136427;
+  fa-icon {
+    filter: drop-shadow(1px 1px 1px rgba(40, 44, 49, 0.65));
+  }
+}
+
+.tooltip-wsp {
+  font-size: 0.9em;
+  color: whitesmoke;
+  position: fixed;
+  z-index: 9999;
+
+  bottom: 25px;
+  right: 80px;
+  width: 200px;
+  height: 33px;
+
+  background-color: rgba(27, 30, 33, 0.87);
+  padding: 3px 10px;
+  border-radius: 8px;
+  animation-name: msg-rl;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.tooltip-wsp:after {
+  content: "";
+  background-color: rgba(27, 30, 33, 0.87);
+  position: absolute;
+  right: -10px;
+  top: 7px;
+  width: 10px;
+  height: 15px;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+.tooltip-wsp > fa-icon {
+  color: #ffe900;
+}
+
+@keyframes move-up-down {
+  0% {
+    opacity: 0.6;
+    bottom: 25px;
+  }
+  35% {
+    opacity: 0.8;
+    bottom: 20px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 15px;
+  }
+}
+
+@keyframes msg-rl {
+  0% {
+    clip-path: circle(10px at 100% -30%);
+  }
+  60% {
+    clip-path: circle(10px at 100% -30%);
+  }
+  68% {
+    clip-path: circle(400px at 50% 50%);
+    padding: 3px 10px;
+  }
+}

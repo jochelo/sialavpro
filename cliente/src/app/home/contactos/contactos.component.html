@@ -9,7 +9,11 @@
     <div class="row">
       <div class="col-md-6">
         <div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInRight">
-          <agm-map
+          <iframe
+            allowfullscreen=""
+            class="map" loading="lazy"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6176.471375306055!2d-67.10107954129634!3d-17.98692293270997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e2b1d3c7f4c0bd%3A0x6e41bc7aceabbb0b!2sMallas%20y%20Gaviones%20%22KE-MALLA%22!5e1!3m2!1ses!2sbo!4v1625524572877!5m2!1ses!2sbo"></iframe>
+          <!--<agm-map
             [disableDoubleClickZoom]="true"
             [latitude]="lat"
             [longitude]="lng"
@@ -27,7 +31,7 @@
                 <p>Empresa de Productos de Acero Galvanizado</p>
               </agm-info-window>
             </agm-marker>
-          </agm-map>
+          </agm-map>-->
         </div>
       </div>
       <div class="col-md-6">
@@ -49,7 +53,8 @@
             <i class="icon-map"></i>
           </div>
           <div class="colorlib-text">
-            <p>Oruro, Sud Este, 12 de Octubre, Circunvalación y America.</p>
+            <p><a href="https://goo.gl/maps/BnxfyzLq1tSJnWr26">Oruro, Sud Este, 12 de Octubre, Circunvalación y
+              America.</a></p>
           </div>
         </div>
       </div>
@@ -57,11 +62,54 @@
         <div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
           <div class="colorlib-icon">
             <!--<i class="icon-phone"></i>-->
+            <fa-icon [icon]="faPhone" size="xs"></fa-icon>
+          </div>
+          <div class="colorlib-text mt-0 d-flex align-items-center justify-content-start">
+            <p class="">
+              <a href="tel://+591 738 38233"><b class="">+591 738 38233</b></a>
+              <br>
+              <a href="tel://+591 711 86662"><b class="">+591 711 86662</b></a>
+              <br>
+              <a href="tel://+591 794 26068"><b class="">+591 794 26068</b></a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="colorlib-feature colorlib-feature-sm animate-box pointer" data-animate-effect="fadeInLeft">
+          <div class="colorlib-icon">
+            <!--<i class="icon-phone"></i>-->
             <fa-icon [icon]="faWhatsapp" size="xs"></fa-icon>
           </div>
           <div class="colorlib-text">
-            <p><a href="tel://+591 711 86662">+591 711 86662</a>
-              <br><a href="tel://+591 794 26068">+591 794 26068</a></p>
+            <p>
+              <a
+                href="https://api.whatsapp.com/send?phone=59173838233&text=Hola%20KE-MALLA!,%20deseo%20mayor%20información"
+                target="_blank"
+                tooltip="Envianos un mensaje"><b class="fs-2">+591 738 38233</b></a>
+              <!--<br>
+              <a href="tel://+591 711 86662">+591 711 86662</a>
+              <br>
+              <a href="tel://+591 794 26068">+591 794 26068</a>-->
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="colorlib-feature colorlib-feature-sm animate-box pointer" data-animate-effect="fadeInLeft">
+          <div class="colorlib-icon">
+            <!--<i class="icon-phone"></i>-->
+            <fa-icon [icon]="faFacebook" size="xs"></fa-icon>
+          </div>
+          <div class="colorlib-text">
+            <p>
+              <a href="https://www.facebook.com/KE-MALLA-Mallas-y-Gaviones-103290058318305/?ti=as" target="_blank"><b
+                class="fs-2">KE-MALLA</b></a>
+              <!--<br>
+              <a href="tel://+591 711 86662">+591 711 86662</a>
+              <br>
+              <a href="tel://+591 794 26068">+591 794 26068</a>-->
+            </p>
           </div>
         </div>
       </div>
